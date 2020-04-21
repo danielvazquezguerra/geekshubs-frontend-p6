@@ -112,3 +112,8 @@
     background-color: transparent;
     outline: none;
 }
+
+.caja-roja {
+    height: 400px;
+    width: 300px;
+}
