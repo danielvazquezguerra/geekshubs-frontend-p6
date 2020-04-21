@@ -1,0 +1,16 @@
+.main-admin {
+    background-color: white;
+    
+}
+
+.medio {
+    border: 1px solid white;
+
+}
+
+.main-box {
+    
+    overflow-y: auto;
+    border: 1px solid black;
+    
+}
