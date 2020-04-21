@@ -1,0 +1,45 @@
+.main-login {
+
+    overflow: hidden;
+
+
+}
+
+.login-middle {
+
+    background-color: rgb(255, 0, 64);
+    height: 80%;
+}
+
+.foto-fondo {
+    
+    position: absolute;
+    background-image: url(../../../assets/images/login-pattern-1.png);
+    background-size: 400px;
+    z-index: -2;
+    mix-blend-mode: darken;
+
+}
+
+.w-30 {
+
+    width: 30%;
+}
+
+.header-login {
+
+    color: white;
+    font-size: 25px;
+}
+
+.boton-enviar {
+    margin-top: 20px;
+}
+
+.forget-pass {
+
+    margin-top: 10px;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1px;
+}

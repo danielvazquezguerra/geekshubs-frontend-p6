@@ -1,0 +1,66 @@
+
+.bt-header-list {
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    list-style-type: none;
+   
+}   
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.bt-header-list li {
+
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    padding-right: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 1px;
+
+}
+
+.logo-header {
+
+    margin-left: 20px;
+    width: auto;
+    height: 60%;
+
+}
+
+.logo-box {
+
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.login-header {
+    display: flex;
+    width: 30%;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+
+.bt-login {
+    width: 90%;
+    height: 60%;
+    border: 2px solid white;
+    font-size: 13px;
+    font-family: 'Poppins';
+    letter-spacing: 1px;
+    color: white;
+    background-color: transparent;
+}

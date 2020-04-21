@@ -1,0 +1,148 @@
+<!-- 
+          <form class="modal-body" #registerForm="ngForm" (submit)="register(registerForm)">
+            <div class="">
+              <label for="firstName">Nombre</label>
+              <input class="form-control validate white-text" name="firstName" #firstName="ngModel" 
+              id="firstName" placeholder="Nombre de usuario" type="text"
+              ngModel required firstName minlength="5" maxlength="30" class="form-control validate white-text"> 
+              <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+                class="alert alert-danger">
+                <div *ngIf="firstName.errors.required">
+                  El nombre es requerido
+                </div>
+                <div *ngIf="firstName.errors.minlength">
+                  El nombre debe tener mas de 5 caracteres
+                </div>
+                <div *ngIf="firstName.errors.maxlength">
+                  El nombre debe tener menos de 30 caracteres
+                </div>
+              </div>
+            </div>
+            <div class="md-form mb-5">
+              <input name="email" class="form-control validate white-text" #email="ngModel" id="email" placeholder="Email" type="email"
+              ngModel required email minlength="5" minlength="50" class="form-control validate white-text"> 
+              <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                class="alert alert-danger">
+                <div *ngIf="email.errors.required">
+                  El email es requerido
+                </div>
+                <div *ngIf="email.errors.minlength">
+                  El email debe tener mas de 5 caracteres
+                </div>
+                <div *ngIf="email.errors.maxlength">
+                  El nombre debe tener menos de 50 caracteres
+                </div>
+                <div *ngIf="">
+                  El email es requerido
+                </div>
+              </div>
+            </div>
+              <div class="md-form mb-5">
+                <input class="form-control validate white-text" name="password" #password="ngModel" id="password" 
+                placeholder="Contraseña" type="password"
+                ngModel required password minlength="7" class="form-control validate white-text"> 
+                <div *ngIf="password.invalid && (password.dirty || password.touched)"
+                  class="alert alert-danger">
+                  <div *ngIf="password.errors.required">
+                    La contraseña es requerida
+                  </div>
+                  <div *ngIf="password.errors.minlength">
+                    La contraseña debe tener mas de 7 caracteres
+                  </div>
+                </div>
+              </div>
+            <div class="row d-flex align-items-center mb-4">
+              <div class="text-center mb-3 col-md-12">
+                <button type="submit" class="btn btn-success btn-block btn-rounded z-depth-1">Registrarse</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <p class="font-small white-text d-flex justify-content-end">¿Tienes una cuenta? <a [routerLink]="'/login'" class="green-text ml-1 font-weight-bold">
+                    Log in</a></p>
+              </div>  
+            </div>
+            <!-- Mensajes respuesta 
+            <div class="succesmessage" *ngIf="successMsg">
+              {{successMsg}}
+            </div>
+            <div class="errormessage">
+              {{errorMsg}}
+            </div>
+          </form>
+   -->
+
+<main class="main-register container-fluid d-flex h-100 w-100 m-0 p-0 align-items-center">
+  
+  <section class="register-left d-flex w-50 h-100 justify-content-center align-items-center">
+
+    <form class="form-register container-fluid justify-content-center align-items-center d-flex h-100 v-100 m-0 p-0" action="" #registerForm="ngForm" (submit)="register(registerForm)">
+
+        <div class="datos-cont d-flex flex-column justify-content-start align-items-center">
+          
+          <div class="datos-header d-flex justify-content-start align-items-start w-100 p-1">
+            
+            <h2>Registrate aquí.</h2>
+    
+          </div>
+    
+          <div class="datos-field d-flex flex-column w-100">
+    
+            <!-- Nombre -->
+            <mat-form-field hintLabel="Max 10 caracteres" appearance="legacy">
+              <mat-label>Nombre / Firstname</mat-label>
+              <input matInput maxlength="10" placeholder="Ej. Daniel" name="firstName" id="firstName">
+              <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+            </mat-form-field>
+      
+            <!-- Apellido -->
+            <mat-form-field hintLabel="Max 10 caracteres" appearance="legacy">
+              <mat-label>Apellido / Lastname</mat-label>
+              <input matInput #input maxlength="10" placeholder="Ej. Daniel">
+              <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+            </mat-form-field>
+      
+            <!-- Email -->
+            <mat-form-field hintLabel="Max 10 caracteres" appearance="legacy">
+              <mat-label>Email</mat-label>
+              <input matInput #input maxlength="10" placeholder="Ej. Daniel">
+              <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+            </mat-form-field>
+            
+            <!-- Password -->
+            <mat-form-field hintLabel="Max 10 caracteres" appearance="legacy">
+              <mat-label>Contraseña / Password</mat-label>
+              <input matInput #input maxlength="8" placeholder="Ej. Daniel">
+              <mat-hint align="end">{{input.value?.length || 0}}/8</mat-hint>
+            </mat-form-field>
+    
+            <!-- boton Enviar -->
+            <button class="boton-enviar" mat-raised-button>Enviar</button>
+    
+          </div>
+          
+            
+        </div>
+        
+        
+    </form>
+    
+  </section>
+  
+  <section class="register-right d-flex flex-column justify-content-center w-50 h-100 m-0 p-2">
+
+      <p class="big-text m-0">Preparad</p>
+      <p class="big-text m-0">palomitas.</p>
+      <p class="small-text m-0">Películas llegando en muy poco tiempo.</p>
+
+  </section>
+
+  <div class="foto-fondo">
+
+  
+  </div>
+  
+</main>
+
+
+   

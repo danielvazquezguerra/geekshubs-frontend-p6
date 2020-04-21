@@ -1,0 +1,71 @@
+<main class="main-details">
+    
+    
+    
+    <h2>Detalles pelicula</h2>
+    
+    <section>
+        <div class="row">
+            <div class="col-4 ">
+                <h3> {{ detalle.title }} </h3>
+                <img [src]= "getImage(detalle)" alt="">
+            </div>
+    
+            <div class="col-8">
+                <p> ID: {{ detalle.id }} </p>
+                <p> Votacion: {{ detalle.vote_average }} </p>
+                <p> {{ detalle.overview }} </p>
+                <p> {{ detalle.release_date | date:"dd/MM/yy" }} </p>
+                <div *ngIf="detalle.homepage">
+                    <a href="{{ detalle.homepage}}" target="_blank">Web pelicula</a>
+                </div>
+                <p><strong>Generos</strong></p>
+                <div *ngFor="let genre of genres | slice:0:4"> 
+                    <p> {{ genre.name }} </p>
+                </div>  
+                <button> Alquilar </button>
+                <p>Dias de Alquiler: 5 dias: 7€</p>
+                <p>  10 dias: 12€</p>
+            </div>
+        </div> 
+            
+    
+        <!-- ACTORES -->
+        <div>
+            <h3>Casting</h3>
+            <div class="grid">
+                <div *ngFor="let actor of actores | slice:0:8"> 
+                    <h4> {{ actor.name }} </h4>
+                    <p> {{ actor.character }} </p>
+                    <img [src]= "getImage3(actor)" style="width: 30vh" alt="" [routerLink]="'/details/' + actor.id">
+                </div>
+            </div> 
+        </div>
+         
+    
+        <!-- PELICULAS POPULARES -->
+        <div>
+            <h3>Populares</h3>
+            <div class="grid">
+                <div *ngFor="let pelicula of populares | slice:0:4"> 
+                    <p> {{ pelicula.title }} </p>
+                    <img [src]= "getImage(pelicula)" style="width: 30vh" alt="" [routerLink]="'/details/' + pelicula.id">
+                </div>
+            </div>  
+        </div>
+    
+    
+        <!-- PELICULAS PREMIERE -->
+        <div>
+            <h3>Premiere</h3>
+            <div class="grid">
+                <div *ngFor="let popular of premieres | slice:0:4"> 
+                    <p> {{ popular.title }} </p>
+                    <img [src]= "getImage(popular)" style="width: 30vh" alt="" [routerLink]="'/detalles/' + popular.id">
+                </div>
+            </div>
+        </div>
+            
+    </section>
+
+</main>

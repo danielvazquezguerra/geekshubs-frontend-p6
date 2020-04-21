@@ -1,0 +1,113 @@
+
+.home-wrapper {
+
+    font-family: 'Poppins', sans-serif;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+}
+
+.main-up {
+
+    display: flex;
+    width: 100%;
+    height: 90%;
+
+}
+
+.main-up p {
+    margin: 0px;
+}
+
+
+.main-down {
+    display: flex;
+    width: 100%;
+}
+
+.search {
+
+    width: 400px;
+
+}
+
+
+.search-input {
+
+    width: 100%;
+    background-color: transparent;
+    outline: 0px;
+    border: 0px;
+
+}
+
+.movie-box {
+
+    width: 60%;
+    height: 100%;
+ 
+}
+
+.movie-info {
+
+    color: white;
+    margin-left: 5%;
+    margin-bottom: 10%;
+    max-width: 60%;
+    height: auto;
+}
+
+.rent-box {
+    border: 1px solid white;
+    width: 20%;
+    height: 60px;
+
+}
+
+.abajo-box {
+
+    width: 400px;
+    height: 400px;
+}
+
+/*FORMATO DE LA INFO DE LA PELICULA*/
+
+.title {
+
+    max-width: 80%;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 35px;
+
+}
+
+.sinopsis {
+    font-size: 11px;
+}
+
+.degradado {
+    height: 100%;
+    color: white;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    background-image: linear-gradient(90deg, rgba(39, 39, 39,30),rgba(0, 0, 0,0));
+    mix-blend-mode: multiply;
+
+}
+
+.video {
+    width: 100%;
+    position: absolute;
+    z-index: -2;
+}
+
+.bt-buscar {
+    color: white;
+    font-size: 10px;
+    width: 100px;
+    height: 40px;
+    border: 1px solid white;
+    background-color: transparent;
+    outline: none;
+}

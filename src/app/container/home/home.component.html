@@ -1,0 +1,75 @@
+<!-- wrapper general -->
+<main class="home-wrapper container-fluid d-block flex-column w-100 h-100 m-0 p-0">
+
+    mgi
+    <!-- main superior -->
+    <section class="main-up d-flex justify-content-between align-items-center m-0">
+        
+        <div class="degradado"></div>
+        <!-- <video class="video" src="" type="video/mp4" autoplay loop></video> -->
+
+        <!-- caja para las peliculas. -->
+        <div class="movie-box d-flex align-items-end m-0 p-0">
+
+            <div class="movie-info d-flex flex-column p-0">
+                
+                <p class="title">Título de la película mas largo que el otro.</p>
+                <p class="generos">Generos</p>
+                <p class="sinopsis">Tras cumplir 50 años, Walter White (Bryan Cranston), un profesor de química de un instituto de Albuquerque, Nuevo México, se entera de que tiene un cáncer de pulmón incurable. Casado con Skyler (Anna Gunn) y con un hijo discapacitado (RJ Mitte), la brutal noticia lo impulsa a dar un drástico cambio a su vida: decide, con la ayuda de un antiguo alumno (Aaron Paul), fabricar anfetaminas y ponerlas a la venta. Lo que pretende es liberar a su familia de problemas económicos cuando se produzca el fatal desenlace.</p>
+                
+            </div>
+            
+            
+        </div>
+        
+        <!-- botones para alquilar -->
+        <div class="rent-box m-3 p-0 d-flex justify-content-end">
+            
+            <mat-form-field appearance="legacy">
+                <mat-label>Que peli buscas?</mat-label>
+                <input matInput placeholder="Actor / Titulo / Genero">
+                <mat-hint>Ya casi tienes lo que buscas</mat-hint>
+              </mat-form-field>
+            <button class="bt-buscar">Buscar</button>
+
+        </div>
+
+    </section>
+
+    <section class="main-down d-flex justify-content-center align-items-center m-0">
+        
+        <h3>Populares</h3>
+        <div class="grid">
+            <div *ngFor="let populares of populares | slice:0:4">
+                <div>
+                    <p>{{ populares.title }}</p>
+                    <img [src]= "getImage(populares)" alt="" [routerLink]="'/details/' + populares.id"> 
+                </div>
+            </div>
+        </div>
+        
+        <h3>Estrenos</h3>
+        <div class="grid">
+            <div *ngFor="let estreno of estrenos | slice:0:4">
+                <div>
+                    <p>{{ estreno.title }}</p>
+                    <img [src]= "getImage(estreno)" alt="" [routerLink]="'/details/' + estreno.id"> 
+                </div>
+            </div>
+        </div>
+        
+        <h3>{{"Nombre genero"}}</h3>
+        <div class="grid">
+            <div *ngFor="let genero of generos | slice:0:4">
+                <div>
+                    <p>{{ genero.title }}</p>
+                    <img [src]= "getImage(genero)" alt="" [routerLink]="'/details/' + genero.id"> 
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+</main>
+
+

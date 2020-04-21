@@ -1,0 +1,28 @@
+
+.main {
+
+    background-color: rgb(255, 0, 64);
+    mix-blend-mode: darken;
+    overflow: hidden;
+ 
+}
+
+.header {
+
+    height: 10%;
+    background-color: rgb(255, 0, 64);
+
+}
+
+.router {
+
+    height: 80%;
+    
+}
+
+.footer {
+
+    height: 10%;
+
+}
+

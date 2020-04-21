@@ -1,0 +1,33 @@
+.footer-main {
+
+    background-color: rgb(255, 0, 64);
+
+}
+
+.ft-buttons {
+
+
+}
+
+.ft-buttons img {
+
+    width: 25px;
+    height: auto;
+    filter: invert(100%);
+}
+
+.ft-buttons li {
+
+    padding-right: 10px;
+    list-style: none;
+}
+
+.ft-right {
+
+    border-top: 5px solid rgb(0, 255, 242);
+}
+
+section {
+    width: 30%;
+    height: 100%;
+}

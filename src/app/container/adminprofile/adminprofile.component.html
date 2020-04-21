@@ -1,0 +1,40 @@
+<p>adminprofile works!</p>
+
+<p>Listado todos los usuarios</p>
+<p>Listado todos los pedidos</p>
+<p>Buscador usuario por id y por email (x username?)</p>
+<p>Buscador pedido por id</p>
+<p></p>
+
+<!-- ALL ORDERS -->
+<div>
+    <h3>TODOS LOS PEDIDOS</h3>
+    <div class="grid">
+        <div *ngFor="let pedido of pedidos"> 
+            <p>Id: {{ pedido.id }} </p>
+            <p>Date Rent: {{ pedido.dateRent | date:'d/M/yy'}} </p>
+            <p>Date Arrival: {{ pedido.dateArrival | date:'fullDate'}} </p>
+            <p>Days Rent: {{ pedido.daysRent }} </p>
+            <p>Price: {{ pedido.status }} </p>
+            <p>Status: {{ pedido.title }} </p>
+            <p>Pelicula: {{ pedido.Movie.title }} ({{ pedido.Movie.id }})</p>
+            <p>Usuario: {{ pedido.User.username }} ({{ pedido.User.id }})</p>
+            <p>----------------</p>
+        </div>
+    </div>  
+</div>
+
+<!-- <form #orderForm="ngForm" (submit)="order(orderForm)">
+    <input type="text" name="popularity" #popularity="ngModel" id="popularity" placeholder="popularity">
+    <input type="text" name="vote_count" #vote_count="ngModel" id="vote_count" placeholder="vote_count">
+    <input type="text" name="poster_path" #poster_path="ngModel" id="poster_path" placeholder="poster_path">
+    <input type="text" name="backdrop_path" #backdrop_path="ngModel" id="backdrop_path" placeholder="backdrop_path">
+    <input type="text" name="original_language" #original_language="ngModel" id="original_language" placeholder="original_language">
+    <input type="text" name="original_title" #original_title="ngModel" id="original_title" placeholder="original_title">
+    <input type="text" name="title" #title="ngModel" id="title" placeholder="title">
+    <input type="text" name="vote_average" #vote_average="ngModel" id="vote_average" placeholder="vote_average">
+    <input type="text" name="overview" #overview="ngModel" id="overview" placeholder="overview">
+    <input type="text" name="release_date" #release_date="ngModel" id="release_date" placeholder="release_date">
+    <input type="text" name="GenreId" #GenreId="ngModel" id="GenreId" placeholder="GenreId">
+    <button type="submit">Crear pelicula</button>
+</form> -->
