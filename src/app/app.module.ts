@@ -37,6 +37,8 @@ import { MoviesComponent } from './container/movies/movies.component';
 import { UserDataComponent } from './components/user-data/user-data.component';
 import { UserOrdersComponent } from './components/user-orders/user-orders.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
+import { OrdersAllComponent } from './components/orders-all/orders-all.component';
+import { GenreRandomComponent } from './components/genre-random/genre-random.component';
 
 //#endregion
 
@@ -56,6 +58,8 @@ import { UserFormComponent } from './components/user-form/user-form.component';
     UserDataComponent,
     UserOrdersComponent,
     UserFormComponent,
+    OrdersAllComponent,
+    GenreRandomComponent,
   ],
   imports: [
     BrowserModule,

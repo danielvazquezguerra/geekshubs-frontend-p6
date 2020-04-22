@@ -1,0 +1,17 @@
+<!-- ALL ORDERS -->
+<div>
+    <h3>TODOS LOS PEDIDOS</h3>
+    <div class="grid">
+        <div *ngFor="let pedido of pedidos"> 
+            <p>Id: {{ pedido.id }} </p>
+            <p>Date Rent: {{ pedido.dateRent | date:'d/M/yy'}} </p>
+            <p>Date Arrival: {{ pedido.dateArrival | date:'fullDate'}} </p>
+            <p>Days Rent: {{ pedido.daysRent }} </p>
+            <p>Price: {{ pedido.status }} </p>
+            <p>Status: {{ pedido.title }} </p>
+            <p>Pelicula: {{ pedido.Movie.title }} ({{ pedido.Movie.id }})</p>
+            <p>Usuario: {{ pedido.User.username }} ({{ pedido.User.id }})</p>
+            <p>----------------</p>
+        </div>
+    </div>  
+</div>
