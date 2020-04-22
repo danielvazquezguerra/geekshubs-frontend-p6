@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UsersService {
+
   public user: object;
 
   BASE = 'http://localhost:3000/';
@@ -35,7 +36,7 @@ export class UsersService {
   }
 
   getUsersById(id: number){
-    return this.http.get(`${this.BASE}users/${id}`);
+    return this.http.get(`${this.BASE}users/user=${id}`);
   }
 
   getUsersByName(name: string){
@@ -43,7 +44,7 @@ export class UsersService {
   }
 
   modifiedUserById(id: number, body: any){
-    return this.http.put(`${this.BASE}users/${id}`, body);
+    return this.http.put(`${this.BASE}users/user=${id}`, body);
   }
 
   deleteUserById(id: number){

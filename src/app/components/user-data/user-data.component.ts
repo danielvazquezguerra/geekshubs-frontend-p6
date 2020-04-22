@@ -24,7 +24,7 @@ export class UserDataComponent implements OnInit {
   });
   }
 
-UsersById(id: number){
+  UsersById(id: number){
     this.usersService.getUsersById(id).subscribe( user => {
       this.users = user;
       console.log(this.users);

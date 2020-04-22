@@ -13,15 +13,15 @@ export class GenresService {
   ) { }
 
   getGenresAll(){
-    return this.http.get(`${this.route}cities`);
+    return this.http.get(`${this.route}genres`);
   }
 
   getGenresById(id: number){
-    return this.http.get(`${this.route}cities/id=${id}`);
+    return this.http.get(`${this.route}genres/id=${id}`);
   }
 
   getGenresByName(name: string){
-    return this.http.get(`${this.route}cities/name=${name}`);
+    return this.http.get(`${this.route}genres/name=${name}`);
   }
 
 

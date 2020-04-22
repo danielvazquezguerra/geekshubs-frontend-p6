@@ -48,7 +48,7 @@ export class MoviesService {
   }
 
   getMovieUpdate(id: number){
-    return this.http.get(`${this.route}movies/ide=${id}`);
+    return this.http.get(`${this.route}movies/id=${id}`);
   }
 
   getMovieDelete(id: number){

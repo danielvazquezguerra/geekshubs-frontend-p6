@@ -2,12 +2,15 @@
 
 <div class="row">
     <div class="col-6">
-         Poner imagen de perfil 
-        <h3>Datos de perfil</h3>
-        <div>
-            <p> Id: {{ users.id }} </p>
-            <p> Nombre: {{ users.firstName }} </p>
-            <p> Email: {{ users.email }} </p>
-            <p> Contraseña: {{ users.password }} </p>
-        </div>
+        <app-user-data></app-user-data>
+        <!-- <app-user-form></app-user-form> -->
     </div>
+    
+
+    
+    
+    <div class="col-6">
+        <app-user-orders></app-user-orders>
+    </div>
+    
+</div>

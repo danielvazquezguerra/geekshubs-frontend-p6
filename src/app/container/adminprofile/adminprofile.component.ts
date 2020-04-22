@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { NgForm } from '@angular/forms';
-
+import { Router } from '@angular/router';
 
 import { OrdersService } from '../../services/orders.service';
 import { MoviesService } from '../../services/movies.service';
@@ -22,15 +22,15 @@ export class AdminprofileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.AllOrders();
+    this.MoviesAll();
   }
-
-  // ALL ORDERS
-  AllOrders(){
-    this.ordersService.getOrdersAll().subscribe((pedidos: any) => {
-      this.pedidos = pedidos;
-    });
-  }
+    // MOVIES ALL
+    MoviesAll(){
+      this.moviesService.getMoviesAll().subscribe((movies: any) => {
+        this.movies = movies;
+        console.log('Hola');
+      });
+    }
 
   // SEARCH ORDER BY ORDER ID
   SearchOrderById(id: number){
@@ -63,11 +63,12 @@ export class AdminprofileComponent implements OnInit {
   }
 
   // ORDER MODIFY
-  OrderModify(id: number){
-    this.ordersService.getOrderModify(id).subscribe((pedidos: any) => {
-      this.pedidos = pedidos;
-    });
-  }
+  // OrderModify(id: number, orderForm: NgForm){
+  //   const body = orderForm.value;
+  //   this.ordersService.getOrderModify(id, body).subscribe((pedidos: any) => {
+  //     this.pedidos = pedidos;
+  //   });
+  // }
 
   // ORDER DELETE
   OrderDelete(id: number){
@@ -97,4 +98,5 @@ export class AdminprofileComponent implements OnInit {
       this.movies = movies;
     });
   }
+
 }

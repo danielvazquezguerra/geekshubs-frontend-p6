@@ -1,1 +1,17 @@
-<p>user-form works!</p>
+<h3>Modificar datos de Usuario</h3>
+
+<form #userForm="ngForm" (submit)="ModifyUser(2, userForm)">
+    <input type="text" name="username" ngModel id="username" placeholder="username" type="text" required>
+    <input type="text" name="firstName" ngModel #firstName="ngModel" id="firstName" placeholder="firstName">
+    <input type="text" name="lastName" ngModel #lastName="ngModel" id="lastName" placeholder="lastName">
+    <input type="email" name="email" ngModel #email="ngModel" id="email" placeholder="email" required>
+    <input type="passowrd" name="password" ngModel #password="ngModel" id="password" placeholder="password" required>
+    <input type="text" name="address" ngModel #address="ngModel" id="address" placeholder="address">
+    <input type="text" name="imageURL" ngModel #imageURL="ngModel" id="imageURL" placeholder="imageURL">
+    <input type="text" name="CityId" ngModel #CityId="ngModel" id="CityId" placeholder="CityId">
+    <button type="submit">Modificar</button>
+    <!-- Mensajes respuesta -->
+    <div class="message" *ngIf="message">
+        {{message}}
+      </div>
+</form> 

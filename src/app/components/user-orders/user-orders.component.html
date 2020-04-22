@@ -1,1 +1,14 @@
-<p>user-orders works!</p>
+<h3>Historial Pedidos</h3>
+
+<div>
+    <div *ngFor="let user of users">
+       <div>ID: {{user.id}}</div> 
+       <div>Fecha alquiler: {{user.dateRent | date:"mediumDate"}}</div> 
+       <div>Dia llegada: {{user.dateArrival | date:"mediumDate"}}</div> 
+       <div>Dias de alquiler: {{user.daysRent}} dias</div> 
+       <div>Status: {{user.status}}</div> 
+       <div>Pelicula: {{user.Movie.title}} ({{user.Movie.id}})</div>
+       <div>Precio: {{user.price}} €</div>  
+       <div>-----------------</div>
+    </div>
+</div>

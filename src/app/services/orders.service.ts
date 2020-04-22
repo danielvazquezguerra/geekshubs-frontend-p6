@@ -45,8 +45,8 @@ export class OrdersService {
   }
 
   // 6 ORDER MODIFY
-  getOrderModify(id: number){
-    return this.http.get(`${this.route}order=${id}`);
+  getOrderModify(id: number, body: any){
+    return this.http.get(`${this.route}order=${id}`, body);
   }
 
   // 7 ORDER DELETE
@@ -61,7 +61,7 @@ export class OrdersService {
 
    // 8.5 ALL A USER ORDERS BY USER ID
    getOrdersByUserId(id: number){
-    return this.http.get(`${this.route}/order/user=${id}`);
+    return this.http.get(`${this.route}orders/order/user=${id}`);
   }
 
   // 9 A USER ORDERS BY ID

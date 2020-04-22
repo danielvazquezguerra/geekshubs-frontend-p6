@@ -1,0 +1,12 @@
+<!-- ALL LOS USUARIOS -->
+<h3>TODOS LOS USUARIOS</h3>
+<div>
+    <div *ngFor="let usuario of usuarios">
+        <p> Id: {{ usuario.id }} </p> 
+        <p> Nombre Usuario: {{ usuario.username }} </p>
+        <p> Nombre: {{ usuario.firstName }} {{ usuario.lastName }}</p>
+        <p> Email: {{ usuario.email }} </p>
+        <p> Dirección: {{ usuario.address }} {{ usuario.City.city }}, España </p>
+        <p>---------------</p>
+    </div>
+</div>  

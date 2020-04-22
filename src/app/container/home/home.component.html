@@ -59,15 +59,7 @@
             </div>
         </div>
         
-        <h3>{{"Nombre genero"}}</h3>
-        <div class="grid">
-            <div *ngFor="let genero of generos | slice:0:4">
-                <div>
-                    <p>{{ genero.title }}</p>
-                    <img [src]= "getImage(genero)" alt="" [routerLink]="'/details/' + genero.id"> 
-                </div>
-            </div>
-        </div>
+        <app-genre-random></app-genre-random>>
         <div class="caja-roja">hola</div>
     </section>
     
