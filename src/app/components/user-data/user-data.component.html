@@ -1,1 +1,16 @@
-<p>user-data works!</p>
+<h3>Datos del Usuario</h3>
+
+    <div>
+        <div class="row">
+            <div class="col-3">
+                <img src="{{ users.imageURL}}" alt="">
+            </div>
+            <div class="col-4">
+                <p> Id: {{ users.id }} </p> 
+                <p> Nombre Usuario: {{ users.username }} </p>
+                <p> Nombre: {{ users.firstName }} {{ users.lastName }}</p>
+                <p> Email: {{ users.email }} </p>
+                <p> Dirección: {{ users.address }} {{ users.City.city }}, España </p>
+            </div>
+        </div>
+    </div>
