@@ -41,5 +41,5 @@ export class RegisterComponent implements OnInit {
   );
 
   }
-
+// caracter especial (?=.*[!@#$%^&*])
 }
