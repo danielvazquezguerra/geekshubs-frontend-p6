@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('authToken', res['token']);
             this.usuariosService.login(res['user']);
             setTimeout(() => {
-              this.router.navigate(['']);
+              this.router.navigate(['welcome']);
             }, 2000);
           },
 
@@ -44,4 +44,5 @@ export class LoginComponent implements OnInit {
         );
     }
   }
+
 }

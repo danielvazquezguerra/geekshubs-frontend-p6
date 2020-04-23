@@ -33,6 +33,7 @@ import { UserFormComponent } from './components/user-form/user-form.component';
 import { OrdersAllComponent } from './components/orders-all/orders-all.component';
 import { GenreRandomComponent } from './components/genre-random/genre-random.component';
 import { UsersAllComponent } from './components/users-all/users-all.component';
+import { WelcomeComponent } from './container/welcome/welcome.component';
 
 //#endregion
 
@@ -54,6 +55,7 @@ import { UsersAllComponent } from './components/users-all/users-all.component';
     OrdersAllComponent,
     GenreRandomComponent,
     UsersAllComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,

@@ -49,31 +49,40 @@
 
     </div>
 
-    <div class="datos-login d-flex flex-column justify-content-start h-75 w-100 p-3">
+    <div class="datos-login justify-content-start h-75 w-100 p-3">
 
-      <!-- Email -->
-      <mat-form-field hintLabel="Max 10 caracteres" appearance="legacy">
-        <mat-label>Email</mat-label>
-        <input matInput maxlength="10" placeholder="Ej. Daniel" name="firstName" id="firstName">
-        <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
-      </mat-form-field>
+      <form class=" d-flex flex-column" #loginForm="ngForm" (submit)="login(loginForm)" action="">
+        
+        
+        <!-- Email -->
+        <mat-form-field hintLabel="Max 40 caracteres" appearance="legacy">
+          <mat-label>Email</mat-label>
+          <input matInput maxlength="40" placeholder="Ej. Daniel"
+          type="email" name="email" ngModel placeholder="Email" required email>
+          <mat-hint align="end">{{input.value?.length || 0}}/40</mat-hint>
+        </mat-form-field>
+    
+        <!-- Password -->
+        <mat-form-field hintLabel="Max 10 caracteres" appearance="legacy">
+          <mat-label>Password</mat-label>
+          <input matInput #input maxlength="10" placeholder="Ej. Daniel">
+          <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+        </mat-form-field>
   
-      <!-- Password -->
-      <mat-form-field hintLabel="Max 10 caracteres" appearance="legacy">
-        <mat-label>Password</mat-label>
-        <input matInput #input maxlength="10" placeholder="Ej. Daniel">
-        <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
-      </mat-form-field>
+        <!-- boton Enviar -->
+        <button class="boton-enviar" mat-raised-button>Enviar</button>
+        <button type="submit" class="btn btn-success btn-block btn-rounded z-depth-1">Logearse</button>
 
-      <!-- boton Enviar -->
-      <button class="boton-enviar" mat-raised-button>Enviar</button>
-
-      <p class="forget-pass">No recuerdo mi contraseña.</p>
-
-    </div>
-
-  </section>
-
+  
+        <p class="forget-pass">No recuerdo mi contraseña.</p>
+        
+        
+      </form>
+      
+          </div>
+      
+        </section>
+      
   <section class="login-right d-flex w-30 h-100"></section>
   
 
