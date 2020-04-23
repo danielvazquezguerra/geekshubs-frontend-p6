@@ -1,0 +1,74 @@
+<form class="modal-body" #registerForm="ngForm" (submit)="register(registerForm)">
+    <div class="">
+      <label for="firstName">Nombre</label>
+      <input class="form-control validate white-text" name="firstName" #firstName="ngModel" 
+      id="firstName" placeholder="Nombre de usuario" type="text"
+      ngModel required firstName minlength="5" maxlength="30" class="form-control validate white-text"> 
+      <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+        class="alert alert-danger">
+        <div *ngIf="firstName.errors.required">
+          El nombre es requerido
+        </div>
+        <div *ngIf="firstName.errors.minlength">
+          El nombre debe tener mas de 5 caracteres
+        </div>
+        <div *ngIf="firstName.errors.maxlength">
+          El nombre debe tener menos de 30 caracteres
+        </div>
+      </div>
+    </div>
+    <div class="md-form mb-5">
+      <input name="email" class="form-control validate white-text" #email="ngModel" id="email" placeholder="Email" type="email"
+      ngModel required email minlength="5" maxlength="50" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" class="form-control validate white-text"> 
+      <div *ngIf="email.errors && (email.dirty || email.touched)"
+        class="alert alert-danger">
+        <div *ngIf="email.errors.required">
+          El email es requerido
+        </div>
+        <div *ngIf="email.errors.minlength">
+          El email debe tener mas de 5 caracteres
+        </div>
+        <div *ngIf="email.errors.maxlength">
+          El nombre debe tener menos de 50 caracteres
+        </div>
+        <div *ngIf="email.errors?.pattern">
+            TIene que ser un email
+        </div>
+      </div>
+    </div>
+      <div class="md-form mb-5">
+        <input class="form-control validate white-text" name="password" #password="ngModel" id="password" 
+        placeholder="Contraseña" type="password"
+        ngModel required password minlength="7" maxlength="10" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,40}$" class="form-control validate white-text"> 
+        <div *ngIf="password.invalid && (password.dirty || password.touched)"
+          class="alert alert-danger">
+          <div *ngIf="password.errors.required">
+            La contraseña es requerida
+          </div>
+          <div *ngIf="password.errors.minlength">
+            La contraseña debe tener mas de 7 caracteres
+          </div>
+          <small class="" *ngIf="registerForm.controls.password.errors?.pattern">
+            Your password must contain at least a lowercase letter, a uppercase letter, a number, and must be between 8 and 40 characters
+        </small>
+        </div>
+      </div>
+    <div class="row d-flex align-items-center mb-4">
+      <div class="text-center mb-3 col-md-12">
+        <button type="submit" class="btn btn-success btn-block btn-rounded z-depth-1">Registrarse</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="font-small white-text d-flex justify-content-end">¿Tienes una cuenta? <a [routerLink]="'/login'" class="green-text ml-1 font-weight-bold">
+            Log in</a></p>
+      </div>  
+    </div>
+    
+    <div class="succesmessage" *ngIf="successMsg">
+      {{successMsg}} Success
+    </div>
+    <div class="errormessage">
+      {{errorMsg}}
+    </div>
+  </form>

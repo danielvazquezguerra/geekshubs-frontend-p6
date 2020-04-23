@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -61,6 +62,7 @@ import { UsersAllComponent } from './components/users-all/users-all.component';
     FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
 

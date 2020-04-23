@@ -80,3 +80,8 @@ mat-form-field.mat-form-field {
     z-index: -2;
     overflow: hidden;
 }
+
+.succesmessage {
+    font-size: 40px;
+    color: white;
+}

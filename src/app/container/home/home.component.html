@@ -39,7 +39,7 @@
 
     <section class="main-down d-flex justify-content-center align-items-center m-0">
         
-        <h3>Populares</h3>
+        <!-- <h3>Populares</h3>
         <div class="grid">
             <div *ngFor="let populares of populares | slice:0:4">
                 <div>
@@ -50,17 +50,17 @@
         </div>
         
         <h3>Estrenos</h3>
-        <div class="grid">
+        <div class="d-flex">
             <div *ngFor="let estreno of estrenos | slice:0:4">
                 <div>
                     <p>{{ estreno.title }}</p>
                     <img [src]= "getImage(estreno)" alt="" [routerLink]="'/details/' + estreno.id"> 
                 </div>
             </div>
-        </div>
+        </div> -->
         
-        <app-genre-random></app-genre-random>>
-        <div class="caja-roja">hola</div>
+        <app-genre-random></app-genre-random>
+        
     </section>
     
 </main>

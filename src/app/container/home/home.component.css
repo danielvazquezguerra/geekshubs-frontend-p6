@@ -117,3 +117,8 @@
     height: 400px;
     width: 300px;
 }
+
+.grid {
+    display: inline;
+    grid-template-columns: repeat(4, 1fr);
+}
