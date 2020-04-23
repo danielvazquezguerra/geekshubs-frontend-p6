@@ -59,4 +59,12 @@ export class UsersService {
   getUser(): User {
     return this.user;
   }
+
+  getInfo(token): Observable<any> {
+    return this.http.get<User>(`${this.BASE}users/info`, {
+      headers: {
+        Authorization: token
+      }
+    });
+  }
 }

@@ -1,18 +1,18 @@
 <form class="modal-body" #registerForm="ngForm" (submit)="register(registerForm)">
     <div class="">
-      <label for="firstName">Nombre</label>
-      <input class="form-control validate white-text" name="firstName" #firstName="ngModel" 
-      id="firstName" placeholder="Nombre de usuario" type="text"
-      ngModel required firstName minlength="5" maxlength="30" class="form-control validate white-text"> 
-      <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+      <label for="userName">Nombre</label>
+      <input class="form-control validate white-text" name="userName" #userName="ngModel" 
+      id="userName" placeholder="Nombre de usuario" type="text"
+      ngModel required userName minlength="5" maxlength="30" class="form-control validate white-text"> 
+      <div *ngIf="userName.invalid && (userName.dirty || userName.touched)"
         class="alert alert-danger">
-        <div *ngIf="firstName.errors.required">
+        <div *ngIf="userName.errors.required">
           El nombre es requerido
         </div>
-        <div *ngIf="firstName.errors.minlength">
+        <div *ngIf="userName.errors.minlength">
           El nombre debe tener mas de 5 caracteres
         </div>
-        <div *ngIf="firstName.errors.maxlength">
+        <div *ngIf="userName.errors.maxlength">
           El nombre debe tener menos de 30 caracteres
         </div>
       </div>

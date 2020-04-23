@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
       this.usuariosService.login(loginForm.value)
         .subscribe(
           (res: HttpResponse<object>) => {
+            /* tslint:disable:no-string-literal */
             this.successMsg = res['message'];
             localStorage.setItem('authToken', res['token']);
             this.usuariosService.setUser(res['user']);
