@@ -21,7 +21,7 @@
 
     <!-- LOGEADO -->
     <div class="userZone login-header" *ngIf="usersService.getUser() as user">
-        <a>Logout</a>
+        <a (click)="logout()">Logout</a>
         <a [routerLink]="['/profile']" class="material-icons search-icon" routerLinkActive="active">{{user.username}}<span>person</span></a>
     </div>
     

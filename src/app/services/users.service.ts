@@ -11,6 +11,7 @@ export class UsersService {
 
   BASE = 'http://localhost:3000/';
   private user: User;
+  
 
   constructor(
     private http: HttpClient
@@ -52,7 +53,7 @@ export class UsersService {
     return this.http.delete(`${this.BASE}users/${id}`);
   }
 
-  setUser(user: User) {
+  setUser(user: User): void {
     this.user = user;
   }
 
