@@ -9,13 +9,21 @@
 
     <ul class="bt-header-list">
         <li><a routerLink="home" routerLinkActive="active">Home</a></li>
-        <li><a routerLink="home" routerLinkActive="active">Movies</a></li>
+        <li><a routerLink="movies" routerLinkActive="active">Movies</a></li>
         <li><a routerLink="home" routerLinkActive="active">About Us</a></li>
     </ul>
 
-    <section class="login-header">
-        <button class="bt-login">Register</button>
-        <a class="material-icons search-icon" href=""><img src="" alt="">person</a>
-    </section>
+    <!-- SIN LOGEAR -->
+    <div class="guestZone" *ngIf="!usersService.getUser()">
+        <a [routerLink]="['/register']" routerLinkActive="active">Register</a>
+        <a [routerLink]="['/login']" routerLinkActive="active">Login</a>
+    </div>
+
+    <!-- LOGEADO -->
+    <div class="userZone login-header" *ngIf="usersService.getUser() as user">
+        <a>Logout</a>
+        <a [routerLink]="['/profile/:id']" class="bt-login material-icons search-icon" routerLinkActive="active">{{user.email}}</a>
+      </div>
+    
 
 </nav>

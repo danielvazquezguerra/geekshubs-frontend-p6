@@ -1,0 +1,44 @@
+<main class="main-login container-fluid d-flex justify-content-between align-items-center w-100 h-100 m-0 p-0">
+
+    <section class="login-left d-flex w-30 h-100"></section>
+  
+    <section class="login-middle d-flex flex-column justify-content-between w-30">
+  
+      <div class="header-login d-flex justify-content-start align-items-center p-3 w-100 h-25"> 
+  
+        <h3>Iniciar Sesión.</h3>
+  
+      </div>
+  
+      <div class="datos-login d-flex flex-column justify-content-start h-75 w-100 p-3">
+  
+        <!-- Email -->
+        <mat-form-field hintLabel="Max 10 caracteres" appearance="legacy">
+          <mat-label>Email</mat-label>
+          <input matInput maxlength="30" placeholder="Ej. Daniel" name="firstName" id="firstName">
+          <mat-hint align="end">{{input.value?.length || 0}}/30</mat-hint>
+        </mat-form-field>
+    
+        <!-- Password -->
+        <mat-form-field hintLabel="Max 10 caracteres" appearance="legacy">
+          <mat-label>Password</mat-label>
+          <input matInput #input maxlength="10" placeholder="Ej. Daniel">
+          <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+        </mat-form-field>
+  
+        <!-- boton Enviar -->
+        <button class="boton-enviar" mat-raised-button>Enviar</button>
+  
+        <p class="forget-pass">No recuerdo mi contraseña.</p>
+  
+      </div>
+  
+    </section>
+  
+    <section class="login-right d-flex w-30 h-100"></section>
+    
+  
+    <div class="foto-fondo d-flex m-0 p-0 w-100 h-100"></div>
+  
+  </main>
+  
