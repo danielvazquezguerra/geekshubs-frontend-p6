@@ -1,26 +1,27 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
-  public user: object;
 
   BASE = 'http://localhost:3000/';
+  private user: User;
 
   constructor(
     private http: HttpClient
   ) { }
 
-  register(user: object): Observable<object>{
-    return this.http.post(`${this.BASE}users/register`, user);
+  register(user: User): Observable<object>{
+    return this.http.post<User>(`${this.BASE}users/register`, user);
   }
 
-  login(user: object): Observable <any> {
-    return this.http.post(`${this.BASE}users/login`, user);
+  login(user: User): Observable <any> {
+    return this.http.post<User>(`${this.BASE}users/login`, user);
   }
 
   logout(token: string){
@@ -51,8 +52,11 @@ export class UsersService {
     return this.http.delete(`${this.BASE}users/${id}`);
   }
 
-  setUser(user: object) {
+  setUser(user: User) {
     this.user = user;
   }
 
+  getUser(): User {
+    return this.user;
+  }
 }

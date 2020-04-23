@@ -23,7 +23,7 @@ export class GenreRandomComponent implements OnInit {
   }
 
   randomGenerosId(){
-    const random = Math.floor((Math.random() * 20) );
+    const random = Math.floor((Math.random() * 20));
     const idGenres = [12, 14, 16, 18, 27, 28, 35, 36, 37, 53, 80, 99, 878, 9648, 10402, 10479, 10751, 10752, 10770];
     const id = idGenres[random];
     this.randomGenero(id);

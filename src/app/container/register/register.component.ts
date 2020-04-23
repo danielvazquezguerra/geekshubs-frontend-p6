@@ -25,6 +25,7 @@ export class RegisterComponent implements OnInit {
   }
 
   register(registerForm: NgForm){
+    console.log(registerForm);
     const user = registerForm.value;
     this.usuariosService.register(user)
     .subscribe(
