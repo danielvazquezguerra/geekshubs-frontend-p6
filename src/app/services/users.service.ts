@@ -11,7 +11,6 @@ export class UsersService {
 
   BASE = 'http://localhost:3000/';
   private user: User;
-  
 
   constructor(
     private http: HttpClient

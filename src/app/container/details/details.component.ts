@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { MoviesService } from '../../services/movies.service';
 import { ActorsService } from '../../services/actors.service';
+import { UsersService } from 'src/app/services/users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -21,8 +23,10 @@ export class DetailsComponent implements OnInit {
   actores: any;
 
   constructor(
+    public usersService: UsersService,
     private route: ActivatedRoute,
-    private moviesService: MoviesService
+    private moviesService: MoviesService,
+    public router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -77,4 +81,11 @@ export class DetailsComponent implements OnInit {
     });
   }
 
+  rentMovieGuest() {
+    this.router.navigate(['login']);
+  }
+  rentMovieLogin() {
+    console.log('boton si esta logueado');
+    this.router.navigate(['login']);
+  }
 }
