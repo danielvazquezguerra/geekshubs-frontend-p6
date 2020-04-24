@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
         this.successMsg = res[this.successMsg];
         setTimeout(() => {
           this.router.navigate(['login']);
-        }, 5000);
+        }, 2000);
     },
     (error: HttpErrorResponse) => {
       this.errorMsg = error.error.message;

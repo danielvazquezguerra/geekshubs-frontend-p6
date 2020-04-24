@@ -12,21 +12,35 @@ export class HeaderComponent implements OnInit {
 
   public errorMsg: string;
   public successMsg: string;
-  token: '';
+
+  private token: any;
+
 
   constructor(
     public usersService: UsersService,
-    public router: Router
+    public router: Router,
+ 
   ) { }
 
   ngOnInit(): void {
   }
 
   logout() {
-    localStorage.removeItem('authToken');
-    setTimeout(() => {
-      this.router.navigate(['/']);
-    }, 2000);
+
+    this.token = localStorage.getItem('authToken');
+    
+    this.usersService.logout(this.token)
+      .subscribe(
+        (data) => {
+          console.log(data);
+          localStorage.removeItem('authToken');
+          setTimeout(() => {
+          this.router.navigate(['/']);
+          }, 2000);
+          // this.usersService.setUser();
+        },
+        (error) => console.log(error)
+      );
   }
 
 }
