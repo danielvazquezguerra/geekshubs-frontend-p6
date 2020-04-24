@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
+import { User } from '../../models/user.model';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -12,21 +13,32 @@ export class HeaderComponent implements OnInit {
 
   public errorMsg: string;
   public successMsg: string;
-  token: '';
+
+  private token: any;
+
 
   constructor(
     public usersService: UsersService,
-    public router: Router
+    public router: Router,
   ) { }
 
   ngOnInit(): void {
   }
 
   logout() {
-    localStorage.removeItem('authToken');
-    setTimeout(() => {
-      this.router.navigate(['/']);
-    }, 2000);
+    this.token = localStorage.getItem('authToken');
+    this.usersService.logout(this.token)
+      .subscribe(
+        (res: User) => {
+          localStorage.removeItem('authToken');
+          this.usersService.setUser(null);
+          setTimeout(() => {
+          this.router.navigate(['login']);
+          }, 2000);
+          // this.usersService.setUser();
+        },
+        (error) => console.log(error)
+      );
   }
 
 }

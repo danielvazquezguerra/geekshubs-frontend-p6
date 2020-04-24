@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
         this.successMsg = res[this.successMsg];
         setTimeout(() => {
           this.router.navigate(['login']);
-        }, 5000);
+        }, 2000);
     },
     (error: HttpErrorResponse) => {
       this.errorMsg = error.error.message;
@@ -46,7 +46,8 @@ export class RegisterComponent implements OnInit {
   // signup(signupForm: NgForm) {
   //   console.log(signupForm);
   //   if (signupForm.controls.password.errors?.pattern) {
-  //     return this.notification.warning('Wrong password', 'Your password must contain at least a lowercase letter, a uppercase letter, a number, and must be between 8 and 40 characters')
+  //     return this.notification.warning('Wrong password', 
+  // 'Your password must contain at least a lowercase letter, a uppercase letter, a number, and must be between 8 and 40 characters')
   //   }
   //   if (signupForm.valid) {
   //     this.userService.signup(signupForm.value)
