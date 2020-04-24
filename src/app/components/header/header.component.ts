@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
+import { User } from '../../models/user.model';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -19,23 +20,20 @@ export class HeaderComponent implements OnInit {
   constructor(
     public usersService: UsersService,
     public router: Router,
- 
   ) { }
 
   ngOnInit(): void {
   }
 
   logout() {
-
     this.token = localStorage.getItem('authToken');
-    
     this.usersService.logout(this.token)
       .subscribe(
-        (data) => {
-          console.log(data);
+        (res: User) => {
           localStorage.removeItem('authToken');
+          this.usersService.setUser(null);
           setTimeout(() => {
-          this.router.navigate(['/']);
+          this.router.navigate(['login']);
           }, 2000);
           // this.usersService.setUser();
         },

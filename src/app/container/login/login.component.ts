@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
             /* tslint:disable:no-string-literal */
             this.successMsg = res['message'];
             localStorage.setItem('authToken', res['token']);
-            this.usuariosService.login(res['user']);
+            this.usuariosService.setUser(res['user']);
             setTimeout(() => {
               this.router.navigate(['']);
             }, 2000);

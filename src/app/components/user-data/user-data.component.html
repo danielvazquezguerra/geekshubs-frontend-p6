@@ -1,5 +1,19 @@
 <h3>Datos del Usuario</h3>
-
+    <div class="profile" *ngIf="usersService.getUser() as user">
+        <!-- <div class="col-3">
+            <img src="{{users.imageURL}}" alt="">
+        </div> -->
+        <div class="email">
+            User Name:{{user.username}}
+            Fisrt Name:{{user.firstName}}
+            Last Name:{{user.lastName}}
+            Email:{{user.email}}
+            Address:{{user.address}} 
+        </div>
+    <div class="role">
+        <!-- Role:{{user.role}} -->
+    </div>
+<!-- </div>
     <div>
         <div class="row">
             <div class="col-3">
@@ -13,4 +27,4 @@
                 <p> Dirección: {{ users.address }} {{ users.City.city }}, España </p>
             </div>
         </div>
-    </div>
+    </div> -->

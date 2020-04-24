@@ -15,12 +15,12 @@ export class UserDataComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private usersService: UsersService
+    public usersService: UsersService
   ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-    this.UsersById(params.id);
+    // this.UsersById(params.id);
   });
   }
 
