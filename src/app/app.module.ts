@@ -32,6 +32,12 @@ import { AdminprofileComponent } from './container/adminprofile/adminprofile.com
 import { RegisterComponent } from './container/register/register.component';
 import { LoginComponent } from './container/login/login.component';
 import { ProfileComponent } from './container/profile/profile.component';
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { en_US } from 'ng-zorro-antd/i18n';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+
+registerLocaleData(en);
 //#endregion
 
 @NgModule({
@@ -62,7 +68,7 @@ import { ProfileComponent } from './container/profile/profile.component';
     MaterialModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: en_US }],
 
   bootstrap: [AppComponent]
 })
