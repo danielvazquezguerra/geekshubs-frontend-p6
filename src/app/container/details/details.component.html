@@ -13,20 +13,30 @@
 
             </div>
 
-            <article class="movie-info-box d-flex flex-column justify-content-center align-items-start h-100 m-0 p-0">
+            <article class="movie-info-box d-flex flex-column justify-content-center align-items-start h-100 m-0 p-3">
                 
-                <h3> {{ detalle.title }} Titulo Pelicula</h3>
-                <p> ID: {{ detalle.id }} ID</p>
-                <p> Votacion: {{ detalle.vote_average }} Votacion</p>
-                <p> {{ detalle.overview }} Sinopsis</p>
-                <p> {{ detalle.release_date | date:"dd/MM/yy" }} Fecha-Release</p>
-                <div *ngIf="detalle.homepage">
-                    <a href="{{ detalle.homepage}}" target="_blank">Web pelicula</a>
-               
-                <p><strong>Generos</strong></p>
-                <div *ngFor="let genre of genres | slice:0:4"> 
-                    <p> {{ genre.name }} </p>
+                <h3 class="mv-title info-base"> <!--{{ detalle.title }}--> Titulo Pelicula</h3>
+                <p class="mv-id info-base"> ID: <!--{{ detalle.id }}--> 3453364statu</p>
+                <div class="rate-date d-flex w-100 justify-content-start m-0 p-0">
+
+                    <p class="mv-votacion info-base"> <!--Votacion: {{ detalle.vote_average }} -->7.0</p>
+                    <p class="mv-date info-base"> <!---{{ detalle.release_date | date:"dd/MM/yy" }}--->2020</p>
+                    <!-- <p><strong>Generos</strong></p> -->
+                    <div *ngFor="let genre of genres | slice:0:4"> 
+                        <p> {{ genre.name }} </p>
+                    </div>
+
                 </div>  
+                    <p class="mv-sinopsis info-base" data-toggle="collapse"> <!--{{ detalle.overview }}--> Sinopsis
+                        ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Repellendus, provident! Incidunt ut fuga voluptatem dolore 
+                        reprehenderit deserunt ipsa omnis. Amet neque esse, 
+                        officiis cum dolorem autem reprehenderit unde facilis odio!
+                    </p>
+                    <div *ngIf="detalle.homepage">
+                        <a href="{{ detalle.homepage}}" target="_blank">Web pelicula</a>
+                    </div>
+                        
                 <!-- BOTON ALQUILER GUEST -->
                 <button class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()"> Alquilar </button> 
                 <!-- BOTON ALQUILER LOGIN -->
@@ -35,7 +45,6 @@
         
                 <p>Dias de Alquiler: 5 dias: 7€</p>
                 <p>  10 dias: 12€</p>
-                </div>
 
             </article>
 

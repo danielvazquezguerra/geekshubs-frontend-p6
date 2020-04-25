@@ -36,7 +36,7 @@
 }
 
 .movie-img {
-    width: 35%;
+    width: 38%;
     height: 100%;
     border: 1px solid white;
 }
@@ -44,4 +44,39 @@
 .movie-info-box {
     width: 60%;
     border: 1px solid white;
+}
+
+
+.info-base {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin: 2px;
+}
+
+.mv-title {
+    font-size: 2.5em;
+    font-weight: 800;
+}
+
+.mv-id {
+    font-size: 0.8em;
+    color: white;
+}
+
+.mv-votacion {
+    font-size: 1.9em;
+    color:  rgb(79, 0, 110);
+    font-weight: 800;
+}
+
+.mv-sinopsis {
+    font-size: 1em;
+    letter-spacing: 1px;
+    font-weight: 200;
+}
+
+.mv-date {
+    font-size: 1.3em;
+    color: black;
+    font-weight: 800;
 }
