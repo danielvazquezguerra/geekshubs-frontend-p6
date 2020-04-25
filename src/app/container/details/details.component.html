@@ -1,16 +1,25 @@
 <main class="main-details container-fluid h-100 m-0 p-0">
-    
-    <section class="">
-        
-                <h3> {{ detalle.title }} </h3>
+
+    <!-- CAJA-GENERAL PARA INFO DE PELICULAS -->
+    <section class="movie-box d-flex m-0 p-0 w-100">
+
+        <!-- CAJA CON DETALLES IZQUIERDA -->
+
+        <section class="movie-left d-flex m-0 p-0 h-100 w-75">
+
+            <div class="movie-img d-flex justify-content-center align-items-center m-0 p-0">
+                
                 <img class="img-box" [src]= "getImage(detalle)" alt="">
-           
-    
-           
-                <p> ID: {{ detalle.id }} </p>
-                <p> Votacion: {{ detalle.vote_average }} </p>
-                <p> {{ detalle.overview }} </p>
-                <p> {{ detalle.release_date | date:"dd/MM/yy" }} </p>
+
+            </div>
+
+            <article class="movie-info-box d-flex flex-column justify-content-center align-items-start h-100 m-0 p-0">
+                
+                <h3> {{ detalle.title }} Titulo Pelicula</h3>
+                <p> ID: {{ detalle.id }} ID</p>
+                <p> Votacion: {{ detalle.vote_average }} Votacion</p>
+                <p> {{ detalle.overview }} Sinopsis</p>
+                <p> {{ detalle.release_date | date:"dd/MM/yy" }} Fecha-Release</p>
                 <div *ngIf="detalle.homepage">
                     <a href="{{ detalle.homepage}}" target="_blank">Web pelicula</a>
                
@@ -23,11 +32,28 @@
                 <!-- BOTON ALQUILER LOGIN -->
                 <button (click)="rentMovieLogin()" *ngIf="usersService.getUser()"> Alquilar </button> 
                 
-
+        
                 <p>Dias de Alquiler: 5 dias: 7€</p>
                 <p>  10 dias: 12€</p>
                 </div>
-    
+
+            </article>
+
+            
+
+        </section>
+
+        <!-- CAJA DERECHA CON BOTONES PARA ALQUILAR -->
+        <section class="movie-right d-flex w-25 h-100 m-0 p-0">
+                
+        
+        
+        </section>
+
+    </section>
+
+
+
         <!-- ACTORES -->
         <div>
             <h3>Casting</h3>
@@ -40,7 +66,6 @@
             </div> 
         </div>
          
-    </section>
     
         <!-- PELICULAS POPULARES -->
         <div>

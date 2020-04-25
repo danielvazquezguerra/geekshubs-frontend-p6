@@ -1,7 +1,7 @@
 .main-details {
     overflow: scroll;
-    border: 1px solid white;
-}
+    border: 1px solid red;
+}.
 
 .grid {
     display: grid;
@@ -13,9 +13,35 @@
     border: 1px solid white;
 }
 
-.img-box {
 
-    width: 40%;
-    height: 60%;
+.movie-left {
+    border: 1px solid white;
+}
+
+
+.movie-right {
+    border: 1px solid white;
+}
+
+.movie-box {
+
+    height: 90%;
+    border: 1px solid green;
+}
+
+.img-box {
+    width: 90%;
+    height: 90%;
+    border: 1px solid white;
+}
+
+.movie-img {
+    width: 35%;
+    height: 100%;
+    border: 1px solid white;
+}
+
+.movie-info-box {
+    width: 60%;
     border: 1px solid white;
 }
