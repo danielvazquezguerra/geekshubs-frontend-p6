@@ -15,27 +15,32 @@
 
             <article class="movie-info-box d-flex flex-column justify-content-center align-items-start h-100 m-0 p-3">
                 
-                <h3 class="mv-title info-base"> <!--{{ detalle.title }}--> Titulo Pelicula</h3>
-                <p class="mv-id info-base"> ID: <!--{{ detalle.id }}--> 3453364statu</p>
+                <h3 class="mv-title info-base d-inline m-1"> <!--{{ detalle.title }}--> Titulo Pelicula</h3>
+                <p class="mv-id info-base d-inline m-0 mb-3"> ID: <!--{{ detalle.id }}--> 3453364</p>
+
                 <div class="rate-date d-flex w-100 justify-content-start m-0 p-0">
 
-                    <p class="mv-votacion info-base"> <!--Votacion: {{ detalle.vote_average }} -->7.0</p>
-                    <p class="mv-date info-base"> <!---{{ detalle.release_date | date:"dd/MM/yy" }}--->2020</p>
+                    <p class="mv-votacion info-base d-flex align-self-center m-0 mr-2"> <!--Votacion: {{ detalle.vote_average }} -->7.0</p>
+                    <p class="mv-date info-base d-flex align-self-center m-0 mr-2"> <!---{{ detalle.release_date | date:"dd/MM/yy" }}--->2020</p>
                     <!-- <p><strong>Generos</strong></p> -->
-                    <div *ngFor="let genre of genres | slice:0:4"> 
-                        <p> <!--{{ genre.name }}--> <button class="bt-genre">Estreno</button><button class="bt-genre">Terror</button></p>
-                    </div>
 
-                </div>  
+                    <div *ngFor="let genre of genres | slice:0:4"> 
+                        <p> <!--{{ genre.name }}--> <button class="bt-genre">Estreno</button></p>
+                    </div>
+                    
+                    <button class="bt-genre info-base">TERROR</button>
+                    <button class="bt-genre info-base">ESTRENO</button>
+
+                    </div>  
                     <p class="mv-sinopsis info-base" data-toggle="collapse"> <!--{{ detalle.overview }}--> Sinopsis
                         ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Repellendus, provident! Incidunt ut fuga voluptatem dolore 
                         reprehenderit deserunt ipsa omnis. Amet neque esse, 
                         officiis cum dolorem autem reprehenderit unde facilis odio!
                     </p>
-                    <div *ngIf="detalle.homepage">
-                        <a href="{{ detalle.homepage}}" target="_blank">Web pelicula</a>
-                    </div>
+
+                        <button nz-button nzType="primary">Primary</button>
+                   <p>hola HDP</p>
                         
                 <!-- BOTON ALQUILER GUEST -->
                 <button class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()"> Alquilar </button> 

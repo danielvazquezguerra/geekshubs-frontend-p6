@@ -1,5 +1,6 @@
 .main-details {
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     border: 1px solid red;
 }.
 
@@ -36,7 +37,7 @@
 }
 
 .movie-img {
-    width: 38%;
+    width: 36%;
     height: 100%;
     border: 1px solid white;
 }
@@ -50,7 +51,7 @@
 .info-base {
     color: white;
     font-family: 'Poppins', sans-serif;
-    margin: 2px;
+    margin-left: 2px;
 }
 
 .mv-title {
@@ -67,10 +68,11 @@
     font-size: 1.9em;
     color:  rgb(79, 0, 110);
     font-weight: 800;
+    margin-right: 5px;
 }
 
 .mv-sinopsis {
-    font-size: 1em;
+    font-size: 0.9em;
     letter-spacing: 1px;
     font-weight: 200;
 }
@@ -79,11 +81,17 @@
     font-size: 1.3em;
     color: black;
     font-weight: 800;
+    margin-right: 5px;
 }
 
 .bt-genre {
     border: 1px solid black;
+    background-color: transparent;
+    font-weight: 200;
+    padding-left: 10px;
+    padding-right: 10px;
     color: black;
     font-size: 0.8em;
-    font-weight: 800;
+    letter-spacing: 2px;
+    margin-right: 5px;
 }
