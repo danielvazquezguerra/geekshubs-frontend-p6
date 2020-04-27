@@ -1,11 +1,25 @@
 <main class="main-details container-fluid h-100 m-0 p-0">
     
-    <section class="">
+    <section class="movie-left d-flex w-75 m-0 p-0">
+
+        <div class="movie-box d-flex m-0 p-0">
+
+            
+
+        </div>
+
+        <div class="movie-info d-flex flex-column m-0 p-0">
+
+        </div>
+
+    </section>
+    <section class="movie-right d-flex w-25 m-0 p-0">
+
+    </section>
         
                 <h3> {{ detalle.title }} </h3>
                 <img class="img-box" [src]= "getImage(detalle)" alt="">
            
-    
            
                 <p> ID: {{ detalle.id }} </p>
                 <p> Votacion: {{ detalle.vote_average }} </p>
@@ -31,45 +45,44 @@
         
             
                 
-                
-
-    
-        <!-- ACTORES -->
-        <div>
-            <h3>Casting</h3>
-            <div class="grid">
-                <div *ngFor="let actor of actores | slice:0:8"> 
-                    <h4> {{ actor.name }} </h4>
-                    <p> {{ actor.character }} </p>
-                    <img [src]= "getImage3(actor)" style="width: 30vh" alt="" [routerLink]="'/details/' + actor.id">
-                </div>
-            </div> 
-        </div>
-         
-    </section>
-    
-        <!-- PELICULAS POPULARES -->
-        <div>
-            <h3>Populares</h3>
-            <div class="grid">
-                <div *ngFor="let pelicula of populares | slice:0:4"> 
-                    <p> {{ pelicula.title }} </p>
-                    <img [src]= "getImage(pelicula)" style="width: 30vh" alt="" [routerLink]="'/details/' + pelicula.id">
-                </div>
-            </div>  
-        </div>
-    
-    
-        <!-- PELICULAS PREMIERE -->
-        <div>
-            <h3>Premiere</h3>
-            <div class="grid">
-                <div *ngFor="let popular of premieres | slice:0:4"> 
-                    <p> {{ popular.title }} </p>
-                    <img [src]= "getImage(popular)" style="width: 30vh" alt="" [routerLink]="'/detalles/' + popular.id">
+        
+            
+        </main>
+        
+        
+            <!-- ACTORES -->
+            <div>
+                <h3>Casting</h3>
+                <div class="grid">
+                    <div *ngFor="let actor of actores | slice:0:8"> 
+                        <h4> {{ actor.name }} </h4>
+                        <p> {{ actor.character }} </p>
+                        <img [src]= "getImage3(actor)" style="width: 30vh" alt="" [routerLink]="'/details/' + actor.id">
+                    </div>
+                </div> 
+            </div>
+             
+        </section>
+        
+            <!-- PELICULAS POPULARES -->
+            <div>
+                <h3>Populares</h3>
+                <div class="grid">
+                    <div *ngFor="let pelicula of populares | slice:0:4"> 
+                        <p> {{ pelicula.title }} </p>
+                        <img [src]= "getImage(pelicula)" style="width: 30vh" alt="" [routerLink]="'/details/' + pelicula.id">
+                    </div>
+                </div>  
+            </div>
+        
+        
+            <!-- PELICULAS PREMIERE -->
+            <div>
+                <h3>Premiere</h3>
+                <div class="grid">
+                    <div *ngFor="let popular of premieres | slice:0:4"> 
+                        <p> {{ popular.title }} </p>
+                        <img [src]= "getImage(popular)" style="width: 30vh" alt="" [routerLink]="'/detalles/' + popular.id">
+                    </div>
                 </div>
             </div>
-        </div>
-            
-
-</main>

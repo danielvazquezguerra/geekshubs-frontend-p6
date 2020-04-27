@@ -106,4 +106,6 @@ rentMovieLogin() {
   console.log('boton si esta logueado');
   this.router.navigate(['login']);
 }
+
 }
+
