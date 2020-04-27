@@ -5,6 +5,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { MoviesService } from '../../services/movies.service';
 import { ActorsService } from '../../services/actors.service';
 import { OrdersService } from '../../services/orders.service';
+import { UsersService } from 'src/app/services/users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -26,9 +28,11 @@ export class DetailsComponent implements OnInit {
   daysRent: any = 1;
 
   constructor(
+    public usersService: UsersService,
+    public ordersService: OrdersService,
     private route: ActivatedRoute,
     private moviesService: MoviesService,
-    private ordersService: OrdersService,
+    public router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -92,5 +96,14 @@ export class DetailsComponent implements OnInit {
       // this.ordersService.daysToRent(this.daysRent);
       this.ordersService.OrderCreate(movie);
     }
-  }
+
+}
+rentMovieGuest() {
+  this.router.navigate(['login']);
+}
+
+rentMovieLogin() {
+  console.log('boton si esta logueado');
+  this.router.navigate(['login']);
+}
 }
