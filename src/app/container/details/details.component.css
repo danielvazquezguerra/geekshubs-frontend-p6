@@ -1,7 +1,7 @@
 .main-details {
     overflow-y: scroll;
     overflow-x: hidden;
-    border: 1px solid red;
+   
 }.
 
 .grid {
@@ -11,40 +11,40 @@
 
 .bt-rent {
 
-    border: 1px solid white;
+    
 }
 
 
 .movie-left {
-    border: 1px solid white;
+    
 }
 
 
 .movie-right {
-    border: 1px solid white;
+    
 }
 
 .movie-box {
 
     height: 90%;
-    border: 1px solid green;
+    
 }
 
 .img-box {
     width: 90%;
     height: 90%;
-    border: 1px solid white;
+    
 }
 
 .movie-img {
     width: 36%;
     height: 100%;
-    border: 1px solid white;
+   
 }
 
 .movie-info-box {
     width: 60%;
-    border: 1px solid white;
+   
 }
 
 
@@ -95,3 +95,8 @@
     letter-spacing: 2px;
     margin-right: 5px;
 }
+
+[nz-button] {
+    margin-right: 8px;
+    margin-bottom: 12px;
+  }

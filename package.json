@@ -21,7 +21,6 @@
     "@angular/platform-browser": "~9.1.0",
     "@angular/platform-browser-dynamic": "~9.1.0",
     "@angular/router": "~9.1.0",
-    "antd": "^4.1.4",
     "material-components-web": "^5.1.0",
     "ng-zorro-antd": "^9.0.2",
     "rxjs": "~6.5.4",

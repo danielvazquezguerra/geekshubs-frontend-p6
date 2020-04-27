@@ -9,7 +9,7 @@
 
             <div class="movie-img d-flex justify-content-center align-items-center m-0 p-0">
                 
-                <img class="img-box" [src]= "getImage(detalle)" alt="">
+                <!-- <img class="img-box" [src]= "getImage(detalle)" alt=""> -->
 
             </div>
 
@@ -39,17 +39,22 @@
                         officiis cum dolorem autem reprehenderit unde facilis odio!
                     </p>
 
-                        <button nz-button nzType="primary">Primary</button>
-                   <p>hola HDP</p>
+                       
+
                         
                 <!-- BOTON ALQUILER GUEST -->
-                <button class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()"> Alquilar </button> 
+                <button nz-button nzType="primary" class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()"> Alquilar </button> 
                 <!-- BOTON ALQUILER LOGIN -->
                 <button (click)="rentMovieLogin()" *ngIf="usersService.getUser()"> Alquilar </button> 
                 
+                <div class="d-flex flex-column m-0 p-0 w-100 align-items-start">
+
+                    <p>Dias de Alquiler</p>
+                    <p>5 días 7€</p>
+                    <p>10 dias: 12€</p>
+
+                </div>
         
-                <p>Dias de Alquiler: 5 dias: 7€</p>
-                <p>  10 dias: 12€</p>
 
             </article>
 

@@ -39,7 +39,7 @@ import { RegisterComponent } from './container/register/register.component';
 import { LoginComponent } from './container/login/login.component';
 import { ProfileComponent } from './container/profile/profile.component';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
-import { en_US } from 'ng-zorro-antd/i18n';
+import { es_ES } from 'ng-zorro-antd/i18n';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
@@ -77,7 +77,7 @@ registerLocaleData(en);
     NgZorroAntdModule,
     NzButtonModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [{ provide: NZ_I18N, useValue: es_ES }],
 
   bootstrap: [AppComponent]
 })
