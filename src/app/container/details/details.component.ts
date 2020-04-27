@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { MoviesService } from '../../services/movies.service';
 import { ActorsService } from '../../services/actors.service';
 import { UsersService } from 'src/app/services/users.service';
-import { NzButtonModule } from 'ng-zorro-antd/button';
+
 
 
 import { Router } from '@angular/router';
@@ -31,7 +31,7 @@ export class DetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private moviesService: MoviesService,
     public router: Router,
-    public buttonZorro: NzButtonModule,
+
 
   ) { }
 

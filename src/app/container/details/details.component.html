@@ -38,21 +38,22 @@
                         reprehenderit deserunt ipsa omnis. Amet neque esse, 
                         officiis cum dolorem autem reprehenderit unde facilis odio!
                     </p>
-
-                       
-
                         
-                <!-- BOTON ALQUILER GUEST -->
-                <button nz-button nzType="primary" class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()"> Alquilar </button> 
-                <!-- BOTON ALQUILER LOGIN -->
-                <button (click)="rentMovieLogin()" *ngIf="usersService.getUser()"> Alquilar </button> 
-                
-                <div class="d-flex flex-column m-0 p-0 w-100 align-items-start">
+                    
+                    <div class="rent-box d-flex m-0 pt-2 w-100 align-items-start">
+                        
+                        <!-- seleccion dias de alquiler -->
+                        <nz-select ngModel="dias">
+                            <nz-option nzValue="5 días" nzLabel="5 días">5 días</nz-option>
+                            <nz-option nzValue="10 días" nzLabel="10 días">10 díass</nz-option>
+                        </nz-select>
 
-                    <p>Dias de Alquiler</p>
-                    <p>5 días 7€</p>
-                    <p>10 dias: 12€</p>
+                        <!-- BOTON ALQUILER GUEST -->
+                    <button nz-button nzType="primary" class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()"> Alquilar </button> 
+                        <!-- BOTON ALQUILER LOGIN -->
+                    <button (click)="rentMovieLogin()" *ngIf="usersService.getUser()"> Alquilar </button> 
 
+                    
                 </div>
         
 

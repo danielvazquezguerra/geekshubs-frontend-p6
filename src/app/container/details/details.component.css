@@ -96,7 +96,20 @@
     margin-right: 5px;
 }
 
+.rent-box {
+    border-top: 2px solid black;
+}
+
 [nz-button] {
     margin-right: 8px;
     margin-bottom: 12px;
   }
+
+nz-select {
+    width: 30%;
+    padding-right: 10px;
+    background-color: transparent;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
