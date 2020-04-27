@@ -34,7 +34,14 @@ export class ResultsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getAllMovies();
+  }
 
+   // PELICULAS POR ID
+   getAllMovies() {
+    this.moviesService.getMoviesAll().subscribe((pelicula: any) => {
+      this.peliculas = pelicula;
+    });
   }
 
   // PELICULAS POR ID
@@ -50,6 +57,16 @@ export class ResultsComponent implements OnInit {
       this.movies = pelicula;
     });
   }
+
+    // PELICULAS Y ACTORES POR TITULO
+    getAllMoviesAndActorsByTitle(title: string) {
+      this.moviesService.getMoviesByTitle(title).subscribe((pelicula: any) => {
+        this.movies = pelicula;
+      });
+      this.actorsService.getActorByName(title).subscribe((pelicula: any) => {
+        this.actors = pelicula;
+      });
+    }
 
   // PELICULAS POR GENERO
   getGenresByName(name: string) {

@@ -23,9 +23,13 @@
                 <div *ngFor="let genre of genres | slice:0:4"> 
                     <p> {{ genre.name }} </p>
                 </div>  
-                <button> Alquilar </button>
                 <p>Dias de Alquiler: 5 dias: 7€</p>
                 <p>  10 dias: 12€</p>
+                <div class="rentingDays">
+                    <label for="daysRent"><h3>1.80 €/d</h3></label>
+                    <input id='daysRent' placeholder="nº dias" required name="daysRent" [(ngModel)]='daysRent'>
+                </div>
+                <button (click)='OrderCreate(movie)'> Alquilar </button>   
             </div>
         </div> 
             

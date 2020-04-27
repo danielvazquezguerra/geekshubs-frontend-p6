@@ -23,9 +23,8 @@
 <!-- <h3>TODAS LAS PELICULAS</h3>
 <div>
     <div *ngFor="let movie of movies">
-        <p>{{ movie.title }} ({{ movie.id }})</p>  -->
-
-        <!-- <p>Popularity: {{ movie.popularity }} </p>
+        <p>{{ movie.title }} ({{ movie.id }})</p>  
+        <p>Popularity: {{ movie.popularity }} </p>
         <p>Vote Count: {{ movie.vote_count }} </p>
         <p>Original Language: {{ movie.original_language }} </p>
         <p>Original Title: {{ movie.original_title }}</p>
@@ -39,13 +38,15 @@
         <p>Actores</p>
         <div *ngFor="let actor of movie.Actors"> 
             <p>{{ actor.name }} ({{ actor.id }}) </p>
-        </div> -->
-    <!-- </div>
-</div>   -->
+        </div>
+        <p>------------------</p>
+    </div>
+</div>    -->
 
 <!-- 4. CREAR PELICULA -->
-<!-- <h3>Crear Pelicula</h3> -->
-<!-- <form #movieCreateForm="ngForm" (submit)="MovieCreate(movieCreateForm)">
+<h3>Crear Pelicula</h3>
+<form #movieForm="ngForm" (submit)="MovieCreate(movieForm)">
+    <input type="text" name="id" #id="ngModel" id="id" placeholder="id" ngModel>
     <input type="text" name="popularity" #popularity="ngModel" id="popularity" placeholder="popularity" ngModel>
     <input type="text" name="vote_count" #vote_count="ngModel" id="vote_count" placeholder="vote_count" ngModel>
     <input type="text" name="poster_path" #poster_path="ngModel" id="poster_path" placeholder="poster_path" ngModel>
@@ -58,7 +59,7 @@
     <input type="text" name="release_date" #release_date="ngModel" id="release_date" placeholder="release_date" ngModel>
     <input type="text" name="GenreId" #GenreId="ngModel" id="GenreId" placeholder="GenreId" ngModel>
     <button type="submit">Crear pelicula</button>
-</form> -->
+</form> 
 
 <!-- 5. MODIFICAR PELICULA -->
 <!-- <h3>Modificar Pelicula</h3> -->
@@ -78,42 +79,42 @@
 </form> -->
 
 <!-- 6. ELIMINAR PELICULA -->
-<form action="">
+<!-- <form action="">
     <button>Eliminar Pelicula</button>
-</form>
+</form> -->
 
 <!-- 7. BUSQUEDA USUARIO -->
 <!-- BUSCAR USUARIO POR ID USUARIO -->
-<form action="">
+<!-- <form action="">
     <input type="number" placeholder="Id Usuario">
     <button>Buscar Usuario</button>
-</form>
+</form> -->
 
 <!-- BUSCAR USUARIO POR EMAIL USUARIO -->
-<form action="">
+<!-- <form action="">
     <input type="email" placeholder="Email Usuario">
     <button>Buscar Usuario</button>
-</form>
+</form> -->
 
 <!-- BUSCAR USUARIO POR USERNAME USUARIO -->
-<form action="">
+<!-- <form action="">
     <input type="text" placeholder="Username Usuario">
     <button>Buscar Usuario</button>
-</form>
+</form> -->
 
 <!-- 8. BUSQUEDA PELICULA -->
 <!-- BUSCAR USUARIO POR ID PEDIDO -->
-<form action="">
+<!-- <form action="">
     <input type="number" placeholder="Id Pedido">
     <button>Buscar Pedido</button>
-</form>
+</form> -->
 
 
 <!-- BUSCAR USUARIO POR FECHA PEDIDO -->
-<form action="">
+<!-- <form action="">
     <input type="text" placeholder="Fecha Pedido">
     <button>Buscar Pedido</button>
-</form>
+</form> -->
 
 <!-- 9. TOTAL VENTAS DIARIAS -->
 

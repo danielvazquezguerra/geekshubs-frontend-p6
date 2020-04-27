@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
 import { MoviesService } from '../../services/movies.service';
 import { ActorsService } from '../../services/actors.service';
+import { OrdersService } from '../../services/orders.service';
 
 @Component({
   selector: 'app-details',
@@ -19,21 +21,27 @@ export class DetailsComponent implements OnInit {
   populares: '';
   premieres: '';
   actores: any;
+  pedidos;
+  movie: any;
+  daysRent: any = 1;
 
   constructor(
     private route: ActivatedRoute,
-    private moviesService: MoviesService
+    private moviesService: MoviesService,
+    private ordersService: OrdersService,
   ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       // this.fetchMoviesById(params.id);
       this.detailsById(params.id);
-      this.AllMoviesPopular();
-      this.AllMoviesPremieres();
+      // this.AllMoviesPopular();
+      // this.AllMoviesPremieres();
       // this.fetchMoviesRecommendedById(params.id);
       // this.fetchMoviesSimilarById(params.id);
       // this.YouTubeById(params.id);
+      this.movie = params.id;
+
     });
   }
 
@@ -77,4 +85,12 @@ export class DetailsComponent implements OnInit {
     });
   }
 
+  // ORDER CREATE
+  OrderCreate(movie){
+    const token = localStorage.getItem('authToken');
+    if (token){
+      // this.ordersService.daysToRent(this.daysRent);
+      this.ordersService.OrderCreate(movie);
+    }
+  }
 }

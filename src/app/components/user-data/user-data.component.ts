@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../services/users.service';
+import { OrdersService } from '../../services/orders.service';
+import { MoviesService } from '../../services/movies.service';
+import { User } from '../../models/user.model';
 
 import { ActivatedRoute, Params } from '@angular/router';
 
@@ -9,18 +12,65 @@ import { ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./user-data.component.css']
 })
 export class UserDataComponent implements OnInit {
+  token = localStorage.getItem('token');
+  public user;
+  public orders;
+  public movies;
 
-  users: any;
-  id: number;
 
   constructor(
     private route: ActivatedRoute,
-    public usersService: UsersService
+    public usersService: UsersService,
+    public ordersService: OrdersService,
+    public moviesService: MoviesService
   ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
   });
+    this.user = this.usersService.getUser();
+    this.getOrders();
   }
 
+
+  getOrders(){
+    const token = localStorage.getItem('authToken');
+    if (token) {
+      console.log(token);
+      this.ordersService.getOrdersUser(token).subscribe(res => {
+          this.orders = res;
+          console.log(this.orders)
+          // this.orders.forEach(order => {
+          //   console.log(order.MovieId);
+          //   this.moviesService.getById(order.MovieId).subscribe(Movies => {
+          //   this.movies = Movies;
+          //   console.log(this.movies)
+          //   });
+          // });
+      }
+    )}
+  }
+
+
+// UserInfoAll(){
+  //   this.usersService.getUserInfoAll().subscribe( user => {
+  //     this.users = user;
+  //     console.log(this.users);
+  //   });
+  // }
+
+  // this.pedidosService.pedido(this.userID)
+  //     .subscribe(resp => {
+  //         // @ts-ignore
+
+  //         console.log(resp.movie_id);
+  //         this.pedidoUser = resp;
+  //         // @ts-ignore
+  //         this.movieServices.getMovieById(resp.movie_id)
+  //           .subscribe(tit => {
+  //             this.datosPeli = tit;
+  //           });
+  //       },
+  //       error => console.log(error)
+  //     );
 }

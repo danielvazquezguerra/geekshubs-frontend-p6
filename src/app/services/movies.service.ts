@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Movie } from '../models/movie.model';
 
 @Injectable({
   providedIn: 'root'
@@ -8,52 +9,69 @@ import { Observable } from 'rxjs';
 
 export class MoviesService {
 
-  route = 'http://localhost:3000/';
+  BASE = 'http://localhost:3000/';
+  public movie: Movie;
+  private token: string;
 
   constructor(
-    // public movie: object,
+
     private http: HttpClient
   ) { }
 
   getMoviesAll(){
-    return this.http.get(`${this.route}movies`);
+    return this.http.get(`${this.BASE}movies/`);
   }
 
   getMoviesById(id: number){
-    return this.http.get(`${this.route}movies/id=${id}`);
+    return this.http.get(`${this.BASE}movies/id=${id}`);
   }
 
   getMoviesByTitle(title: string){
-    return this.http.get(`${this.route}movies/title=${title}`);
+    return this.http.get(`${this.BASE}movies/title=${title}`);
   }
 
   getPopularAll(){
-    return this.http.get(`${this.route}movies/popular`);
+    return this.http.get(`${this.BASE}movies/popular`);
   }
 
   getPopularByGenre(name: string){
-    return this.http.get(`${this.route}movies/popular/genre=${name}`);
+    return this.http.get(`${this.BASE}movies/popular/genre=${name}`);
   }
 
   getPremiereAll(){
-    return this.http.get(`${this.route}movies/premiere`);
+    return this.http.get(`${this.BASE}movies/premiere`);
   }
 
   getPremiereByGenre(name: string){
-    return this.http.get(`${this.route}movies/premiere/genre=${name}`);
+    return this.http.get(`${this.BASE}movies/premiere/genre=${name}`);
   }
 
-  getMovieCreate(movie: object): Observable<object>{
-    return this.http.get(`${this.route}movies/`, movie);
+  MovieCreate(movie: Movie): Observable<object>{
+    return this.http.post<Movie>(`${this.BASE}movies`, movie, {
+      headers: {
+        Authorization: this.token
+      }
+    });
   }
 
   getMovieUpdate(id: number){
-    return this.http.get(`${this.route}movies/id=${id}`);
+    return this.http.get(`${this.BASE}movies/id=${id}`);
   }
 
   getMovieDelete(id: number){
-    return this.http.get(`${this.route}movies/id=${id}`);
+    return this.http.get(`${this.BASE}movies/id=${id}`);
   }
 
+  getMoviesOrder(token) {
+    return this.http.get(`${this.BASE}movies/user`, {
+      headers: {
+        Authorization: token
+      }
+    });
+  }
+
+  getById(MovieId: number) {
+    return this.http.get(`${this.BASE}movies/id=${MovieId}`);
+  }
 
 }

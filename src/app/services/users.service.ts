@@ -11,7 +11,8 @@ export class UsersService {
 
   BASE = 'http://localhost:3000/';
   private user: User;
-  
+  private token: string;
+
 
   constructor(
     private http: HttpClient
@@ -33,8 +34,21 @@ export class UsersService {
     });
   }
 
+  getUserInfo(token){
+    return this.http.get<User>(`${this.BASE}users/info`, {
+      headers: {
+        Authorization: token
+      }
+    });
+  }
+
   getUsersAll(){
-    return this.http.get(`${this.BASE}users/`);
+    this.token = localStorage.getItem('authToken');
+    return this.http.get(`${this.BASE}users/info/all`, {
+      headers: {
+        Authorization: this.token
+      }
+    });
   }
 
   getUsersById(id: number){
@@ -61,11 +75,5 @@ export class UsersService {
     return this.user;
   }
 
-  getInfo(token): Observable<any> {
-    return this.http.get<User>(`${this.BASE}users/info`, {
-      headers: {
-        Authorization: token
-      }
-    });
-  }
+  
 }

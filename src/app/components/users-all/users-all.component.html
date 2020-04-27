@@ -2,11 +2,19 @@
 <h3>TODOS LOS USUARIOS</h3>
 <div>
     <div *ngFor="let usuario of usuarios">
+        <div class="col-3">
+            <!-- <img src="{{users.imageURL}}" alt=""> -->
+        </div> 
         <p> Id: {{ usuario.id }} </p> 
         <p> Nombre Usuario: {{ usuario.username }} </p>
         <p> Nombre: {{ usuario.firstName }} {{ usuario.lastName }}</p>
         <p> Email: {{ usuario.email }} </p>
         <p> Dirección: {{ usuario.address }} {{ usuario.City.city }}, España </p>
+        <div *ngFor="let order of usuario.Orders">
+            <p> Nº pedido: {{ order.id }} </p>
+            <p> Nº pelicula: {{ order.MovieId }} </p>
+            <p>//////</p>
+        </div>
         <p>---------------</p>
     </div>
 </div>  

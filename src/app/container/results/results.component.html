@@ -1,20 +1,20 @@
 <!-- FILTRO POR ID, GENERO, ESTRENOS, TITULO, ACTORES -->
 
 <!-- FILTRO POR ID -->
-<div>
+<!-- <div>
     <form action="">
         <input type="text" placeholder="ID pelicula" [(ngModel)]="id" [ngModelOptions]="{standalone: true}">
         <button (click)="getAllMoviesById(id)">Buscar</button>
     </form>
-</div>
+</div> -->
 
 <!-- FILTRO POR TITULO -->
-<div>
+<!-- <div>
     <form action="">
         <input type="text" placeholder="titulo pelicula" [(ngModel)]="title" [ngModelOptions]="{standalone: true}">
         <button (click)="getAllMoviesByTitle(title)">Buscar</button>
     </form>
-</div>
+</div> -->
 
 <!-- FILTRO POR GENERO -->
 <!-- <div>
@@ -25,21 +25,20 @@
 </div> -->
 
 <!-- FILTRO POR ACTORES -->
-<div>
+<!-- <div>
     <form action="">
         <input type="text" placeholder="Actores" [(ngModel)]="name" [ngModelOptions]="{standalone: true}">
         <button (click)="getActorsByName(name)">Buscar</button>
     </form>
+</div> -->
+
+<!-- FILTRO POR PELICULAS Y ACTORES -->
+<div>
+    <form action="">
+        <input type="text" placeholder="PeliYActor" [(ngModel)]="title" [ngModelOptions]="{standalone: true}">
+        <button (click)="getAllMoviesAndActorsByTitle(title)">Buscar</button>
+    </form>
 </div>
-
-
-    <div *ngFor="let pelicula of peliculas">
-        <div>
-            <p>{{ pelicula.title }}</p>
-            <img [src]= "getImage(pelicula)" alt="" [routerLink]="'/details/' + pelicula.id"> 
-        </div>
-    </div>
-
     <div *ngFor="let movie of movies">
         <div>
             <p>{{ movie.title }}</p>
@@ -53,6 +52,17 @@
             <!-- <img [src]= "getImage(actor)" alt="" [routerLink]="'/details/' + actor.id">  -->
         </div>
     </div>
+    
+    <h3>Sugerencias</h3>
+    <div *ngFor="let pelicula of peliculas | slice:0:20">
+        <div>
+            <p>{{ pelicula.title }}</p>
+            <!-- <img [src]= "getImage(pelicula)" alt="" [routerLink]="'/details/' + pelicula.id">  -->
+        </div>
+    </div>
 
 
-        
+    
+
+
+  

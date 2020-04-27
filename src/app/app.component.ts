@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     const token = localStorage.getItem('authToken');
     if (token) {
-      this.usersService.getInfo(token)
+      this.usersService.getUserInfo(token)
         .subscribe((res: User) => {
           this.usersService.setUser(res);
         });

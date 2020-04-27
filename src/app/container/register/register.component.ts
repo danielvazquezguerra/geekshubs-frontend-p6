@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
   // signup(signupForm: NgForm) {
   //   console.log(signupForm);
   //   if (signupForm.controls.password.errors?.pattern) {
-  //     return this.notification.warning('Wrong password', 
+  //     return this.notification.warning('Wrong password',
   // 'Your password must contain at least a lowercase letter, a uppercase letter, a number, and must be between 8 and 40 characters')
   //   }
   //   if (signupForm.valid) {

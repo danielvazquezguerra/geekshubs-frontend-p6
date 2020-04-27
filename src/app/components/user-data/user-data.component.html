@@ -1,30 +1,27 @@
 <h3>Datos del Usuario</h3>
     <div class="profile" *ngIf="usersService.getUser() as user">
-        <!-- <div class="col-3">
-            <img src="{{users.imageURL}}" alt="">
-        </div> -->
+        <div class="col-3">
+            <!-- <img src="{{users.imageURL}}" alt=""> -->
+        </div> 
         <div class="email">
-            User Name:{{user.username}}
-            Fisrt Name:{{user.firstName}}
-            Last Name:{{user.lastName}}
-            Email:{{user.email}}
-            Address:{{user.address}} 
+            <p> Id: {{ user.id }} </p> 
+            <p> Id: {{ user.role }} </p> 
+            <p> Nombre Usuario: {{ user.username }} </p>
+            <p> Nombre: {{ user.firstName }} {{ user.lastName }}</p>
+            <p> Email: {{ user.email }} </p>
+            <p> Dirección: {{ user.address }}, España </p>
+            <!-- <p>{{ user.City.city }}</p> -->
         </div>
-    <div class="role">
-        <!-- Role:{{user.role}} -->
+
+    <h3>Pedidos</h3>
+    <div *ngFor="let order of orders">
+        <p>Fecha de alquiler: {{ order.dateRent | date }}</p>
+        <p>Fecha de llegada: {{ order.dateArrival | date }}</p>
+        <p>Dias de alquiler: {{ order.daysRent }}</p>
+        <p>Status: {{ order.status }}</p>
+        <p>Precio: {{ order.price }}</p>
+        <p>{{ order.MovieId }}</p>
+        <p>Pelicula: {{ order.Movie.title }}</p>
+        <p>-------------------------</p>
+        </div> 
     </div>
-<!-- </div>
-    <div>
-        <div class="row">
-            <div class="col-3">
-                <img src="{{ users.imageURL}}" alt="">
-            </div>
-            <div class="col-4">
-                <p> Id: {{ users.id }} </p> 
-                <p> Nombre Usuario: {{ users.username }} </p>
-                <p> Nombre: {{ users.firstName }} {{ users.lastName }}</p>
-                <p> Email: {{ users.email }} </p>
-                <p> Dirección: {{ users.address }} {{ users.City.city }}, España </p>
-            </div>
-        </div>
-    </div> -->
