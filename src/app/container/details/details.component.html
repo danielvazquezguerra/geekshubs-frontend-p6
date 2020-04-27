@@ -14,6 +14,43 @@
             </div>
 
             <article class="movie-info-box d-flex flex-column justify-content-center align-items-start h-100 m-0 p-3">
+    
+    
+           
+        </section>
+    </section>
+    
+    <section class="">
+        
+                <h3> {{ detalle.title }} </h3>
+                <img class="img-box" [src]= "getImage(detalle)" alt="">
+           
+    
+           
+                <p> ID: {{ detalle.id }} </p>
+                <p> Votacion: {{ detalle.vote_average }} </p>
+                <p> {{ detalle.overview }} </p>
+                <p> {{ detalle.release_date | date:"dd/MM/yy" }} </p>
+                <div *ngIf="detalle.homepage">
+                    <a href="{{ detalle.homepage}}" target="_blank">Web pelicula</a>
+               
+                <p><strong>Generos</strong></p>
+                <div *ngFor="let genre of genres | slice:0:4"> 
+                    <p> {{ genre.name }} </p>
+                </div>  
+                <!-- BOTON ALQUILER GUEST -->
+                <button class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()"> Alquilar </button> 
+                <!-- BOTON ALQUILER LOGIN -->
+                <button (click)="OrderCreate(movie)" *ngIf="usersService.getUser()"> Alquilar </button> 
+                <div class="rentingDays">
+                    <label for="daysRent"><h3>1.80 €/d</h3></label>
+                    <input id='daysRent' placeholder="nº dias" required name="daysRent" [(ngModel)]='daysRent'>
+                </div>
+                  
+            </div>
+        
+            
+                
                 
                 <h3 class="mv-title info-base d-inline m-1"> <!--{{ detalle.title }}--> Titulo Pelicula</h3>
                 <p class="mv-id info-base d-inline m-0 mb-3"> ID: <!--{{ detalle.id }}--> 3453364</p>
@@ -57,10 +94,6 @@
                 </div>
         
 
-            </article>
-
-            
-
         </section>
 
         <!-- CAJA DERECHA CON BOTONES PARA ALQUILAR -->
@@ -74,6 +107,7 @@
 
 
 
+    
         <!-- ACTORES -->
         <div>
             <h3>Casting</h3>

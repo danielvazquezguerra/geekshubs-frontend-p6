@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
 import { MoviesService } from '../../services/movies.service';
 import { ActorsService } from '../../services/actors.service';
+import { OrdersService } from '../../services/orders.service';
 import { UsersService } from 'src/app/services/users.service';
 
 
@@ -24,10 +27,14 @@ export class DetailsComponent implements OnInit {
   populares: '';
   premieres: '';
   actores: any;
+  pedidos;
+  movie: any;
+  daysRent: any = 1;
 
   constructor(
 
     public usersService: UsersService,
+    public ordersService: OrdersService,
     private route: ActivatedRoute,
     private moviesService: MoviesService,
     public router: Router,
@@ -39,11 +46,13 @@ export class DetailsComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       // this.fetchMoviesById(params.id);
       this.detailsById(params.id);
-      this.AllMoviesPopular();
-      this.AllMoviesPremieres();
+      // this.AllMoviesPopular();
+      // this.AllMoviesPremieres();
       // this.fetchMoviesRecommendedById(params.id);
       // this.fetchMoviesSimilarById(params.id);
       // this.YouTubeById(params.id);
+      this.movie = params.id;
+
     });
   }
 
@@ -87,14 +96,24 @@ export class DetailsComponent implements OnInit {
     });
   }
 
-  rentMovieGuest() {
-    this.router.navigate(['login']);
-  }
-  rentMovieLogin() {
-    console.log('boton si esta logueado');
-    this.router.navigate(['login']);
-  }
+  // ORDER CREATE
+  OrderCreate(movie){
+    const token = localStorage.getItem('authToken');
+    if (token){
+      // this.ordersService.daysToRent(this.daysRent);
+      this.ordersService.OrderCreate(movie);
+    }
+
 }
+rentMovieGuest() {
+  this.router.navigate(['login']);
+}
+
+rentMovieLogin() {
+  console.log('boton si esta logueado');
+  this.router.navigate(['login']);
+}
+<<<<<<< HEAD
 
 
 // const = collapseText() => {
@@ -112,3 +131,6 @@ export class DetailsComponent implements OnInit {
 //     moreText.style.display = "inline";
 //   }
 // }
+=======
+}
+>>>>>>> dev

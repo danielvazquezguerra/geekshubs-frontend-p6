@@ -9,7 +9,7 @@ import { UsersService } from '../../services/users.service';
 })
 export class UsersAllComponent implements OnInit {
 
-  usuarios: '';
+  public usuarios;
 
   constructor(
     private usersService: UsersService,
@@ -21,8 +21,13 @@ export class UsersAllComponent implements OnInit {
 
   // ALL ORDERS
   AllUsers(){
-    this.usersService.getUsersAll().subscribe((usuario: any) => {
-      this.usuarios = usuario;
-    });
+    const token = localStorage.getItem('authToken');
+    if (token) {
+      console.log(token);
+      this.usersService.getUsersAll().subscribe(usuario => {
+        this.usuarios = usuario;
+        console.log(this.usuarios);
+      }
+    )}
   }
 }

@@ -9,7 +9,7 @@ import { OrdersService } from '../../services/orders.service';
 })
 export class OrdersAllComponent implements OnInit {
 
-  pedidos: '';
+  pedidos;
 
   constructor(
     private ordersService: OrdersService,
@@ -21,8 +21,13 @@ export class OrdersAllComponent implements OnInit {
 
   // ALL ORDERS
   AllOrders(){
-    this.ordersService.getOrdersAll().subscribe((pedidos: any) => {
-      this.pedidos = pedidos;
-    });
+    const token = localStorage.getItem('authToken');
+    if (token) {
+      console.log(token);
+      this.ordersService.getOrdersAll(token).subscribe(order => {
+        this.pedidos = order;
+        console.log(this.pedidos);
+      }
+    )}
   }
 }
