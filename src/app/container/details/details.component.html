@@ -1,6 +1,6 @@
 <main class="main-details container-fluid h-100 m-0 p-0">
     
-    <section class="movie-details d-flex w-100 h-100 m-0 p-0">
+    <section class="movie-details d-flex w-100 m-0 p-0">
         
         <article class="movie-left d-flex w-75 h-100 m-0 p-0">
             
@@ -9,24 +9,42 @@
                 <img class="img-box" [src]= "getImage(detalle)" alt="{{ detalle.title }}">
 
             </div>
-                
+            
             <div class="info-box d-flex flex-column justify-content-center align-items-start m-0 p-2">
-                    
+                
                 <h3 class="mv-title"> {{ detalle.title }} </h3>
                 <p class="mv-id"> ID: {{ detalle.id }} </p>
-
+                
                 <div class="average-box d-flex align-items-center w-100 mb-3">
                     
                     <p class="mv-average"> {{ detalle.vote_average }} </p><span class="average-top"> / 10</span>
                     <p class="mv-release"> {{ detalle.release_date | date:"yyyy" }} </p>               
                     
-                </div>
+                    <div *ngFor="let genre of genres | slice:0:3"> 
+                        <a class="bt-genre" href="#"> {{ genre.name }} </a>
+                    </div>
 
+                </div>
+                
                 <p class="mv-overview"> {{ detalle.overview }} </p>
                 <div *ngIf="detalle.homepage">
                     <a class="mv-homepage" href=" {{ detalle.homepage}} " target="_blank">Web pelicula</a>
                 </div>
+                <div class="rent-box d-flex w-100 m-0 p-0">
 
+                    <nz-select ngModel="daysRent" nzPlaceHolder="Alquiler por 5 días.">
+                        <nz-option nzValue="5" nzLabel="Alquiler por 5 días."></nz-option>
+                        <nz-option nzValue="10" nzLabel="Alquiler por 10 días."></nz-option>
+                    </nz-select>
+                    
+                    <!-- BOTON ALQUILER GUEST -->
+                     <button class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()"> Alquilar </button>
+                    
+                     <!-- BOTON ALQUILER LOGIN -->
+                     <button (click)="OrderCreate(movie)" *ngIf="usersService.getUser()"> Alquilar </button>
+                     
+                </div>
+                
             </div>
 
         </article>
@@ -38,29 +56,7 @@
     </section>
     <section>
     
-        
-           
-           
-               
-                <p><strong>Generos</strong></p>
-                <div *ngFor="let genre of genres | slice:0:4"> 
-                    <p> {{ genre.name }} </p>
-                </div>   -->
-                <!-- BOTON ALQUILER GUEST -->
-                <!-- <button class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()"> Alquilar </button>  -->
-                <!-- BOTON ALQUILER LOGIN -->
-                <!-- <button (click)="OrderCreate(movie)" *ngIf="usersService.getUser()"> Alquilar </button>  -->
-                <!-- <div class="rentingDays">
-                    <label for="daysRent"><h3>1.80 €/d</h3></label>
-                    <input id='daysRent' placeholder="nº dias" required name="daysRent" [(ngModel)]='daysRent'>
-                </div>
-                   -->
-            <!-- </div>
-            -->
-            
-            
-            
-            
+                  
             
             <!-- ACTORES -->
             <div>

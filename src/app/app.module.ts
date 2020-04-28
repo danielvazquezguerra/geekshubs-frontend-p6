@@ -15,7 +15,7 @@ import { MaterialModule } from './material.module';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
-import { NzButtonModule } from 'ng-zorro-antd/button';
+import { AntDesignModule } from './antdesign.module';
 //#endregion
 
 //#region Components
@@ -72,7 +72,7 @@ registerLocaleData(en);
     MaterialModule,
     ReactiveFormsModule,
     NgZorroAntdModule,
-    NzButtonModule
+    AntDesignModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
 
