@@ -1,5 +1,6 @@
 .main-details {
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     border: 1px solid white;
 }
 

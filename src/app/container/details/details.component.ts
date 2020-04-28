@@ -52,6 +52,7 @@ export class DetailsComponent implements OnInit {
 
   detailsById(id: number) {
     this.moviesService.getMoviesById(id).subscribe((pelicula: any) => {
+      console.log(this.detalle);
       this.detalle = pelicula;
       this.genres = pelicula.Genres;
       this.actores = pelicula.Actors;

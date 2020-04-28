@@ -1,19 +1,16 @@
 <main class="main-details container-fluid h-100 m-0 p-0">
     
-    <section class="movie-left d-flex w-75 m-0 p-0">
+    <section class="movie-left d-flex w-75 h-100 m-0 p-0">
         
         <div class="movie-box d-flex m-0 p-0">
             
-            
-            
+            <img class="img-box" [src]= "getImage(detalle)" alt="">
+             
         </div>
         
         <div class="movie-info d-flex flex-column m-0 p-0">
             
             <h3> {{ detalle.title }} </h3>
-            <img class="img-box" [src]= "getImage(detalle)" alt="">
-            
-            
             <p> ID: {{ detalle.id }} </p>
             <p> Votacion: {{ detalle.vote_average }} </p>
             <p> {{ detalle.overview }} </p>
@@ -38,17 +35,10 @@
         </div>
 
     </section>
-    <section class="movie-right d-flex w-25 m-0 p-0">
+    <section class="movie-right d-flex w-25 h-100 m-0 p-0">
 
     </section>
     <section>
-        
-        
-            
-                
-        
-            
-            
             
             <!-- ACTORES -->
             <div>
@@ -62,18 +52,18 @@
                 </div> 
             </div>
             
-        </section>
+    </section>
         
         <!-- PELICULAS POPULARES -->
-        <div>
-                <h3>Populares</h3>
-                <div class="grid">
+        <div></div>
+            <h3>Populares</h3>
+              
                     <div *ngFor="let pelicula of populares | slice:0:4"> 
                         <p> {{ pelicula.title }} </p>
                         <img [src]= "getImage(pelicula)" style="width: 30vh" alt="" [routerLink]="'/details/' + pelicula.id">
                     </div>
-                </div>  
-            </div>
+                 
+       
             
             
             <!-- PELICULAS PREMIERE -->
