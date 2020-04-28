@@ -1,7 +1,7 @@
 <h3>Datos del Usuario</h3>
 <div class="profile row" *ngIf="usersService.getUser() as user">
 
-        <div class="col-5">
+        <div class="col-4">
             <div >
                 <!-- <img src="{{users.imageURL}}" alt=""> -->
             </div> 
@@ -15,27 +15,35 @@
                 <!-- <p>{{ user.City.city }}</p> -->
             </div>
         </div>
-
-        <table class="col-6">
-            <h3>Pedidos</h3>
-            <tr>
-                <td><strong>Fecha de alquiler</strong></td>
-                <td><strong>Fecha de llegada</strong></td>
-                <td><strong>Dias de alquiler</strong></td>
-                <td><strong>Status</strong></td>
-                <td><strong>Precio:</strong></td>
-                <td><strong>MovieId</strong></td>
-
-            </tr>
-            <tr class="pedidos" *ngFor="let order of orders">
-                <td> {{ order.dateRent | date }}</td>
-                <td> {{ order.dateArrival | date }}</td>
-                <td> {{ order.daysRent }}</td>
-                <td> {{ order.status }}</td>
-                <td> {{ order.price }} €</td>
-                <td> {{ order.MovieId }}</td>
-                <!-- <td>Pelicula: {{ order.Movie.title }}</td> -->
-            </tr> 
+        
+    <div class="col-6">
+        <h3>Pedidos</h3>
+        <table >
+            <thead>
+                <tr>
+                    <td><strong>ID</strong></td>
+                    <td><strong>Fecha de alquiler</strong></td>
+                    <td><strong>Fecha de llegada</strong></td>
+                    <td><strong>Dias de alquiler</strong></td>
+                    <td><strong>Status</strong></td>
+                    <td><strong>Precio:</strong></td>
+                    <td><strong>MovieId</strong></td>
+                    <td><strong>Pelicula</strong></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="pedidos" *ngFor="let order of orders">
+                    <td> {{ order.id }}</td>
+                    <td> {{ order.dateRent | date }}</td>
+                    <td> {{ order.dateArrival | date }}</td>
+                    <td> {{ order.daysRent }}</td>
+                    <td> {{ order.status }}</td>
+                    <td> {{ order.price }} €</td>
+                    <td> {{ order.MovieId }}</td>
+                    <td> {{ order.Movie.title }}</td>
+                </tr> 
+            </tbody>
         </table>
+    </div>
 </div>
 

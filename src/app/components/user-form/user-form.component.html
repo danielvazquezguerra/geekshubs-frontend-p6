@@ -1,7 +1,7 @@
 <h3>Modificar datos de Usuario</h3>
 
 <form #userModifyForm="ngForm" (submit)="ModifyUser(userModifyForm)">
-    <input type="text" name="username" ngModel id="username" placeholder="username" type="text"  required>
+    <input type="text" name="username" value={{user.username}} ngModel id="username" type="text"  required>
     <input type="text" name="firstName" ngModel #firstName="ngModel" id="firstName" placeholder="firstName">
     <input type="text" name="lastName" ngModel #lastName="ngModel" id="lastName" placeholder="lastName">
     <input type="email" name="email" ngModel #email="ngModel" id="email" placeholder="email" required>

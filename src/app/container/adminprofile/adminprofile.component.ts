@@ -81,6 +81,7 @@ export class AdminprofileComponent implements OnInit {
 
   // MOVIES ALL
   MoviesAll(){
+    console.log(this.movies)
     this.moviesService.getMoviesAll().subscribe((movies: any) => {
       this.movies = movies;
     });
