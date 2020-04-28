@@ -1,55 +1,60 @@
 <main class="main-details container-fluid h-100 m-0 p-0">
     
-    <section class="movie-left d-flex w-75 m-0 p-0">
-
-        <div class="movie-box d-flex m-0 p-0">
-
-            
-
-        </div>
-
-        <div class="movie-info d-flex flex-column m-0 p-0">
-
-        </div>
-
-    </section>
-    <section class="movie-right d-flex w-25 m-0 p-0">
-
-    </section>
+    <section class="movie-details d-flex w-100 h-100 m-0 p-0">
         
-                <h3> {{ detalle.title }} </h3>
+        <article class="movie-left d-flex w-75 h-100 m-0 p-0">
+            
+            <div class="img-content d-flex h-100 justify-content-center align-items-center">
+                
                 <img class="img-box" [src]= "getImage(detalle)" alt="">
-           
-           
-                <p> ID: {{ detalle.id }} </p>
-                <p> Votacion: {{ detalle.vote_average }} </p>
-                <p> {{ detalle.overview }} </p>
-                <p> {{ detalle.release_date | date:"dd/MM/yy" }} </p>
+
+            </div>
+                
+            <div class="info-box d-flex flex-column justify-content-center align-items-start m-0 p-0">
+                    
+                <h3 class="mv-title"> {{ detalle.title }} </h3>
+                <p class="mv-id"> ID: {{ detalle.id }} </p>
+                <p class="mv-average"> Votacion: {{ detalle.vote_average }} </p>
+                <p class="mv-overview"> {{ detalle.overview }} </p>
+                <p class="mv-release"> {{ detalle.release_date | date:"dd/MM/yy" }} </p>               
                 <div *ngIf="detalle.homepage">
-                    <a href="{{ detalle.homepage}}" target="_blank">Web pelicula</a>
+                    <a class="mv-homepage" href=" {{ detalle.homepage}} " target="_blank">Web pelicula</a>
+                </div>
+
+            </div>
+
+        </article>
+
+        <article class="movie-right d-flex flex-column w-25 h-100 m-0 p-0">
+
+        </article>
+
+    </section>
+    
+        
+           
+           
                
                 <p><strong>Generos</strong></p>
                 <div *ngFor="let genre of genres | slice:0:4"> 
                     <p> {{ genre.name }} </p>
-                </div>  
+                </div>   -->
                 <!-- BOTON ALQUILER GUEST -->
-                <button class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()"> Alquilar </button> 
+                <!-- <button class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()"> Alquilar </button>  -->
                 <!-- BOTON ALQUILER LOGIN -->
-                <button (click)="OrderCreate(movie)" *ngIf="usersService.getUser()"> Alquilar </button> 
-                <div class="rentingDays">
+                <!-- <button (click)="OrderCreate(movie)" *ngIf="usersService.getUser()"> Alquilar </button>  -->
+                <!-- <div class="rentingDays">
                     <label for="daysRent"><h3>1.80 €/d</h3></label>
                     <input id='daysRent' placeholder="nº dias" required name="daysRent" [(ngModel)]='daysRent'>
                 </div>
-                  
-            </div>
-        
+                   -->
+            <!-- </div>
+            -->
             
-                
-        
             
-        </main>
-        
-        
+            
+            
+            
             <!-- ACTORES -->
             <div>
                 <h3>Casting</h3>
@@ -61,20 +66,19 @@
                     </div>
                 </div> 
             </div>
-             
-        </section>
+       
         
-            <!-- PELICULAS POPULARES -->
-            <div>
-                <h3>Populares</h3>
-                <div class="grid">
+        <!-- PELICULAS POPULARES -->
+        <div>
+            <h3>Populares</h3>
+            <div class="grid">
                     <div *ngFor="let pelicula of populares | slice:0:4"> 
                         <p> {{ pelicula.title }} </p>
                         <img [src]= "getImage(pelicula)" style="width: 30vh" alt="" [routerLink]="'/details/' + pelicula.id">
                     </div>
                 </div>  
             </div>
-        
+            
         
             <!-- PELICULAS PREMIERE -->
             <div>
@@ -86,3 +90,5 @@
                     </div>
                 </div>
             </div>
+            
+</main>

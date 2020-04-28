@@ -1,21 +1,36 @@
 .main-details {
-    overflow: scroll;
-    border: 1px solid white;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.bt-rent {
 
     border: 1px solid white;
 }
 
-.img-box {
+.movie-left {
+    border: 1px solid white;
+}
+
+.movie-right {
+    border: 1px solid white;
+}
+
+.movie-details {
+    border: 1px solid white;
+}
+
+.img-content {
 
     width: 40%;
-    height: 60%;
-    border: 1px solid white;
+    border: 1px solid black;
+
 }
+
+.info-box {
+    width: 50%;
+    border: 1px solid black;
+}
+
+.mv-title {
+    font-size: 2em;
+    font-family: 'Poppins';
+    font-weight: 800;
+    
+}
+
