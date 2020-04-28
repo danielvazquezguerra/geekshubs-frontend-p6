@@ -6,17 +6,23 @@
             
             <div class="img-content d-flex h-100 justify-content-center align-items-center">
                 
-                <img class="img-box" [src]= "getImage(detalle)" alt="">
+                <img class="img-box" [src]= "getImage(detalle)" alt="{{ detalle.title }}">
 
             </div>
                 
-            <div class="info-box d-flex flex-column justify-content-center align-items-start m-0 p-0">
+            <div class="info-box d-flex flex-column justify-content-center align-items-start m-0 p-2">
                     
                 <h3 class="mv-title"> {{ detalle.title }} </h3>
                 <p class="mv-id"> ID: {{ detalle.id }} </p>
-                <p class="mv-average"> Votacion: {{ detalle.vote_average }} </p>
+
+                <div class="average-box d-flex align-items-center w-100 mb-3">
+                    
+                    <p class="mv-average"> {{ detalle.vote_average }} </p><span class="average-top"> / 10</span>
+                    <p class="mv-release"> {{ detalle.release_date | date:"yyyy" }} </p>               
+                    
+                </div>
+
                 <p class="mv-overview"> {{ detalle.overview }} </p>
-                <p class="mv-release"> {{ detalle.release_date | date:"dd/MM/yy" }} </p>               
                 <div *ngIf="detalle.homepage">
                     <a class="mv-homepage" href=" {{ detalle.homepage}} " target="_blank">Web pelicula</a>
                 </div>

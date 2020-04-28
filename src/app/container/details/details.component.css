@@ -1,42 +1,90 @@
 .main-details {
     overflow-y: scroll;
     overflow-x: hidden;
-    border: 1px solid white;
+
 }
 
 .movie-left {
-    border: 1px solid white;
+    
 }
 
 .movie-right {
-    border: 1px solid white;
+   
 }
 
 .movie-details {
-    border: 1px solid white;
+   
 }
 
 .img-content {
 
     width: 33%;
-    border: 1px solid black;
+    
 
 }
 
 .img-box {
+    min-width: 90%;
+    min-height: auto;
     width: auto;
     height: 90%;
 }
 
 .info-box {
     width: 50%;
-    border: 1px solid black;
+   
 }
 
 .mv-title {
     font-size: 2em;
-    font-family: 'Poppins';
+    color: white;
+    font-family: 'Poppins', sans-serif;
     font-weight: 800;
+    text-transform: capitalize;
+    margin: 0;
     
+}
+
+.mv-id {
+    font-size: 0.7em;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+}
+
+.mv-average {
+    font-size: 2em;
+    color: rgb(79, 0, 110);
+    font-weight: 800;
+    margin: 0px;
+}
+
+.average-top {
+    font-size: 0.9em;
+    font-family: 'Poppins',sans-serif;
+    color: white;
+    margin: 0px;
+}
+
+.mv-overview {
+    font-size: 0.9em;
+    font-family: 'Poppins',sans-serif;
+    color: white;
+    font-weight: 300;
+    letter-spacing: 1px;
+
+}
+
+.mv-release {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 0.9em;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 0px;
+    margin-left: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 2px solid white;
 }
 
