@@ -1,8 +1,8 @@
 <main class="main-details container-fluid h-100 m-0 p-0">
-    
+
     <section class="">
-        
-                <h3> {{ detalle.title }} </h3>
+
+        <!-- <h3> {{ detalle.title }} </h3>
                 <img class="img-box" [src]= "getImage(detalle)" alt="">
            
     
@@ -17,25 +17,38 @@
                 <p><strong>Generos</strong></p>
                 <div *ngFor="let genre of genres | slice:0:4"> 
                     <p> {{ genre.name }} </p>
-                </div>  
-                <!-- BOTON ALQUILER GUEST -->
-                <button class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()"> Alquilar </button> 
-                <!-- BOTON ALQUILER LOGIN -->
-                <button (click)="OrderCreate(movie)" *ngIf="usersService.getUser()"> Alquilar </button> 
-                <div class="rentingDays">
-                    <label for="daysRent"><h3>1.80 €/d</h3></label>
-                    <input id='daysRent' placeholder="nº dias" required name="daysRent" [(ngModel)]='daysRent'>
-                </div>
-                  
-            </div>
-        
-            
-                
-                
+                </div>   -->
 
-    
+
+
+        <!-- BOTON ALQUILER GUEST -->
+        <button class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()"> Alquilar </button>
+        <!-- BOTON ALQUILER LOGIN -->
+
+        <form class="rentingDays" #orderForm="ngForm" (submit)="OrderCreate(orderForm)">
+            <label for="daysRent"><h3>1.80 €/d</h3></label>
+            <input id='daysRent' #date="ngModel" name="date" id="date" placeholder="nº dias" required [(ngModel)]='daysRent'>
+            <button type="submit" *ngIf="usersService.getUser()"> Alquilar </button>
+            <!-- Mensajes -->
+            <div class="succesmessage" *ngIf="successMsg">
+                {{successMsg}} 
+              </div>
+              <div class="errormessage">
+                {{errorMsg}}
+              </div>
+        </form>
+
+        
+        <!--                   
+            </div> -->
+
+
+
+
+
+
         <!-- ACTORES -->
-        <div>
+        <!-- <div>
             <h3>Casting</h3>
             <div class="grid">
                 <div *ngFor="let actor of actores | slice:0:8"> 
@@ -45,11 +58,11 @@
                 </div>
             </div> 
         </div>
-         
+          -->
     </section>
-    
-        <!-- PELICULAS POPULARES -->
-        <div>
+
+    <!-- PELICULAS POPULARES -->
+    <!-- <div>
             <h3>Populares</h3>
             <div class="grid">
                 <div *ngFor="let pelicula of populares | slice:0:4"> 
@@ -58,10 +71,10 @@
                 </div>
             </div>  
         </div>
-    
-    
-        <!-- PELICULAS PREMIERE -->
-        <div>
+     -->
+
+    <!-- PELICULAS PREMIERE -->
+    <!-- <div>
             <h3>Premiere</h3>
             <div class="grid">
                 <div *ngFor="let popular of premieres | slice:0:4"> 
@@ -69,7 +82,7 @@
                     <img [src]= "getImage(popular)" style="width: 30vh" alt="" [routerLink]="'/detalles/' + popular.id">
                 </div>
             </div>
-        </div>
-            
+        </div> -->
 
-</main>
+
+</main>o

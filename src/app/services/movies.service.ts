@@ -46,10 +46,10 @@ export class MoviesService {
     return this.http.get(`${this.BASE}movies/premiere/genre=${name}`);
   }
 
-  MovieCreate(movie: Movie): Observable<object>{
-    return this.http.post<Movie>(`${this.BASE}movies`, movie, {
+  MovieCreate(movie): Observable<object>{
+    return this.http.post(`${this.BASE}movies`, movie, {
       headers: {
-        Authorization: this.token
+        Authorization: localStorage.getItem('authToken') || ''
       }
     });
   }

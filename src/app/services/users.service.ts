@@ -59,8 +59,13 @@ export class UsersService {
     return this.http.get(`${this.BASE}users/${name}`);
   }
 
-  modifiedUserById(id: number, body: any){
-    return this.http.put(`${this.BASE}users/user=${id}`, body);
+  modifiedUserById(body: any){
+    this.token = localStorage.getItem('authToken');
+    return this.http.put(`${this.BASE}users/update`, body, {
+      headers: {
+        Authorization: this.token
+      }
+    });
   }
 
   deleteUserById(id: number){
@@ -75,5 +80,4 @@ export class UsersService {
     return this.user;
   }
 
-  
 }
