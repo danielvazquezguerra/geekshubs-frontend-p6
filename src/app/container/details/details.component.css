@@ -18,9 +18,14 @@
 
 .img-content {
 
-    width: 40%;
+    width: 33%;
     border: 1px solid black;
 
+}
+
+.img-box {
+    width: auto;
+    height: 90%;
 }
 
 .info-box {
