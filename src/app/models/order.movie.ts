@@ -1,10 +1,10 @@
 export interface Order {
     id?: string;
     dateRent: Date;
-    dateArrival: Date;
-    daysRent: number;
+    dateArrival?: Date;
+    daysRent?: number;
     price: number;
-    status: string;
+    status?: string;
     UserId: number;
     MovieId: number;
 }

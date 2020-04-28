@@ -12,7 +12,7 @@ export class OrdersService {
   public order: Order;
   private token: string;
   private daysRent:any;
-  private totalAmount:any;
+  private price:any;
   // alquiler: any = {id: this.movie.id, daysRent: this.daysRent, payingAmount: this.totalAmount}
 
   constructor(
@@ -46,32 +46,23 @@ export class OrdersService {
 
   // 4 ORDER BY ORDER DATE ¿?
   getUserOrderDates(){
-    return this.http.get(`${this.BASE}/orderDate`);
+    return this.http.get(`${this.BASE}orderDate`);
   }
 
   daysToRent(numDays){
     console.log('funciona daysToRent');
     this.daysRent = numDays;
-    this.totalAmount = parseInt(this.daysRent) * 1.8;
-    console.log(this.daysRent);
-    console.log(this.totalAmount);
+    this.price = parseInt(this.daysRent) * 1.8; 
   }
 
   // 5 ORDER CREATE
-  OrderCreate(movie): Observable<object>{
-    if (movie){
-      console.log(`pelicula ${movie}`)
-      return this.http.post<Order>(`${this.BASE}order`,
-      {
-        MovieId: movie,
-        daysRent: this.daysRent,
-        price: this.totalAmount},
-        {
+  getOrderCreate(order): Observable<object>{
+      return this.http.post<Order>(`http://localhost:3000/orders/order`, order, {
         headers: {
-          Authorization: this.token
+          Authorization: localStorage.getItem('authToken') || ''
         }
       });
-    }
+  
   }
 
 

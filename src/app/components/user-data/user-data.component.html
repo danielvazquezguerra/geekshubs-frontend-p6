@@ -1,27 +1,49 @@
 <h3>Datos del Usuario</h3>
-    <div class="profile" *ngIf="usersService.getUser() as user">
-        <div class="col-3">
-            <!-- <img src="{{users.imageURL}}" alt=""> -->
-        </div> 
-        <div class="email">
-            <p> Id: {{ user.id }} </p> 
-            <p> Id: {{ user.role }} </p> 
-            <p> Nombre Usuario: {{ user.username }} </p>
-            <p> Nombre: {{ user.firstName }} {{ user.lastName }}</p>
-            <p> Email: {{ user.email }} </p>
-            <p> Dirección: {{ user.address }}, España </p>
-            <!-- <p>{{ user.City.city }}</p> -->
-        </div>
+<div class="profile row" *ngIf="usersService.getUser() as user">
 
-    <h3>Pedidos</h3>
-    <div *ngFor="let order of orders">
-        <p>Fecha de alquiler: {{ order.dateRent | date }}</p>
-        <p>Fecha de llegada: {{ order.dateArrival | date }}</p>
-        <p>Dias de alquiler: {{ order.daysRent }}</p>
-        <p>Status: {{ order.status }}</p>
-        <p>Precio: {{ order.price }}</p>
-        <p>{{ order.MovieId }}</p>
-        <p>Pelicula: {{ order.Movie.title }}</p>
-        <p>-------------------------</p>
-        </div> 
+        <div class="col-4">
+            <div >
+                <!-- <img src="{{users.imageURL}}" alt=""> -->
+            </div> 
+            <div class="datos">
+                <p> Id: {{ user.id }} </p> 
+                <p> Id: {{ user.role }} </p> 
+                <p> Nombre Usuario: {{ user.username }} </p>
+                <p> Nombre: {{ user.firstName }} {{ user.lastName }}</p>
+                <p> Email: {{ user.email }} </p>
+                <p> Dirección: {{ user.address }}, España </p>
+                <!-- <p>{{ user.City.city }}</p> -->
+            </div>
+        </div>
+        
+    <div class="col-6">
+        <h3>Pedidos</h3>
+        <table >
+            <thead>
+                <tr>
+                    <td><strong>ID</strong></td>
+                    <td><strong>Fecha de alquiler</strong></td>
+                    <td><strong>Fecha de llegada</strong></td>
+                    <td><strong>Dias de alquiler</strong></td>
+                    <td><strong>Status</strong></td>
+                    <td><strong>Precio:</strong></td>
+                    <td><strong>MovieId</strong></td>
+                    <td><strong>Pelicula</strong></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="pedidos" *ngFor="let order of orders">
+                    <td> {{ order.id }}</td>
+                    <td> {{ order.dateRent | date }}</td>
+                    <td> {{ order.dateArrival | date }}</td>
+                    <td> {{ order.daysRent }}</td>
+                    <td> {{ order.status }}</td>
+                    <td> {{ order.price }} €</td>
+                    <td> {{ order.MovieId }}</td>
+                    <td> {{ order.Movie.title }}</td>
+                </tr> 
+            </tbody>
+        </table>
     </div>
+</div>
+

@@ -7,6 +7,7 @@ import { ActorsService } from '../../services/actors.service';
 import { OrdersService } from '../../services/orders.service';
 import { UsersService } from 'src/app/services/users.service';
 import { Router } from '@angular/router';
+import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-details',
@@ -26,6 +27,9 @@ export class DetailsComponent implements OnInit {
   pedidos;
   movie: any;
   daysRent: any = 1;
+  public message: string;
+  public errorMsg: string;
+  public successMsg: string;
 
   constructor(
     public usersService: UsersService,
@@ -39,11 +43,8 @@ export class DetailsComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       // this.fetchMoviesById(params.id);
       this.detailsById(params.id);
-      // this.AllMoviesPopular();
-      // this.AllMoviesPremieres();
       // this.fetchMoviesRecommendedById(params.id);
       // this.fetchMoviesSimilarById(params.id);
-      // this.YouTubeById(params.id);
       this.movie = params.id;
 
     });
@@ -51,6 +52,7 @@ export class DetailsComponent implements OnInit {
 
   detailsById(id: number) {
     this.moviesService.getMoviesById(id).subscribe((pelicula: any) => {
+      console.log(this.detalle);
       this.detalle = pelicula;
       this.genres = pelicula.Genres;
       this.actores = pelicula.Actors;
@@ -75,29 +77,35 @@ export class DetailsComponent implements OnInit {
     }
   }
 
-  // PELICULAS POPULARES
-  AllMoviesPopular(){
-    this.moviesService.getPopularAll().subscribe((pelicula: any) => {
-      this.populares = pelicula;
-    });
-  }
 
-  // PELICULAS PREMIERES
-  AllMoviesPremieres(){
-    this.moviesService.getPremiereAll().subscribe((pelicula: any) => {
-      this.premieres = pelicula;
-    });
-  }
 
   // ORDER CREATE
-  OrderCreate(movie){
-    const token = localStorage.getItem('authToken');
-    if (token){
+  OrderCreate(orderForm: NgForm){
+    const token = localStorage.getItem('authToken') || '';
+    // if (token){
       // this.ordersService.daysToRent(this.daysRent);
-      this.ordersService.OrderCreate(movie);
-    }
-
+      // }
+    const order = {
+      daysRent: parseInt(this.daysRent),
+      price: (this.daysRent) * 1.8,
+      UserId: this.usersService['user']['id'],
+      MovieId: parseInt(this.movie),
+      };
+      console.log(order)
+    this.ordersService.getOrderCreate(order)
+    .subscribe(
+        (res: HttpResponse<any>) => {
+        this.successMsg = res['message'];
+        console.log(this.successMsg)
+        setTimeout(() => {
+        }, 2000);
+        },
+        (error: HttpErrorResponse) => {
+        this.errorMsg = error.error.message;
+        setTimeout(() =>  this.errorMsg = '' , 2000);
+    })
 }
+
 rentMovieGuest() {
   this.router.navigate(['login']);
 }

@@ -30,6 +30,7 @@
         </article>
 
     </section>
+    <section>
     
         
            
@@ -66,20 +67,21 @@
                     </div>
                 </div> 
             </div>
-       
+            
+    </section>
         
         <!-- PELICULAS POPULARES -->
-        <div>
+        <div></div>
             <h3>Populares</h3>
-            <div class="grid">
+              
                     <div *ngFor="let pelicula of populares | slice:0:4"> 
                         <p> {{ pelicula.title }} </p>
                         <img [src]= "getImage(pelicula)" style="width: 30vh" alt="" [routerLink]="'/details/' + pelicula.id">
                     </div>
-                </div>  
-            </div>
+                 
+       
             
-        
+            
             <!-- PELICULAS PREMIERE -->
             <div>
                 <h3>Premiere</h3>
