@@ -44,7 +44,7 @@
 </div>    -->
 
 <!-- 4. CREAR PELICULA -->
-<h3>Crear Pelicula</h3>
+<!-- <h3>Crear Pelicula</h3>
 <form #movieForm="ngForm" (submit)="MovieCreate(movieForm)">
     <input type="text" name="id" #id="ngModel" id="id" placeholder="id" ngModel>
     <input type="text" name="popularity" #popularity="ngModel" id="popularity" placeholder="popularity" ngModel>
@@ -59,11 +59,18 @@
     <input type="text" name="release_date" #release_date="ngModel" id="release_date" placeholder="release_date" ngModel>
     <input type="text" name="GenreId" #GenreId="ngModel" id="GenreId" placeholder="GenreId" ngModel>
     <button type="submit">Crear pelicula</button>
-</form> 
+     Mensajes 
+    <div class="succesmessage" *ngIf="successMsg">
+        {{successMsg}} 
+      </div>
+      <div class="errormessage">
+        {{errorMsg}}
+      </div>
+</form> -->
 
 <!-- 5. MODIFICAR PELICULA -->
-<!-- <h3>Modificar Pelicula</h3> -->
-<!-- <form #movieModifyForm="ngForm" (submit)="MovieModify(movieModifyForm)">
+<!-- <h3>Modificar Pelicula</h3> 
+<form #movieModifyForm="ngForm" (submit)="MovieModify(movieModifyForm)">
     <input type="text" name="popularity" #popularity="ngModel" id="popularity" placeholder="popularity" ngModel>
     <input type="text" name="vote_count" #vote_count="ngModel" id="vote_count" placeholder="vote_count" ngModel>
     <input type="text" name="poster_path" #poster_path="ngModel" id="poster_path" placeholder="poster_path" ngModel>
@@ -76,7 +83,7 @@
     <input type="text" name="release_date" #release_date="ngModel" id="release_date" placeholder="release_date" ngModel>
     <input type="text" name="GenreId" #GenreId="ngModel" id="GenreId" placeholder="GenreId" ngModel>
     <button type="submit">Crear pelicula</button>
-</form> -->
+</form>  -->
 
 <!-- 6. ELIMINAR PELICULA -->
 <!-- <form action="">

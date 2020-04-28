@@ -16,6 +16,7 @@ export class AdminprofileComponent implements OnInit {
 
   public errorMsg: string;
   public successMsg: string;
+  message;
   pedidos;
   movies;
 
@@ -26,7 +27,7 @@ export class AdminprofileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.MoviesAll();
+    // this.MoviesAll();
   }
 
 
@@ -56,7 +57,7 @@ export class AdminprofileComponent implements OnInit {
     const token = localStorage.getItem('authToken');
     if (token){
       const order = orderForm.value;
-      this.ordersService.OrderCreate(order)
+      this.ordersService.getOrderCreate(order)
       .subscribe((pedidos: any) => {
         this.pedidos = pedidos;
       });
@@ -80,6 +81,7 @@ export class AdminprofileComponent implements OnInit {
 
   // MOVIES ALL
   MoviesAll(){
+    console.log(this.movies)
     this.moviesService.getMoviesAll().subscribe((movies: any) => {
       this.movies = movies;
     });
@@ -89,18 +91,18 @@ export class AdminprofileComponent implements OnInit {
   MovieCreate(movieForm: NgForm){
     const movie = movieForm.value;
     console.log(movie);
-    this.moviesService.MovieCreate(movie).subscribe(
-      (res: HttpResponse<object>) => {
-        this.successMsg = res[this.successMsg];
+    this.moviesService.MovieCreate(movie)
+      .subscribe(
+        (res: HttpResponse<any>) => {
+        this.successMsg = res['message'];
+        console.log(this.successMsg)
         setTimeout(() => {
-          this.router.navigate(['login']);
         }, 2000);
-    },
-    (error: HttpErrorResponse) => {
-      this.errorMsg = error.error.message;
-      setTimeout(() =>  this.errorMsg = '' , 2000);
-    }
-    );
+        },
+        (error: HttpErrorResponse) => {
+        this.errorMsg = error.error.message;
+        setTimeout(() =>  this.errorMsg = '' , 2000);
+    })
   }
 
   // MOVIE MODIFY
