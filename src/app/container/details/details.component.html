@@ -80,7 +80,7 @@
         <div></div>
             <h3>Populares</h3>
               
-                    <div *ngFor="let pelicula of peliculas | slice:0:4"> 
+                    <div *ngFor="let pelicula of genres | slice:0:4"> 
                         <p> {{ pelicula.title }} </p>
                         <img [src]= "getImage(pelicula)" style="width: 30vh" alt="" [routerLink]="'/details/' + pelicula.id">
                     </div>
