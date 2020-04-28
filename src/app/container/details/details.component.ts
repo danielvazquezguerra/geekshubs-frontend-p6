@@ -21,8 +21,8 @@ export class DetailsComponent implements OnInit {
   detalle: any;
   genres: any;
   companies: any;
-  populares: '';
-  premieres: '';
+  populares: any;
+  premieres: any;
   actores: any;
   pedidos;
   movie: any;
