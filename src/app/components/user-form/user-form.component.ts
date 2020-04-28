@@ -4,7 +4,7 @@ import { UsersService } from '../../services/users.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
-
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-user-form',
@@ -13,28 +13,31 @@ import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 })
 export class UserFormComponent implements OnInit {
 
-  user: '';
+  public user;
   public message: string;
-  id: 2;
 
 
   constructor(
+    private route: ActivatedRoute,
     private usersService: UsersService,
     public router: Router
   ) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe((params: Params) => {
+    });
+    this.user = this.usersService.getUser();
   }
 
   // MODIFICAR USUARIO
-  ModifyUser(id: number, userForm: NgForm) {
-    const body = userForm.value;
-    this.usersService.modifiedUserById(id, body).subscribe(
+  ModifyUser(userModifyForm: NgForm) {
+    console.log(this.user);
+    const body = userModifyForm.value;
+    this.usersService.modifiedUserById(body).subscribe(
       (res: HttpResponse<object>) => {
       this.message = res['message'];
-      this.usersService.modifiedUserById(res['user'], [body]);
-    }
-  );
-}
+      }
+    );
+  }
 
 }
