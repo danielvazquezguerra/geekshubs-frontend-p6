@@ -30,7 +30,7 @@
                 <div *ngIf="detalle.homepage">
                     <a class="mv-homepage" href=" {{ detalle.homepage}} " target="_blank">Web pelicula</a>
                 </div>
-                <div class="rent-box d-flex w-100 m-0 p-0">
+                <div class="rent-box d-flex w-100 m-0 pt-3">
 
                     <nz-select ngModel="daysRent" nzPlaceHolder="Alquiler por 5 días.">
                         <nz-option nzValue="5" nzLabel="Alquiler por 5 días."></nz-option>
@@ -38,11 +38,10 @@
                     </nz-select>
                     
                     <!-- BOTON ALQUILER GUEST -->
-                     <button class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()"> Alquilar </button>
-                    
+                     <button class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()" nz-button nzType="default">Alquilar</button>
+
                      <!-- BOTON ALQUILER LOGIN -->
-                     <button (click)="OrderCreate(movie)" *ngIf="usersService.getUser()"> Alquilar </button>
-                     
+                     <button class="bt-rent" (click)="OrderCreate(movie)" *ngIf="usersService.getUser()" nz-button nzType="default">Alquilar</button>
                 </div>
                 
             </div>
@@ -54,22 +53,27 @@
         </article>
 
     </section>
-    <section>
-    
-                  
+    <section class="casting w-100 container">
+
+        <h3 class="casting-title">Casting.</h3>
+       
+        <!-- ACTORES -->
+        <div class="row">
             
-            <!-- ACTORES -->
-            <div>
-                <h3>Casting</h3>
-                <div class="grid">
-                    <div *ngFor="let actor of actores | slice:0:8"> 
-                        <h4> {{ actor.name }} </h4>
-                        <p> {{ actor.character }} </p>
-                        <img [src]= "getImage3(actor)" style="width: 30vh" alt="" [routerLink]="'/details/' + actor.id">
-                    </div>
-                </div> 
+            <div class="actores" *ngFor="let actor of actores | slice:0:8"> 
+                
+                <div class="actor-box col">
+                    
+                    <p class="actor-name"> {{ actor.name }}. </p>
+                    <p> {{ actor.character }} </p>
+                    <img class="actor-img" [src]= "getImage3(actor)" alt="{{ actor.name }}" [routerLink]="'/details/' + actor.id">
+
+                </div>            
+
             </div>
-            
+
+        </div>
+          
     </section>
         
         <!-- PELICULAS POPULARES -->

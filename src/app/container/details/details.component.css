@@ -9,9 +9,12 @@
 
 .movie-left {
     
+    
 }
 
 .movie-right {
+
+    border-left: 1px solid white;
    
 }
 
@@ -36,6 +39,7 @@
 
 .info-box {
     width: 50%;
+
    
 }
 
@@ -57,6 +61,7 @@
 }
 
 .mv-average {
+    font-family: 'Poppins', sans-serif;
     font-size: 2em;
     color: rgb(79, 0, 110);
     font-weight: 800;
@@ -110,6 +115,34 @@
 nz-select {
 
     width: 35%;
-    @select-border-color: @border-color-base;
+    margin-right: 10px;
+    color: white;
 
+}
+
+.actor-box {
+    width: 150px;
+}
+
+.actor-img {
+    width: 100%;
+    height: auto;
+}
+
+.casting {
+    border-top: 2px solid black;
+    margin-top: 20px;
+}
+
+.casting-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    color: black;
+
+}
+
+.actor-name {
+    font-size: 0.8em;
+    font-family: 'Poppins', sans-serif;
+    color: black;
 }
