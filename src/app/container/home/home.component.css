@@ -12,7 +12,6 @@
     display: flex;
     width: 100%;
     height: 90%;
-    
 
 }
 
@@ -56,6 +55,8 @@
     margin-bottom: 10%;
     max-width: 60%;
     height: auto;
+    border: 5px solid rgb(0, 255, 242);
+    text-transform: capitalize;
 }
 
 .rent-box {
@@ -73,17 +74,21 @@
 
 /*FORMATO DE LA INFO DE LA PELICULA*/
 
-.title {
+.mv-title {
 
     max-width: 80%;
-    font-size: 30px;
+    font-size: 3em;
     font-weight: 800;
-    line-height: 35px;
+    line-height: 1em;
+    color:rgb(0, 255, 242);
 
 }
 
-.sinopsis {
-    font-size: 11px;
+.mv-overview {
+    font-size: 0.8em;
+    color: white;
+    font-weight: 200;
+    text-transform: initial;
 }
 
 .degradado {
@@ -91,17 +96,23 @@
     color: white;
     width: 100%;
     position: absolute;
+    top: 0px;
     z-index: -1;
-    background-image: linear-gradient(90deg, rgba(39, 39, 39,30),rgba(0, 0, 0,0));
+    background-image: linear-gradient(90deg, rgba(39, 39, 39,35),rgba(0, 0, 0,0));
     mix-blend-mode: multiply;
 
 }
 
 .video {
+
     width: 100%;
-    height: 100%;
+    height: auto;
     position: absolute;
+    top: -200px;
     z-index: -2;
+    filter: grayscale();
+    mix-blend-mode: multiply;
+
 }
 
 .bt-buscar {
@@ -114,12 +125,50 @@
     outline: none;
 }
 
-.caja-roja {
-    height: 400px;
-    width: 300px;
+.mv-average {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    color: rgb(79, 0, 110);
+    font-weight: 800;
+    margin: 0px;
+
 }
 
-.grid {
-    display: inline;
-    grid-template-columns: repeat(4, 1fr);
+
+.mv-release {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 0px;
+    margin-left: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+    
+    .bt-genre {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.9em;
+        border: 2px solid white;
+        padding-right: 5px;
+        padding-left: 5px;
+        margin: 0px;
+        margin-left: 3px;
+        margin-right: 3px;
+        color: white;
+    }
+    
+
+.bt-rent {  
+    
+    width: 100px;
+    color: black;
+    background-color: rgb(0, 255, 242);
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    outline: none;
+    border: 0px;
+    margin-top: 10px;
 }

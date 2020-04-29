@@ -3,26 +3,41 @@
 
  
     <!-- main superior -->
-    <section class="main-up d-flex justify-content-between align-items-center m-0">
+    <section class="main-up d-flex justify-content-between align-items-center m-0 p-0">
         
-        <div class="degradado"></div>
-
-        <iframe class="video" src="https://www.youtube.com/embed/q2QXoFZekNE?&autoplay=1" frameborder="0" allowfullscreen></iframe>
-
-        <!-- caja para las peliculas. -->
-        <div class="movie-box d-flex align-items-end m-0 p-0">
-
-            <div class="movie-info d-flex flex-column p-0">
-                
-                <p class="title">Título de la película mas largo que el otro.</p>
-                <p class="generos">Generos</p>
-                <p class="sinopsis">Tras cumplir 50 años, Walter White (Bryan Cranston), un profesor de química de un instituto de Albuquerque, Nuevo México, se entera de que tiene un cáncer de pulmón incurable. Casado con Skyler (Anna Gunn) y con un hijo discapacitado (RJ Mitte), la brutal noticia lo impulsa a dar un drástico cambio a su vida: decide, con la ayuda de un antiguo alumno (Aaron Paul), fabricar anfetaminas y ponerlas a la venta. Lo que pretende es liberar a su familia de problemas económicos cuando se produzca el fatal desenlace.</p>
-                
-            </div>
+  
+        <div *ngFor="let movie of populares | slice:0:1">
             
+            <div class="degradado"></div> 
+            <img class="video" [src]= "getImage(movie)" alt=""> 
             
         </div>
         
+        <div *ngFor="let movie of populares | slice:0:1">
+            
+            <div class="movie-info d-flex flex-column p-5 m-5">
+
+                <p class="mv-title">{{ movie.title }}</p>
+
+                <div class="average-box d-flex align-items-center w-100 mt-3 mb-3">
+                    
+                    <p class="mv-average"> {{ movie.vote_average }} </p><span class="average-top"> / 10</span>
+                    <p class="mv-release"> {{ movie.release_date | date:"yyyy" }} </p> 
+                    <a href="#" class="bt-genre">CIENCIA FICCIÓN</a>
+                    
+                    <div *ngFor="let genre of generos | slice:0:3"> 
+                        <a class="bt-genre" href="#"> {{ genre.name }} </a>
+                    </div>
+                    
+                </div>
+                
+                <p class="mv-overview">{{movie.overview}}</p>
+                
+                <button class="bt-rent">Alquilar</button>              
+            </div>
+                
+        </div>
+      
         <!-- botones para alquilar -->
         <div class="rent-box m-3 p-0 d-flex justify-content-end">
             
