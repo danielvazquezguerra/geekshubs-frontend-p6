@@ -3,7 +3,7 @@
 
  
     <!-- main superior -->
-    <section class="main-up d-flex justify-content-between align-items-center m-0 p-0">
+    <section class="main-up d-flex m-0 p-0">
         
   
         <div *ngFor="let movie of populares | slice:0:1">
@@ -13,43 +13,52 @@
             
         </div>
         
-        <div *ngFor="let movie of populares | slice:0:1">
+        <div class="up-left d-flex w-50 h-100 m-0 p-5">
             
-            <div class="movie-info d-flex flex-column p-5 m-5">
-
-                <p class="mv-title">{{ movie.title }}</p>
-
-                <div class="average-box d-flex align-items-center w-100 mt-3 mb-3">
-                    
-                    <p class="mv-average"> {{ movie.vote_average }} </p><span class="average-top"> / 10</span>
-                    <p class="mv-release"> {{ movie.release_date | date:"yyyy" }} </p> 
-                    <a href="#" class="bt-genre">CIENCIA FICCIÓN</a>
-                    
-                    <div *ngFor="let genre of generos | slice:0:3"> 
-                        <a class="bt-genre" href="#"> {{ genre.name }} </a>
+            <div *ngFor="let movie of populares | slice:0:1">
+                
+                <div class="movie-info d-flex flex-column">
+    
+                    <p class="mv-title">{{ movie.title }}</p>
+    
+                    <div class="average-box d-flex align-items-center w-100 mt-3 mb-3">
+                        
+                        <p class="mv-average"> {{ movie.vote_average }} </p><span class="average-top"> / 10</span>
+                        <p class="mv-release"> {{ movie.release_date | date:"yyyy" }} </p> 
+                        <a href="#" class="bt-genre">CIENCIA FICCIÓN</a>
+                        
+                        <div *ngFor="let genre of generos | slice:0:3"> 
+                            <a class="bt-genre" href="#"> {{ genre.name }} </a>
+                        </div>
+                        
                     </div>
                     
+                    <p class="mv-overview">{{movie.overview}}</p>
+                    
+                    <button class="bt-rent">Alquilar</button>              
                 </div>
-                
-                <p class="mv-overview">{{movie.overview}}</p>
-                
-                <button class="bt-rent">Alquilar</button>              
+                    
             </div>
-                
-        </div>
-      
-        <!-- botones para alquilar -->
-        <div class="rent-box m-3 p-0 d-flex justify-content-end">
+          
             
-            <mat-form-field appearance="legacy">
-                <mat-label>Que peli buscas?</mat-label>
-                <input matInput placeholder="Actor / Titulo / Genero">
-                <mat-hint>Ya casi tienes lo que buscas</mat-hint>
-              </mat-form-field>
-            <button class="bt-buscar">Buscar</button>
+        </div>
+        
+        <div class="up-right w-50 d-flex flex-column justify-content-center align-content-center h-100 m-0 p-0">
+
+            <!-- botones para alquilar -->
+            <div class="rent-box p-3 d-flex justify-content-end align-items-center">
+                
+                <mat-form-field appearance="legacy">
+                    <mat-label>Que peli buscas?</mat-label>
+                    <input matInput placeholder="Actor / Titulo / Genero">
+                    <mat-hint>Ya casi tienes lo que buscas</mat-hint>
+                  </mat-form-field>
+                <a href="" class="search material-icons">search</a>
+    
+            </div>
 
         </div>
-
+        
     </section>
 
     <section class="main-down d-flex justify-content-center align-items-center m-0">

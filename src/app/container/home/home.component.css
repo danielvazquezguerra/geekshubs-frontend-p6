@@ -9,10 +9,19 @@
 
 .main-up {
 
-    display: flex;
     width: 100%;
     height: 90%;
+    border: 1px solid white;
 
+}
+
+.up-left {
+    border: 1px solid white;
+    
+}
+
+.up-right {
+    border: 1px solid white;
 }
 
 .main-up p {
@@ -50,19 +59,20 @@
 
 .movie-info {
 
-    color: white;
-    margin-left: 5%;
-    margin-bottom: 10%;
-    max-width: 60%;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    padding: 3em;
     border: 5px solid rgb(0, 255, 242);
     text-transform: capitalize;
 }
 
 .rent-box {
-    border: 1px solid white;
-    width: 20%;
-    height: 60px;
+
+    width: 400px;
+    height: auto;
+    background-color: white;  
+    padding: 2em;
+    /* rgb(255, 0, 64) */
 
 }
 
@@ -72,11 +82,12 @@
     height: 400px;
 }
 
+
+
 /*FORMATO DE LA INFO DE LA PELICULA*/
 
 .mv-title {
 
-    max-width: 80%;
     font-size: 3em;
     font-weight: 800;
     line-height: 1em;
@@ -172,3 +183,33 @@
     border: 0px;
     margin-top: 10px;
 }
+
+.search {
+    color: white;
+
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
