@@ -73,32 +73,31 @@
             </div>
 
         </div>
+
+        <!-- PELICULAS RELACIONADAS POR GENERO ** -->
+        <div class="row">
+            <h3>{{nombre}}</h3>
+        </div>
+        <div *ngFor="let pelicula of moviesGenre | slice:0:8"> 
+            <p>{{ pelicula.title }}</p>
+            <img [src]= "getImage(pelicula)" alt="" [routerLink]="'/details/' + pelicula.id">
+        </div>
+
           
     </section>
         
-        <!-- PELICULAS POPULARES -->
-        
-        <app-movies-genre>
-            
-        </app-movies-genre>
-              
-                    <div *ngFor="let pelicula of populares | slice:0:4"> 
-                        <p> {{ pelicula.title }} </p>
-                        <img [src]= "getImage(pelicula)" style="width: 30vh" alt="" [routerLink]="'/details/' + pelicula.id">
-                    </div>
-                 
        
             
-            
-            <!-- PELICULAS PREMIERE -->
-            <div>
-                <h3>Premiere</h3>
-                <div class="grid">
-                    <div *ngFor="let popular of premieres | slice:0:4"> 
-                        <p> {{ popular.title }} </p>
-                        <img [src]= "getImage(popular)" style="width: 30vh" alt="" [routerLink]="'/detalles/' + popular.id">
-                    </div>
-                </div>
-            </div>
-            
 </main>
+        
+                         
+
+
+       
+
+
+    
+
+
+
+

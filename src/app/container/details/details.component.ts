@@ -3,11 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
 import { MoviesService } from '../../services/movies.service';
-import { ActorsService } from '../../services/actors.service';
+import { GenresService } from '../../services/genres.service';
 import { OrdersService } from '../../services/orders.service';
 import { UsersService } from 'src/app/services/users.service';
 import { Router } from '@angular/router';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-details',
@@ -27,6 +28,10 @@ export class DetailsComponent implements OnInit {
   pedidos;
   movie: any;
   daysRent: any = 1;
+  pedido;
+  moviesGenre;
+  generos = [];
+  nombre;
   public message: string;
   public errorMsg: string;
   public successMsg: string;
@@ -34,6 +39,7 @@ export class DetailsComponent implements OnInit {
   constructor(
     public usersService: UsersService,
     public ordersService: OrdersService,
+    public genresService: GenresService,
     private route: ActivatedRoute,
     private moviesService: MoviesService,
     public router: Router,
@@ -46,7 +52,7 @@ export class DetailsComponent implements OnInit {
       // this.fetchMoviesRecommendedById(params.id);
       // this.fetchMoviesSimilarById(params.id);
       this.movie = params.id;
-
+      this.getGenreId
     });
   }
 
@@ -54,8 +60,27 @@ export class DetailsComponent implements OnInit {
     this.moviesService.getMoviesById(id).subscribe((pelicula: any) => {
       this.detalle = pelicula;
       this.genres = pelicula.Genres;
+      for(const genre of this.genres){
+        this.generos.push(genre.id);
+        
+      }
+      const genre1 = this.generos[0]
+      this.getGenreId(genre1);
       this.actores = pelicula.Actors;
+      
     });
+  }
+
+  getGenreId(genre1){
+    console.log(`${genre1}`)
+    this.genresService.getGenresById(genre1).subscribe((genres: any) => {
+      for(const genre of genres){
+        this.nombre = genre.name;
+        this.moviesGenre = genre.Movies;
+      }
+      console.log(`MovieGenres2: ${this.moviesGenre}`);
+    })
+
   }
 
   getImage(pelicula: any){
@@ -81,29 +106,31 @@ export class DetailsComponent implements OnInit {
   // ORDER CREATE
   OrderCreate(orderForm: NgForm){
     const token = localStorage.getItem('authToken') || '';
-    // if (token){
-      // this.ordersService.daysToRent(this.daysRent);
-      // }
     const order = {
+      dateRent: moment(new Date()).toDate(),
+      dateArrival: moment(new Date()).add(2, 'days').toDate(),
       daysRent: parseInt(this.daysRent),
       price: (this.daysRent) * 1.8,
       UserId: this.usersService['user']['id'],
       MovieId: parseInt(this.movie),
       };
-      console.log(order)
+    console.log(order)
     this.ordersService.getOrderCreate(order)
     .subscribe(
         (res: HttpResponse<any>) => {
         this.successMsg = res['message'];
-        console.log(this.successMsg)
+        console.log(this.successMsg);
         setTimeout(() => {
         }, 2000);
         },
         (error: HttpErrorResponse) => {
         this.errorMsg = error.error.message;
         setTimeout(() =>  this.errorMsg = '' , 2000);
-    })
+
+    });
 }
+
+  
 
 rentMovieGuest() {
   this.router.navigate(['login']);
@@ -113,4 +140,5 @@ rentMovieLogin() {
   console.log('boton si esta logueado');
   this.router.navigate(['login']);
 }
+
 }

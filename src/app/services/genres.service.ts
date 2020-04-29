@@ -17,7 +17,7 @@ export class GenresService {
   }
 
   getGenresById(id: number){
-    return this.http.get(`${this.route}genres/id=${id}`);
+    return this.http.get(`http://localhost:3000/genres/id=${id}`);
   }
 
   getGenresByName(name: string){
