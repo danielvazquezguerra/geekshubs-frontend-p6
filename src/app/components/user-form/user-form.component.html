@@ -1,18 +1,19 @@
 <h3>Modificar datos de Usuario</h3>
-
-<form #userModifyForm="ngForm" (submit)="ModifyUser(userModifyForm)">
-    <input type="text" name="username" value={{user.username}} ngModel id="username" type="text"  required>
-    <input type="text" name="firstName" ngModel #firstName="ngModel" id="firstName" placeholder="firstName">
-    <input type="text" name="lastName" ngModel #lastName="ngModel" id="lastName" placeholder="lastName">
-    <input type="email" name="email" ngModel #email="ngModel" id="email" placeholder="email" required>
-    <input type="oldPassword" name="oldPassword" ngModel #oldPassword="ngModel" id="oldPassword" placeholder="oldPassword" required>
-    <input type="password" name="password" ngModel #password="ngModel" id="password" placeholder="password" required>
-    <input type="text" name="address" ngModel #address="ngModel" id="address" placeholder="address">
-    <input type="text" name="imageURL" ngModel #imageURL="ngModel" id="imageURL" placeholder="imageURL">
-    <input type="text" name="CityId" ngModel #CityId="ngModel" id="CityId" placeholder="CityId">
-    <button type="submit">Modificar</button>
-    <!-- Mensajes respuesta -->
-    <div class="message" *ngIf="message">
-        {{message}}
-      </div>
-</form> 
+<div class="profile row" *ngIf="usersService.getUser() as user">
+  <form #userModifyForm="ngForm" (submit)="ModifyUser(userModifyForm)">
+      <input type="text" [(ngModel)]="user.username" name="username" ngModel #username="ngModel" id="username" type="text" placeholder="username" required>
+      <input type="text" [(ngModel)]="user.firstName" name="firstName" ngModel #firstName="ngModel" id="firstName" placeholder="firstName">
+      <input type="text" [(ngModel)]="user.lastName" name="lastName" ngModel #lastName="ngModel" id="lastName" placeholder="lastName">
+      <input type="email" [(ngModel)]="user.email" name="email" ngModel #email="ngModel" id="email" placeholder="email" required>
+      <input type="text" name="oldPassword" ngModel #oldPassword="ngModel" id="oldPassword" placeholder="Old Password" required>
+      <input type="text" name="password" ngModel #password="ngModel" id="password" placeholder="New Password" required>
+      <input type="text" [(ngModel)]="user.address" name="address" ngModel #address="ngModel" id="address" placeholder="address">
+      <input type="text" [(ngModel)]="user.imageURL" name="imageURL" ngModel #imageURL="ngModel" id="imageURL" placeholder="imageURL">
+      <input type="number" [(ngModel)]="user.CityId" name="CityId" ngModel #CityId="ngModel" id="CityId" placeholder="CityId">
+      <button type="submit">Modificar</button>
+      <!-- Mensajes respuesta -->
+      <div class="message" *ngIf="message">
+          {{message}}
+        </div>
+  </form> 
+</div>

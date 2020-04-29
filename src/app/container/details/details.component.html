@@ -6,19 +6,19 @@
             
             <div class="img-content d-flex h-100 justify-content-center align-items-center">
                 
-                <img class="img-box" [src]= "getImage(detalle)" alt="{{ detalle.title }}">
+                <img class="img-box" [src]= "getImage(detalle)" alt="{{ detalle?.title }}">
 
             </div>
             
             <div class="info-box d-flex flex-column justify-content-center align-items-start m-0 p-2">
                 
-                <h3 class="mv-title"> {{ detalle.title }} </h3>
-                <p class="mv-id"> ID: {{ detalle.id }} </p>
+                <h3 class="mv-title"> {{ detalle?.title }} </h3>
+                <p class="mv-id"> ID: {{ detalle?.id }} </p>
                 
                 <div class="average-box d-flex align-items-center w-100 mb-3">
                     
-                    <p class="mv-average"> {{ detalle.vote_average }} </p><span class="average-top"> / 10</span>
-                    <p class="mv-release"> {{ detalle.release_date | date:"yyyy" }} </p>               
+                    <p class="mv-average"> {{ detalle?.vote_average }} </p><span class="average-top"> / 10</span>
+                    <p class="mv-release"> {{ detalle?.release_date | date:"yyyy" }} </p>               
                     
                     <div *ngFor="let genre of genres | slice:0:3"> 
                         <a class="bt-genre" href="#"> {{ genre.name }} </a>
@@ -26,30 +26,51 @@
 
                 </div>
                 
-                <p class="mv-overview"> {{ detalle.overview }} </p>
-                <div *ngIf="detalle.homepage">
-                    <a class="mv-homepage" href=" {{ detalle.homepage}} " target="_blank">Web pelicula</a>
+                <p class="mv-overview"> {{ detalle?.overview }} </p>
+                <div *ngIf="detalle?.homepage">
+                    <a class="mv-homepage" href=" {{ detalle?.homepage}} " target="_blank">Web pelicula</a>
                 </div>
-                <div class="rent-box d-flex w-100 m-0 pt-3">
 
-                    <nz-select ngModel="daysRent" nzPlaceHolder="Alquiler por 5 días.">
-                        <nz-option nzValue="5" nzLabel="Alquiler por 5 días."></nz-option>
-                        <nz-option nzValue="10" nzLabel="Alquiler por 10 días."></nz-option>
+                <!-- SELECT DAYS -->
+                <div class="rent-box d-flex w-100 m-0 pt-3">
+                    <nz-select [(ngModel)]="selectedValue" nzAllowClear nzPlaceHolder="Elige" name="valueCheck">
+                        <nz-option *ngFor="let option of optionList" [nzValue]="option" [nzLabel]="option.label" ></nz-option>
                     </nz-select>
                     
                     <!-- BOTON ALQUILER GUEST -->
                      <button class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()" nz-button nzType="default">Alquilar</button>
 
                      <!-- BOTON ALQUILER LOGIN -->
-                     <button class="bt-rent" (click)="OrderCreate(movie)" *ngIf="usersService.getUser()" nz-button nzType="default">Alquilar</button>
+                     <button class="bt-rent" (click)="orderCreate(movie)" *ngIf="usersService.getUser()" nz-button nzType="default">Alquilar</button>
+                </div>
+
+                <!-- Mensajes  -->
+                <div class="succesmessage" *ngIf="successMsg">
+                    {{successMsg}}
+                </div>
+            
+                <div class="errormessage">
+                    {{errorMsg}}
                 </div>
                 
             </div>
 
         </article>
 
-        <article class="movie-right d-flex flex-column w-25 h-100 m-0 p-0">
-
+        <article class="movie-right d-flex flex-column w-25 h-100 m-0 p-0" *ngIf="order !== null">
+                <section>
+                    <div>
+                        <h3>Pedidos</h3>
+                        <p> {{ order?.id }}</p>
+                        <p> {{ order?.dateRent | date }}</p>
+                        <p> {{ order?.dateArrival | date }}</p>
+                        <p> {{ order?.daysRent }}</p>
+                        <p> {{ order?.status }}</p>
+                        <p> {{ order?.price }} €</p>
+                        <p> {{ order?.MovieId }}</p>
+                        <p> {{ order?.Movie.title }}</p>
+                    </div>
+                </section> 
         </article>
 
     </section>
@@ -85,8 +106,8 @@
 
           
     </section>
-        
-       
+    
+  
             
 </main>
         

@@ -49,7 +49,7 @@
     <div *ngFor="let actor of actors">
         <div>
             <p>{{ actor.name }}</p>
-            <!-- <img [src]= "getImage(actor)" alt="" [routerLink]="'/details/' + actor.id">  -->
+            <img [src]= "getImage(actor)" alt="" [routerLink]="'/details/' + actor.id"> 
         </div>
     </div>
     
@@ -57,7 +57,7 @@
     <div *ngFor="let pelicula of peliculas | slice:0:20">
         <div>
             <p>{{ pelicula.title }}</p>
-            <!-- <img [src]= "getImage(pelicula)" alt="" [routerLink]="'/details/' + pelicula.id">  -->
+            <img [src]= "getImage(pelicula)" alt="" [routerLink]="'/details/' + pelicula.id"> 
         </div>
     </div>
 

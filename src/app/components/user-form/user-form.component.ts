@@ -19,14 +19,14 @@ export class UserFormComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private usersService: UsersService,
-    public router: Router
+    public usersService: UsersService,
   ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
     });
     this.user = this.usersService.getUser();
+    console.log(this.user);
   }
 
   // MODIFICAR USUARIO

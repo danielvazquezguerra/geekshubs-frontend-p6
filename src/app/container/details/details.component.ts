@@ -27,14 +27,20 @@ export class DetailsComponent implements OnInit {
   actores: any;
   pedidos;
   movie: any;
-  daysRent: any = 1;
+  daysRent;
   pedido;
   moviesGenre;
   generos = [];
   nombre;
+  order;
   public message: string;
   public errorMsg: string;
   public successMsg: string;
+  optionList = [
+    { label: '5 dias = 7€', days: 5, price: 7 },
+    { label: '10 dias = 12€', days: 10, price: 12 }
+  ];
+  selectedValue: any = {};
 
   constructor(
     public usersService: UsersService,
@@ -53,6 +59,7 @@ export class DetailsComponent implements OnInit {
       // this.fetchMoviesSimilarById(params.id);
       this.movie = params.id;
       this.getGenreId
+      // this.order = this.usersService.getOrder();
     });
   }
 
@@ -62,30 +69,27 @@ export class DetailsComponent implements OnInit {
       this.genres = pelicula.Genres;
       for(const genre of this.genres){
         this.generos.push(genre.id);
-        
       }
       const genre1 = this.generos[0]
       this.getGenreId(genre1);
       this.actores = pelicula.Actors;
-      
     });
   }
 
   getGenreId(genre1){
-    console.log(`${genre1}`)
+    console.log(`${genre1}`);
     this.genresService.getGenresById(genre1).subscribe((genres: any) => {
       for(const genre of genres){
         this.nombre = genre.name;
         this.moviesGenre = genre.Movies;
       }
-      console.log(`MovieGenres2: ${this.moviesGenre}`);
     })
 
   }
 
   getImage(pelicula: any){
-    if (pelicula.poster_path){
-      return this.imageURL + (pelicula.poster_path);
+    if (pelicula?.poster_path){
+      return this.imageURL + (pelicula?.poster_path);
     }
     else {
       return this.notImage;
@@ -101,16 +105,13 @@ export class DetailsComponent implements OnInit {
     }
   }
 
-
-
   // ORDER CREATE
-  OrderCreate(orderForm: NgForm){
-    const token = localStorage.getItem('authToken') || '';
+  orderCreate(event){
     const order = {
       dateRent: moment(new Date()).toDate(),
       dateArrival: moment(new Date()).add(2, 'days').toDate(),
-      daysRent: parseInt(this.daysRent),
-      price: (this.daysRent) * 1.8,
+      daysRent: this.selectedValue.days,
+      price: this.selectedValue.price,
       UserId: this.usersService['user']['id'],
       MovieId: parseInt(this.movie),
       };
@@ -126,7 +127,7 @@ export class DetailsComponent implements OnInit {
         (error: HttpErrorResponse) => {
         this.errorMsg = error.error.message;
         setTimeout(() =>  this.errorMsg = '' , 2000);
-
+        return order;
     });
 }
 

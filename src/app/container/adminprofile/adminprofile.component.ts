@@ -27,7 +27,7 @@ export class AdminprofileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.MoviesAll();
+    this.MoviesAll();
   }
 
 
