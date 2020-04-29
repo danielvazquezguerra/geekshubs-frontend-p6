@@ -23,7 +23,6 @@
                     <div *ngFor="let genre of genres | slice:0:3"> 
                         <a class="bt-genre" href="#"> {{ genre.name }} </a>
                     </div>
-
                 </div>
                 
                 <p class="mv-overview"> {{ detalle?.overview }} </p>
@@ -51,10 +50,8 @@
             
                 <div class="errormessage">
                     {{errorMsg}}
-                </div>
-                
+                </div>  
             </div>
-
         </article>
 
         <article class="movie-right d-flex flex-column w-25 h-100 m-0 p-0" *ngIf="order !== null">
@@ -72,27 +69,21 @@
                     </div>
                 </section> 
         </article>
-
     </section>
+
     <section class="casting w-100 container">
 
         <h3 class="casting-title">Casting.</h3>
        
         <!-- ACTORES -->
         <div class="row">
-            
             <div class="actores" *ngFor="let actor of actores | slice:0:8"> 
-                
                 <div class="actor-box col p-2">
-                    
                     <p class="actor-name"> {{ actor.name }}. </p>
                     <p> {{ actor.character }} </p>
                     <img class="actor-img" [src]= "getImage3(actor)" alt="{{ actor.name }}" [routerLink]="'/details/' + actor.id">
-
                 </div>            
-
             </div>
-
         </div>
 
         <!-- PELICULAS RELACIONADAS POR GENERO ** -->
@@ -103,12 +94,8 @@
             <p>{{ pelicula.title }}</p>
             <img [src]= "getImage(pelicula)" alt="" [routerLink]="'/details/' + pelicula.id">
         </div>
-
-          
-    </section>
-    
-  
-            
+     
+    </section>       
 </main>
         
                          

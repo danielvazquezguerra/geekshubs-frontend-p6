@@ -35,6 +35,7 @@ export class UserFormComponent implements OnInit {
     const body = userModifyForm.value;
     this.usersService.modifiedUserById(body).subscribe(
       (res: HttpResponse<object>) => {
+      // tslint:disable-next-line: no-string-literal
       this.message = res['message'];
       }
     );

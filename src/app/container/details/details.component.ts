@@ -53,12 +53,9 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-      // this.fetchMoviesById(params.id);
       this.detailsById(params.id);
-      // this.fetchMoviesRecommendedById(params.id);
-      // this.fetchMoviesSimilarById(params.id);
       this.movie = params.id;
-      this.getGenreId
+      // this.getGenreId;
       // this.order = this.usersService.getOrder();
     });
   }
@@ -67,10 +64,10 @@ export class DetailsComponent implements OnInit {
     this.moviesService.getMoviesById(id).subscribe((pelicula: any) => {
       this.detalle = pelicula;
       this.genres = pelicula.Genres;
-      for(const genre of this.genres){
+      for (const genre of this.genres){
         this.generos.push(genre.id);
       }
-      const genre1 = this.generos[0]
+      const genre1 = this.generos[0];
       this.getGenreId(genre1);
       this.actores = pelicula.Actors;
     });
@@ -79,12 +76,11 @@ export class DetailsComponent implements OnInit {
   getGenreId(genre1){
     console.log(`${genre1}`);
     this.genresService.getGenresById(genre1).subscribe((genres: any) => {
-      for(const genre of genres){
+      for (const genre of genres){
         this.nombre = genre.name;
         this.moviesGenre = genre.Movies;
       }
-    })
-
+    });
   }
 
   getImage(pelicula: any){
@@ -112,13 +108,16 @@ export class DetailsComponent implements OnInit {
       dateArrival: moment(new Date()).add(2, 'days').toDate(),
       daysRent: this.selectedValue.days,
       price: this.selectedValue.price,
+      // tslint:disable-next-line: no-string-literal
       UserId: this.usersService['user']['id'],
+      // tslint:disable-next-line: radix
       MovieId: parseInt(this.movie),
       };
-    console.log(order)
+    console.log(order);
     this.ordersService.getOrderCreate(order)
     .subscribe(
         (res: HttpResponse<any>) => {
+        // tslint:disable-next-line: no-string-literal
         this.successMsg = res['message'];
         console.log(this.successMsg);
         setTimeout(() => {
@@ -131,15 +130,13 @@ export class DetailsComponent implements OnInit {
     });
 }
 
-  
+  rentMovieGuest() {
+    this.router.navigate(['login']);
+  }
 
-rentMovieGuest() {
-  this.router.navigate(['login']);
-}
-
-rentMovieLogin() {
-  console.log('boton si esta logueado');
-  this.router.navigate(['login']);
-}
+  rentMovieLogin() {
+    console.log('boton si esta logueado');
+    this.router.navigate(['login']);
+  }
 
 }
