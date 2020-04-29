@@ -1,27 +1,139 @@
-# FrontendP6
+# GH-Proyecto1-Netflix-Frontend 🎞
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+FrontEnd del primer proyecto del Bootcamp FullStack de GeeksHubs de una web de alquiler de peliculas.
 
-## Development server
+## Table of Content
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [Built With](##-Built-With)
+- [Knowledge](##-Knowledge)
+- [Getting Started](##-Getting-Started)
+- [Partes](##-Partes)
+- [Documentation](##-Documentation)
+- [Author](##-Author)
 
-## Code scaffolding
+## Built With 🛠️
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Knowledge 🧠 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* Angular
+* Angular Material
+* Typescript
+* 
+* 
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Getting Started 🚀 
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Clonando repositorio
 
-## Further help
+```js
+git clone https://github.com/danielvazquezguerra/geekshubs-frontend-p6.git
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+### Instalación dependencias
+
+- Angular
+- Angular-cli
+- ng-zorro-antd
+- rxjs
+- tslint
+- typescript
+
+
+### Comenzando proyecto Angular
+
+
+### Configuración Angular-CLI
+
+npm install -g @angular/cli
+ng new app
+cd app
+ng serve
+
+
+### Arrancar el servidor
+
+Para arrancar el servidor tienes que introducir el comando:
+
+```js
+ng serve
+```
+
+
+## Partes 
+
+- Components
+- Containers
+- Models
+- Services
+
+### Components
+
+### Containers
+
+- Home
+- Results
+- Details
+- Login
+- Register
+- Profile
+- Admin Profile
+
+
+### Models
+
+- Movie
+- Order
+- User
+
+
+### Services
+
+#### Actors
+
+#### City
+
+#### Genres
+
+#### Movies
+#### Orders
+#### Search
+#### Users
+
+
+## Documentation 📚 
+
+- [Angular Documentation](https://angular.io/docs)
+- [Angular CLI](https://cli.angular.io/)
+- [Angular Material](https://material.angular.io/)
+- [Ant Design](https://ng.ant.design/docs/introduce/en)
+- [Bootstrap](https://ng-bootstrap.github.io/#/getting-started)
+
+
+## Author 👨🏼‍💻 
+
+* **Daniel Vazquez Guerra** - [danielvazquezguerra](https://github.com/danielvazquezguerra)
+* **Rafael Fernández Gómez** - [FerrowRafael](https://github.com/FerrowRafael)
+
+
+## Images
+
+### Home
+
+### Movies
+
+### Details
+
+### Login
+
+### Register
+
+### User Profile
+
+### Admin Profile
+
+
+
