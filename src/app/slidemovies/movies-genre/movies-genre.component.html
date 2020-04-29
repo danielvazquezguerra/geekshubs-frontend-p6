@@ -1,10 +1,10 @@
-<main class="populares-main container">
+<main class="populares-main m-0 p-0">
     
-    <h3>Populares</h3>
+    <h3 class="populares-title w-100">Populares.</h3>
 
-    <div class="row">
+    <!-- <div class="row content-slide d-flex">
             
-        <div class="populares" *ngFor="let pelicula of populares | slice:0:8"> 
+        <div class="populares d-flex" *ngFor="let pelicula of populares | slice:0:8"> 
             
             <div class="movie-box col p-2">
                 
@@ -15,8 +15,41 @@
 
         </div>
 
-    </div>
+    </div> -->
 
+    <!-- <button class="glider-prev">
+        <i class="fa fa-chevron-left"></i>
+    </button>
+
+    <div class="glider">
+
+        
+    </div>
+    
+    <button class="glider-next">
+        <i class="fa fa-chevron-right"></i>
+    </button>
+    
+    <div id="dots" class="glider-dots"></div> -->
+    
+    <ngx-glide class="pop-glide">
+        
+        <div class="row content-slide flex-wrap">
+            
+            <div class="populares" *ngFor="let pelicula of populares | slice:0:8"> 
+                
+                <div class="movie-box p-2">
+    
+                    <img class="movie-img" [src]= "getImage(pelicula)" alt="{{ pelicula.title }}" [routerLink]="'/details/' + pelicula.id">
+                    <figcaption class="movie-name"> {{ pelicula.title }}. </figcaption>
+    
+                </div>            
+    
+            </div>
+    
+        </div>
+
+    </ngx-glide>
 
 </main>
 

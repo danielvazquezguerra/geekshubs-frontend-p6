@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
+
 import { MoviesService } from '../../services/movies.service';
 import { GenresService } from '../../services/genres.service';
+
+import { OwlOptions } from 'ngx-owl-carousel-o';
+
 
 @Component({
   selector: 'app-movies-genre',
@@ -20,13 +24,16 @@ export class MoviesGenreComponent implements OnInit {
   constructor(
     private moviesService: MoviesService,
     private genresService: GenresService,
+
   ) {
 
   }
 
   ngOnInit(): void {
+
     this.AllMoviesPopular();
     this.AllMoviesPremiere();
+
   }
 
 // PELICULAS POR TITULO
@@ -56,8 +63,6 @@ export class MoviesGenreComponent implements OnInit {
       return this.notImage;
     }
   }
+
 }
-
-
-
 

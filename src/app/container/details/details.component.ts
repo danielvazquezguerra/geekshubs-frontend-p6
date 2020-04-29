@@ -8,7 +8,7 @@ import { OrdersService } from '../../services/orders.service';
 import { UsersService } from 'src/app/services/users.service';
 import { Router } from '@angular/router';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
-import * as moment from 'moment';
+// import * as moment from 'moment';
 
 @Component({
   selector: 'app-details',
@@ -107,9 +107,9 @@ export class DetailsComponent implements OnInit {
   OrderCreate(orderForm: NgForm){
     const token = localStorage.getItem('authToken') || '';
     const order = {
-      dateRent: moment(new Date()).toDate(),
-      dateArrival: moment(new Date()).add(2, 'days').toDate(),
-      daysRent: parseInt(this.daysRent),
+      // dateRent: moment(new Date()).toDate(),
+      // dateArrival: moment(new Date()).add(2, 'days').toDate(),
+      // daysRent: parseInt(this.daysRent),
       price: (this.daysRent) * 1.8,
       UserId: this.usersService['user']['id'],
       MovieId: parseInt(this.movie),

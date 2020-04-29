@@ -1,5 +1,8 @@
 .populares-main {
-    border: 1px solid white;
+    
+    margin-top: 40px;
+    height: 200px;
+    
 }
 
 .movie-img {
@@ -12,19 +15,40 @@
     margin-top: 20px;
 }
 
-.casting-title {
+.populares-title {
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
     color: black;
+    border-bottom: 2px solid black;
 
 }
 
 .movie-name {
+    display: flex;
     font-size: 0.8em;
+    height: auto;
     font-family: 'Poppins', sans-serif;
     color: black;
+    text-transform: capitalize;
+    line-height: 1.2em;
+    margin-top: 10px;
+    border-top: 2px solid black;
+    padding-top: 5px;
 }
 
 .movie-box {
     width: 150px;
+    height: auto;
+    
+}
+
+.populares {
+    width: auto;
+    
+}
+
+.content-slide {
+    
+    width: auto;
+    height: auto;
 }
