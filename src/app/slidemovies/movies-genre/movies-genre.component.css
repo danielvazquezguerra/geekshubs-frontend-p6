@@ -1,0 +1,30 @@
+.populares-main {
+    border: 1px solid white;
+}
+
+.movie-img {
+    width: 100%;
+    height: auto;
+}
+
+.casting {
+    border-top: 2px solid black;
+    margin-top: 20px;
+}
+
+.casting-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    color: black;
+
+}
+
+.movie-name {
+    font-size: 0.8em;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+}
+
+.movie-box {
+    width: 150px;
+}

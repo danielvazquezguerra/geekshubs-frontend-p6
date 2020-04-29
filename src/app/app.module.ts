@@ -40,6 +40,7 @@ import { ProfileComponent } from './container/profile/profile.component';
 
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
+import { MoviesGenreComponent } from './slidemovies/movies-genre/movies-genre.component';
 
 registerLocaleData(en);
 //#endregion
@@ -62,6 +63,7 @@ registerLocaleData(en);
     OrdersAllComponent,
     GenreRandomComponent,
     UsersAllComponent,
+    MoviesGenreComponent,
   ],
   imports: [
     BrowserModule,

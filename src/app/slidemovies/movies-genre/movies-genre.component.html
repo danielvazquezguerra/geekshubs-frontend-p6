@@ -1,0 +1,22 @@
+<main class="populares-main container">
+    
+    <h3>Populares</h3>
+
+    <div class="row">
+            
+        <div class="populares" *ngFor="let pelicula of populares | slice:0:8"> 
+            
+            <div class="movie-box col p-2">
+                
+                <img class="movie-img" [src]= "getImage(pelicula)" alt="{{ pelicula.title }}" [routerLink]="'/details/' + pelicula.id">
+                <p class="movie-name"> {{ pelicula.title }}. </p>
+
+            </div>            
+
+        </div>
+
+    </div>
+
+
+</main>
+
