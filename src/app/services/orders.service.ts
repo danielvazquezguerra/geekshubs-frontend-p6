@@ -49,12 +49,6 @@ export class OrdersService {
     return this.http.get(`${this.BASE}orderDate`);
   }
 
-  daysToRent(numDays){
-    console.log('funciona daysToRent');
-    this.daysRent = numDays;
-    this.price = parseInt(this.daysRent) * 1.8; 
-  }
-
   // 5 ORDER CREATE
   getOrderCreate(order): Observable<object>{
       return this.http.post<Order>(`http://localhost:3000/orders/order`, order, {
@@ -62,10 +56,7 @@ export class OrdersService {
           Authorization: localStorage.getItem('authToken') || ''
         }
       });
-  
   }
-
-
 
   // 6 ORDER MODIFY
   getOrderModify(id: number, body: any){
