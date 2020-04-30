@@ -47,6 +47,8 @@ import { ProfileComponent } from './container/profile/profile.component';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { MoviesGenreComponent } from './slidemovies/movies-genre/movies-genre.component';
+import { MoviesAllComponent } from './components/movies-all/movies-all.component';
+import { CreateMovieComponent } from './components/create-movie/create-movie.component';
 
 registerLocaleData(en);
 //#endregion
@@ -70,6 +72,8 @@ registerLocaleData(en);
     GenreRandomComponent,
     UsersAllComponent,
     MoviesGenreComponent,
+    MoviesAllComponent,
+    CreateMovieComponent,
   ],
   imports: [
     BrowserModule,
