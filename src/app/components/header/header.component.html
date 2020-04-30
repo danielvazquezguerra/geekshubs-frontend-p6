@@ -15,13 +15,13 @@
 
     <!-- SIN LOGEAR -->
     <div class="guestZone d-flex align-items-center justify-content-end h-100 w-25" *ngIf="!usersService.getUser()">
-        <a class="bt-rent" [routerLink]="['/register']" routerLinkActive="active">Register</a>
-        <a class="bt-rent" [routerLink]="['/login']" routerLinkActive="active">Login</a>
+        <a class="bt-rent" [routerLink]="['/register']" routerLinkActive="active">REGISTER</a>
+        <a class="bt-rent" [routerLink]="['/login']" routerLinkActive="active">LOGIN</a>
     </div>
 
     <!-- LOGEADO -->
     <div class="userZone login-header" *ngIf="usersService.getUser() as user">
-        <a (click)="logout()">Logout</a>
+        <a class="bt-rent" (click)="logout()">LOGOUT</a>
         <a [routerLink]="['/profile']" class="material-icons search-icon" routerLinkActive="active">{{user.username}}<span>person</span></a>
     </div>
     

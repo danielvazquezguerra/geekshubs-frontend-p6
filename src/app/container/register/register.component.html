@@ -12,7 +12,7 @@
           
           <div class="datos-header d-flex justify-content-start align-items-start w-100 p-1">
             
-            <h2>Registrate aquí.</h2>
+            <h2 class="header-register">Registrate aquí.</h2>
     
           </div>
     
@@ -21,15 +21,17 @@
             <!-- Nombre -->
             <mat-form-field  hintLabel="Max 10 caracteres" appearance="legacy">
               <mat-label>Username</mat-label>
-              <input matInput maxlength="10" placeholder="Ej. Daniel" name="username" id="username">
-              <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+              <input matInput name="userName" #userName="ngModel" 
+              id="userName" placeholder="Nombre de usuario" type="text"
+              ngModel required userName minlength="5" maxlength="30">
+              <mat-hint align="end">{{userName.value?.length || 0}}/10</mat-hint>
             </mat-form-field>
   
             <!-- Email -->
             <mat-form-field hintLabel="Max 10 caracteres" appearance="legacy">
               <mat-label>Email</mat-label>
-              <input matInput #input maxlength="30" #email="ngModel" id="email" placeholder="daniel@gmail.com" 
-              type="email" name="email" required ngModel>
+              <input matInput  name="email" #email="ngModel" id="email" placeholder="rafa@gmail.com" type="email"
+              ngModel required email minlength="5" maxlength="50" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
               <!-- <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint> -->
              <mat-hint align="end" *ngIf="email.errors.required">
               email is required.
@@ -46,13 +48,15 @@
             <!-- Password -->
             <mat-form-field hintLabel="Max 10 caracteres" appearance="legacy">
               <mat-label>Contraseña / Password</mat-label>
-              <input matInput #input maxlength="8" placeholder="Ej. Daniel">
-              <mat-hint align="end">{{input.value?.length || 0}}/8</mat-hint>
+              <input matInput name="password" #password="ngModel" id="password" 
+              placeholder="Contraseña" type="password"
+              ngModel required password minlength="7" maxlength="10" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,40}$">
+              <mat-hint align="end">{{password.value?.length || 0}}/8</mat-hint>
             </mat-form-field>
     
             <!-- boton Enviar -->
-            <!-- <button class="boton-enviar" mat-raised-button>Enviar</button> -->
-            <button type="submit" class="btn btn-success btn-block btn-rounded z-depth-1">Registrarse</button>
+            <button class="boton-enviar" type="submit" mat-raised-button>REGISTRARSE</button>
+            <!-- <button type="submit" class="btn btn-success btn-block btn-rounded z-depth-1">Registrarse</button> -->
     
           </div>
           
