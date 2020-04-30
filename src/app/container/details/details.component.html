@@ -32,16 +32,16 @@
                 </div>
                 <div class="rent-box d-flex w-100 m-0 pt-3">
 
-                    <nz-select ngModel="daysRent" nzPlaceHolder="Alquiler por 5 días.">
+                    <nz-select ngModel="daysRent" nzPlaceHolder="Número de días">
                         <nz-option nzValue="5" nzLabel="Alquiler por 5 días."></nz-option>
                         <nz-option nzValue="10" nzLabel="Alquiler por 10 días."></nz-option>
                     </nz-select>
                     
                     <!-- BOTON ALQUILER GUEST -->
-                     <button class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()" nz-button nzType="default">Alquilar</button>
+                     <button class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()" nz-button nzType="default">ALQUILER</button>
 
                      <!-- BOTON ALQUILER LOGIN -->
-                     <button class="bt-rent" (click)="OrderCreate(movie)" *ngIf="usersService.getUser()" nz-button nzType="default">Alquilar</button>
+                     <button class="bt-rent" (click)="OrderCreate(movie)" *ngIf="usersService.getUser()" nz-button nzType="default">ALQUILER</button>
                 </div>
                 
             </div>
