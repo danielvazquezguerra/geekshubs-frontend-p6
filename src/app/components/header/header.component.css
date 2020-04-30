@@ -10,6 +10,21 @@
    
 }   
 
+.bt-rent {  
+    
+    width: 200px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    background-color: transparent;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    outline: none;
+    border: 3px solid white;
+    margin-left: 10px;
+}
+
 a {
     color: white;
     text-decoration: none;
@@ -94,4 +109,10 @@ a {
   
     /* Support for IE. */
     font-feature-settings: 'liga';
+  }
+
+  .guestZone {
+
+
+
   }

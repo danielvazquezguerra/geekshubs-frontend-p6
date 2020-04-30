@@ -14,9 +14,9 @@
     </ul>
 
     <!-- SIN LOGEAR -->
-    <div class="guestZone" *ngIf="!usersService.getUser()">
-        <a [routerLink]="['/register']" routerLinkActive="active">Register</a>
-        <a [routerLink]="['/login']" routerLinkActive="active">Login</a>
+    <div class="guestZone d-flex align-items-center justify-content-end h-100 w-25" *ngIf="!usersService.getUser()">
+        <a class="bt-rent" [routerLink]="['/register']" routerLinkActive="active">Register</a>
+        <a class="bt-rent" [routerLink]="['/login']" routerLinkActive="active">Login</a>
     </div>
 
     <!-- LOGEADO -->
