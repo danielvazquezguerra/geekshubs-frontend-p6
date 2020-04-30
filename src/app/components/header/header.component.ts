@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
 
   public errorMsg: string;
   public successMsg: string;
-
+  public mensaje: string;
   private token: any;
 
 
@@ -39,6 +39,10 @@ export class HeaderComponent implements OnInit {
         },
         (error) => console.log(error)
       );
+  }
+
+  mensajeLogout($scope) {
+    $scope.mensaje = 'Ya te vas?';
   }
 
 }
