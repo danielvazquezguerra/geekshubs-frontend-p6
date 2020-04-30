@@ -27,9 +27,8 @@ export class AdminprofileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.MoviesAll();
-  }
 
+  }
 
   // SEARCH ORDER BY ORDER ID
   SearchOrderById(id: number){
@@ -79,31 +78,6 @@ export class AdminprofileComponent implements OnInit {
     });
   }
 
-  // MOVIES ALL
-  MoviesAll(){
-    console.log(this.movies)
-    this.moviesService.getMoviesAll().subscribe((movies: any) => {
-      this.movies = movies;
-    });
-  }
-
-  // MOVIE CREATE
-  MovieCreate(movieForm: NgForm){
-    const movie = movieForm.value;
-    console.log(movie);
-    this.moviesService.MovieCreate(movie)
-      .subscribe(
-        (res: HttpResponse<any>) => {
-        this.successMsg = res['message'];
-        console.log(this.successMsg)
-        setTimeout(() => {
-        }, 2000);
-        },
-        (error: HttpErrorResponse) => {
-        this.errorMsg = error.error.message;
-        setTimeout(() =>  this.errorMsg = '' , 2000);
-    })
-  }
 
   // MOVIE MODIFY
   MovieModify(id: number){

@@ -94,6 +94,14 @@ ng serve
 
 #### Actors
 
+        getActorsAll(){
+    return  this.http.get(`${this.route}actors`);
+    }
+    getActorById(id: number){
+    return  this.http.get(`${this.route}actors/id=${id}`);
+    }
+    getActorByName(name: string){
+    return  this.http.get(`${this.route}actors/name=${name}`);
 #### City
 
 #### Genres
@@ -122,14 +130,20 @@ ng serve
 ## Images
 
 ### Home
+![Pantalla Home](https://github.com/danielvazquezguerra/geekshubs-frontend-p6/blob/master/movit-home2.jpg?raw=true)
+
+
 
 ### Movies
+![Detalle de la zona de búsqueda](https://github.com/danielvazquezguerra/geekshubs-frontend-p6/blob/master/movit-home.jpg?raw=true)
 
 ### Details
+![Pantalla de detalles](https://github.com/danielvazquezguerra/geekshubs-frontend-p6/blob/master/movit-detalles.jpg?raw=true)
 
 ### Login
-
+![enter image description here](https://github.com/danielvazquezguerra/geekshubs-frontend-p6/blob/master/movit-registro.jpg?raw=true)
 ### Register
+![Pantalla del Login](https://github.com/danielvazquezguerra/geekshubs-frontend-p6/blob/master/movit-login.jpg?raw=true)
 
 ### User Profile
 
