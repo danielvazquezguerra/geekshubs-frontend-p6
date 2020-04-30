@@ -11,15 +11,15 @@
 }
 
 .casting {
-    border-top: 2px solid black;
-    margin-top: 20px;
+    border-top: 2px solid white;
+    margin-top: 0px;
 }
 
 .populares-title {
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
-    color: black;
-    border-bottom: 2px solid black;
+    color: white;
+    border-bottom: 2px solid white;
 
 }
 
@@ -28,11 +28,11 @@
     font-size: 0.8em;
     height: auto;
     font-family: 'Poppins', sans-serif;
-    color: black;
+    color: white;
     text-transform: capitalize;
     line-height: 1.2em;
     margin-top: 10px;
-    border-top: 2px solid black;
+    border-top: 2px solid white;
     padding-top: 5px;
 }
 
