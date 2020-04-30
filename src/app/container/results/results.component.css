@@ -1,0 +1,33 @@
+.results-main {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.movie-img {
+    width: 100%;
+    height: auto;
+}
+
+.movie-name {
+    display: flex;
+    font-size: 0.8em;
+    height: auto;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-transform: capitalize;
+    line-height: 1.2em;
+    margin-top: 10px;
+    border-top: 2px solid white;
+    padding-top: 5px;
+}
+
+.populares {
+    width: auto;
+    
+}
+
+.movie-box {
+    width: 150px;
+    height: auto;
+    
+}

@@ -29,11 +29,13 @@
 .header-login {
 
     color: white;
-    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    font-weight: 800;
 }
 
 .boton-enviar {
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .forget-pass {
@@ -42,4 +44,55 @@
     color: white;
     font-size: 12px;
     letter-spacing: 1px;
+}
+
+
+.input-mat::placeholder {
+    color: white;
+}
+
+.mat-hint {
+    color: white;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    color: white;
+}
+
+.mat-form-field {
+    font-size: inherit;
+    font-weight: 400;
+    line-height: 1.125;
+    font-family: 'Poppins';
+    letter-spacing: normal;
+    color: white;
+    background-color: transparent;
+}
+
+.mat-raised-button {
+    box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin-top: 40px ;
+    color: black;
+    font-family: 'Poppins';
+    min-width: 64px;
+    line-height: 36px;
+    padding: 0 16px;
+    overflow: visible;
+    transform: translate3d(0, 0, 0);
+    transition: background 200ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 180ms cubic-bezier(0.4, 0, 0.2, 1);
 }

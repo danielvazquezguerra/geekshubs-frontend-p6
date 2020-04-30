@@ -3,7 +3,7 @@
       <label for="userName">Nombre</label>
       <input class="form-control validate white-text" name="userName" #userName="ngModel" 
       id="userName" placeholder="Nombre de usuario" type="text"
-      ngModel required userName minlength="5" maxlength="30" class="form-control validate white-text"> 
+      ngModel required userName minlength="5" maxlength="30"> 
       <div *ngIf="userName.invalid && (userName.dirty || userName.touched)"
         class="alert alert-danger">
         <div *ngIf="userName.errors.required">
@@ -19,7 +19,7 @@
     </div>
     <div class="md-form mb-5">
       <input name="email" class="form-control validate white-text" #email="ngModel" id="email" placeholder="Email" type="email"
-      ngModel required email minlength="5" maxlength="50" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" class="form-control validate white-text"> 
+      ngModel required email minlength="5" maxlength="50" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"> 
       <div *ngIf="email.errors && (email.dirty || email.touched)"
         class="alert alert-danger">
         <div *ngIf="email.errors.required">

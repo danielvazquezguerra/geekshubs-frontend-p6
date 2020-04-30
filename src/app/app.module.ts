@@ -8,6 +8,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+//#region Glidejs
+import { NgxGlideModule } from 'ngx-glide';
+//#endregion
+
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
 //#region Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
@@ -75,6 +81,8 @@ registerLocaleData(en);
     ReactiveFormsModule,
     NgZorroAntdModule,
     AntDesignModule,
+    NgxGlideModule,
+    CarouselModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
 

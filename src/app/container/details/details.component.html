@@ -38,7 +38,7 @@
                     </nz-select>
                     
                     <!-- BOTON ALQUILER GUEST -->
-                     <button class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()" nz-button nzType="default">Alquilar</button>
+                     <button class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()" nz-button nzType="default">ALQUILER</button>
 
                      <!-- BOTON ALQUILER LOGIN -->
                      <button class="bt-rent" (click)="orderCreate(movie)" *ngIf="usersService.getUser()" nz-button nzType="default">Alquilar</button>
@@ -76,7 +76,7 @@
     </section>
     <section class="casting w-100 container">
 
-        <h3 class="casting-title">Casting.</h3>
+        <h3 class="casting-title w-100">Casting.</h3>
        
         <!-- ACTORES -->
         <div class="row">
@@ -95,20 +95,10 @@
 
         </div>
 
-        <!-- PELICULAS RELACIONADAS POR GENERO ** -->
-        <div class="row">
-            <h3>{{nombre}}</h3>
-        </div>
-        <div *ngFor="let pelicula of moviesGenre | slice:0:8"> 
-            <p>{{ pelicula.title }}</p>
-            <img [src]= "getImage(pelicula)" alt="" [routerLink]="'/details/' + pelicula.id">
-        </div>
-
-          
     </section>
     
-  
-            
+    <app-movies-genre></app-movies-genre>
+       
 </main>
         
                          
