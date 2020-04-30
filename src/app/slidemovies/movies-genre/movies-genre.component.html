@@ -1,14 +1,15 @@
-<main class="populares-main m-0 p-0">
+<main class="populares-main container w-100">
     
     <h3 class="populares-title w-100">Populares.</h3>
 
-    <div class="row content-slide d-flex">
+    <div class="row content-slide d-flex flex-nowrap justify-content-center">
             
         <div class="populares d-flex" *ngFor="let pelicula of populares | slice:0:8"> 
             
             <div class="movie-box col p-2">
                 
                 <img class="movie-img" [src]= "getImage(pelicula)" alt="{{ pelicula.title }}" [routerLink]="'/details/' + pelicula.id">
+                
                 <p class="movie-name"> {{ pelicula.title }}. </p>
 
             </div>            

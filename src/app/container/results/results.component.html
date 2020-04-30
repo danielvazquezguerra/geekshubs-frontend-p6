@@ -33,34 +33,67 @@
 </div> -->
 
 <!-- FILTRO POR PELICULAS Y ACTORES -->
-<div>
-    <form action="">
-        <input type="text" placeholder="PeliYActor" [(ngModel)]="title" [ngModelOptions]="{standalone: true}">
-        <button (click)="getAllMoviesAndActorsByTitle(title)">Buscar</button>
-    </form>
-</div>
-    <div *ngFor="let movie of movies">
-        <div>
-            <p>{{ movie.title }}</p>
-            <img [src]= "getImage(movie)" alt="" [routerLink]="'/details/' + movie.id"> 
-        </div>
-    </div>
 
-    <div *ngFor="let actor of actors">
-        <div>
-            <p>{{ actor.name }}</p>
-            <!-- <img [src]= "getImage(actor)" alt="" [routerLink]="'/details/' + actor.id">  -->
-        </div>
-    </div>
+<main class="results-main container-fluid p-0 m-0 h-100">
     
-    <h3>Sugerencias</h3>
-    <div *ngFor="let pelicula of peliculas | slice:0:20">
+    <section class="main-search d-flex w-100 justify-content-start aligns-items-center">
+        
         <div>
-            <p>{{ pelicula.title }}</p>
-            <!-- <img [src]= "getImage(pelicula)" alt="" [routerLink]="'/details/' + pelicula.id">  -->
+            <form action="">
+                <input type="text" placeholder="título / actor" [(ngModel)]="title" [ngModelOptions]="{standalone: true}">
+                <button (click)="getAllMoviesAndActorsByTitle(title)">Buscar</button>
+            </form>
         </div>
-    </div>
 
+    </section>
+
+    <section class="main-results d-flex flex-wrap">
+
+        <div class="row content-slide">
+
+            <div *ngFor="let movie of movies">
+                <div  class="movie-box col p-2">
+                    <img class="movie-img" [src]= "getImage(movie)" alt="" [routerLink]="'/details/' + movie.id"> 
+                    <p class="movie-name">{{ movie.title }}</p>
+                </div>
+            </div>
+        
+            <div *ngFor="let actor of actors">
+                <div>
+                    <p>{{ actor.name }}</p>
+                    <!-- <img [src]= "getImage(actor)" alt="" [routerLink]="'/details/' + actor.id">  -->
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="main-results d-flex flex-wrap h-auto">
+        
+        <div class="row content-slide">
+            
+            <div class="populares d-flex" *ngFor="let pelicula of peliculas | slice:0:20">
+
+                <div class="movie-box col p-2">
+                
+                    <img class="movie-img" [src]= "getImage(pelicula)" alt="{{ pelicula.title }}" [routerLink]="'/details/' + pelicula.id"> 
+                    
+                    <p class="movie-name">{{ pelicula.title }}</p>
+                </div>
+            </div>
+        
+            <div *ngFor="let actor of actors">
+                <div>
+                    <p>{{ actor.name }}</p>
+                    <!-- <img [src]= "getImage(actor)" alt="" [routerLink]="'/details/' + actor.id">  -->
+                </div>
+            </div>
+
+        </div>
+
+    </section>
 
     
 
