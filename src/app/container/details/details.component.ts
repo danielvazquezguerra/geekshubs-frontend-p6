@@ -108,17 +108,10 @@ export class DetailsComponent implements OnInit {
   // ORDER CREATE
   orderCreate(event){
     const order = {
-<<<<<<< HEAD
-      dateRent: moment(new Date()).toDate(),
-      dateArrival: moment(new Date()).add(2, 'days').toDate(),
-      daysRent: this.selectedValue.days,
-      price: this.selectedValue.price,
-=======
       // dateRent: moment(new Date()).toDate(),
       // dateArrival: moment(new Date()).add(2, 'days').toDate(),
-      // daysRent: parseInt(this.daysRent),
-      price: (this.daysRent) * 1.8,
->>>>>>> feature/detailsAgain
+      daysRent: this.selectedValue.days,
+      price: this.selectedValue.price,
       UserId: this.usersService['user']['id'],
       MovieId: parseInt(this.movie),
       };
@@ -138,7 +131,6 @@ export class DetailsComponent implements OnInit {
     });
 }
 
-  
 
 rentMovieGuest() {
   this.router.navigate(['login']);
