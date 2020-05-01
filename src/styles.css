@@ -20,7 +20,7 @@ body {
 html, body { height: 100%; }
 
 
-
+/* 
 .ant-select {
     box-sizing: border-box;
     margin: 0;
@@ -72,8 +72,9 @@ html, body { height: 100%; }
     background-color: transparent;
     color: white;
 
-}
+} */
 
+/* 
 .ant-btn {
     line-height: 1.5715;
     position: relative;
@@ -96,4 +97,4 @@ html, body { height: 100%; }
     color: rgba(0, 0, 0, 0.65);
     background-color: rgb(0, 255, 242);;
     border-color: #d9d9d9;
-}
+} */

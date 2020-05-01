@@ -55,15 +55,29 @@
         </article>
 
         <article class="movie-right d-flex flex-column w-25 h-100 m-0 p-0" *ngIf="order !== null">
-                <section>
-                    <div>
-                        <h3>Pedidos</h3>
-                        <p> {{ order?.id }}</p>
-                        <p> {{ order?.dateRent | date }}</p>
-                        <p> {{ order?.dateArrival | date }}</p>
-                        <p> {{ order?.daysRent }}</p>
-                        <p> {{ order?.status }}</p>
-                        <p> {{ order?.price }} €</p>
+                <section class="details-orders d-flex flex-column h-100 w-100 m-0 p-3">
+                    <div class="order-box">
+
+                        <h3 class="h3-title">Pedido.</h3>
+
+                        <div class="n-order">
+                            <p>ORDEN nº <span class="bold-order">&nbsp; {{ order?.id }}545658</span></p>
+                        </div>
+                        <div class="n-order">
+                            <p>Fecha de pedido > <span class="bold-order thin-order">&nbsp; {{ order?.dateRent | date }} 23/03/2020 </span></p>
+                        </div>
+                        <div class="n-order">
+                            <p>Fecha de pedido > <span class="bold-order thin-order">&nbsp; {{ order?.dateArrival | date }} 25/03/2020 </span></p>
+                        </div>
+                        <div class="n-order">
+                            <p>Días de alquiler > <span class="bold-order thin-order">&nbsp; {{ order?.daysRent }} 5 días </span></p>
+                        </div>
+                         <div class="n-order">
+                            <p>Status > <span class="bold-order thin-order">&nbsp; {{ order?.status }} Enviado. </span></p>
+                        </div>
+                        <div class="n-order">
+                            <p>Status > <span class="bold-order thin-order">&nbsp; {{ order?.price }}7.50€</span></p>
+                        </div>
                         <p> {{ order?.MovieId }}</p>
                         <p> {{ order?.Movie.title }}</p>
                     </div>
@@ -73,7 +87,7 @@
 
     <section class="casting w-100 container">
 
-        <h3 class="casting-title w-100">Casting.</h3>
+        <h3 class="h3-title w-100">Casting.</h3>
        
         <!-- ACTORES -->
         <div class="row">
