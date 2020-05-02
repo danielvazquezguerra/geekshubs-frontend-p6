@@ -8,7 +8,7 @@ import { OrdersService } from '../../services/orders.service';
 import { UsersService } from 'src/app/services/users.service';
 import { Router } from '@angular/router';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
-// import * as moment from 'moment';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-details',
@@ -106,8 +106,8 @@ export class DetailsComponent implements OnInit {
   // ORDER CREATE
   orderCreate(event){
     const order = {
-      // dateRent: moment(new Date()).toDate(),
-      // dateArrival: moment(new Date()).add(2, 'days').toDate(),
+      dateRent: moment(new Date()).toDate(),
+      dateArrival: moment(new Date()).add(2, 'days').toDate(),
       daysRent: this.selectedValue.days,
       price: this.selectedValue.price,
       // tslint:disable-next-line: no-string-literal
@@ -115,21 +115,22 @@ export class DetailsComponent implements OnInit {
       // tslint:disable-next-line: radix
       MovieId: parseInt(this.movie),
       };
-    console.log(order);
     this.ordersService.getOrderCreate(order)
     .subscribe(
         (res: HttpResponse<any>) => {
+        console.log(res)
+        this.ordersService.order = order;
+        console.log(this.ordersService.order)
         // tslint:disable-next-line: no-string-literal
         this.successMsg = res['message'];
-        console.log(this.successMsg);
-        setTimeout(() => {
-        }, 2000);
+        // console.log(this.successMsg);
+
         },
         (error: HttpErrorResponse) => {
         this.errorMsg = error.error.message;
         setTimeout(() =>  this.errorMsg = '' , 2000);
-        return order;
     });
+
 }
 
   rentMovieGuest() {

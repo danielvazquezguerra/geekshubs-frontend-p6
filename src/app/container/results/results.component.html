@@ -1,38 +1,4 @@
-<!-- FILTRO POR ID, GENERO, ESTRENOS, TITULO, ACTORES -->
 
-<!-- FILTRO POR ID -->
-<!-- <div>
-    <form action="">
-        <input type="text" placeholder="ID pelicula" [(ngModel)]="id" [ngModelOptions]="{standalone: true}">
-        <button (click)="getAllMoviesById(id)">Buscar</button>
-    </form>
-</div> -->
-
-<!-- FILTRO POR TITULO -->
-<!-- <div>
-    <form action="">
-        <input type="text" placeholder="titulo pelicula" [(ngModel)]="title" [ngModelOptions]="{standalone: true}">
-        <button (click)="getAllMoviesByTitle(title)">Buscar</button>
-    </form>
-</div> -->
-
-<!-- FILTRO POR GENERO -->
-<!-- <div>
-    <form action="">
-        <input type="text" placeholder="Genero pelicula" [(ngModel)]="title">
-        <button (click)="getAllMoviesByTitle(title)">Buscar</button>
-    </form>
-</div> -->
-
-<!-- FILTRO POR ACTORES -->
-<!-- <div>
-    <form action="">
-        <input type="text" placeholder="Actores" [(ngModel)]="name" [ngModelOptions]="{standalone: true}">
-        <button (click)="getActorsByName(name)">Buscar</button>
-    </form>
-</div> -->
-
-<!-- FILTRO POR PELICULAS Y ACTORES -->
 
 <main class="results-main container-fluid p-0 m-0 h-100">
     
@@ -51,17 +17,17 @@
 
         <div class="row content-slide">
 
-            <div *ngFor="let movie of movies">
+            <div *ngFor="let movie of movies | slice:0:27">
                 <div  class="movie-box col p-2">
                     <img class="movie-img" [src]= "getImage(movie)" alt="" [routerLink]="'/details/' + movie.id"> 
                     <p class="movie-name">{{ movie.title }}</p>
                 </div>
             </div>
         
-            <div *ngFor="let actor of actors">
+            <div *ngFor="let actor of actors | slice:0:9">
                 <div>
                     <p>{{ actor.name }}</p>
-                    <!-- <img [src]= "getImage(actor)" alt="" [routerLink]="'/details/' + actor.id">  -->
+                    <img [src]= "getImage3(actor)" alt="" [routerLink]="'/details/' + actor.id"> 
                 </div>
             </div>
 
@@ -69,12 +35,11 @@
 
     </section>
 
-
     <section class="main-results d-flex flex-wrap h-auto">
         
         <div class="row content-slide">
             
-            <div class="populares d-flex" *ngFor="let pelicula of peliculas | slice:0:20">
+            <div class="populares d-flex" *ngFor="let pelicula of peliculas | slice:0:27">
 
                 <div class="movie-box col p-2">
                 

@@ -37,7 +37,7 @@ export class ResultsComponent implements OnInit {
     this.getAllMovies();
   }
 
-   // PELICULAS POR ID
+  // ALL MOVIES
    getAllMovies() {
     this.moviesService.getMoviesAll().subscribe((pelicula: any) => {
       this.peliculas = pelicula;
@@ -58,15 +58,15 @@ export class ResultsComponent implements OnInit {
     });
   }
 
-    // PELICULAS Y ACTORES POR TITULO
-    getAllMoviesAndActorsByTitle(title: string) {
-      this.moviesService.getMoviesByTitle(title).subscribe((pelicula: any) => {
-        this.movies = pelicula;
-      });
-      this.actorsService.getActorByName(title).subscribe((pelicula: any) => {
-        this.actors = pelicula;
-      });
-    }
+  // PELICULAS Y ACTORES POR TITULO
+  getAllMoviesAndActorsByTitle(title: string) {
+    this.moviesService.getMoviesByTitle(title).subscribe((pelicula: any) => {
+      this.movies = pelicula;
+    });
+    this.actorsService.getActorByName(title).subscribe((pelicula: any) => {
+      this.actors = pelicula;
+    });
+  }
 
   // PELICULAS POR GENERO
   getGenresByName(name: string) {
@@ -91,4 +91,12 @@ export class ResultsComponent implements OnInit {
     }
   }
 
+  getImage3(pelicula: any){
+    if (pelicula.poster_path){
+      return this.imageURL + (pelicula.poster_path);
+    }
+    else {
+      return this.notImage;
+    }
+  }
 }

@@ -79,13 +79,6 @@ export class AdminprofileComponent implements OnInit {
   }
 
 
-  // MOVIE MODIFY
-  MovieModify(id: number){
-    this.moviesService.getMovieUpdate(id).subscribe((movies: any) => {
-      this.movies = movies;
-    });
-  }
-
   // MOVIE DELETE
   MovieDelete(id: number){
     this.moviesService.getMovieDelete(id).subscribe((movies: any) => {

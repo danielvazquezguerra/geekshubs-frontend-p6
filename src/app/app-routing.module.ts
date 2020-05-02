@@ -9,6 +9,10 @@ import { AdminprofileComponent } from './container/adminprofile/adminprofile.com
 import { RegisterComponent } from './container/register/register.component';
 import { LoginComponent } from './container/login/login.component';
 import { ProfileComponent } from './container/profile/profile.component';
+import { UsersAllComponent } from './components/users-all/users-all.component';
+import { OrdersAllComponent } from './components/orders-all/orders-all.component';
+import { MoviesAllComponent } from './components/movies-all/movies-all.component';
+import { AdminSearchComponent } from './components/admin-search/admin-search.component';
 
 
 const routes: Routes = [
@@ -20,6 +24,10 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'admin', component: AdminprofileComponent },
+  { path: 'admin/users', component: UsersAllComponent },
+  { path: 'admin/orders', component: OrdersAllComponent },
+  { path: 'admin/movies', component: MoviesAllComponent },
+  { path: 'admin/search', component: AdminSearchComponent },
 ];
 
 @NgModule({

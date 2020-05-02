@@ -49,6 +49,8 @@ import en from '@angular/common/locales/en';
 import { MoviesGenreComponent } from './slidemovies/movies-genre/movies-genre.component';
 import { MoviesAllComponent } from './components/movies-all/movies-all.component';
 import { CreateMovieComponent } from './components/create-movie/create-movie.component';
+import { MovieUpdateComponent } from './components/movie-update/movie-update.component';
+import { AdminSearchComponent } from './components/admin-search/admin-search.component';
 
 registerLocaleData(en);
 //#endregion
@@ -74,6 +76,8 @@ registerLocaleData(en);
     MoviesGenreComponent,
     MoviesAllComponent,
     CreateMovieComponent,
+    MovieUpdateComponent,
+    AdminSearchComponent,
   ],
   imports: [
     BrowserModule,

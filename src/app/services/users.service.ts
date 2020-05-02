@@ -53,11 +53,19 @@ export class UsersService {
   }
 
   getUsersById(id: number){
-    return this.http.get(`${this.BASE}users/user=${id}`);
+    return this.http.get(`${this.BASE}users/info/id=${id}`);
   }
 
   getUsersByName(name: string){
-    return this.http.get(`${this.BASE}users/${name}`);
+    return this.http.get(`${this.BASE}users/info/id${name}`);
+  }
+
+  getUserByEmail(email: string){
+    return this.http.get(`${this.BASE}users/info/username${email}`);
+  }
+
+  getUserByUsername(username: string){
+    return this.http.get(`${this.BASE}users/${username}`);
   }
 
   modifiedUserById(body: any){
