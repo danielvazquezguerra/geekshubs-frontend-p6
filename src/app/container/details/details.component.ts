@@ -63,7 +63,9 @@ export class DetailsComponent implements OnInit {
   detailsById(id: number) {
     this.moviesService.getMoviesById(id).subscribe((pelicula: any) => {
       this.detalle = pelicula;
+      console.log(this.detalle)
       this.genres = pelicula.Genres;
+      console.log(this.genres)
       for (const genre of this.genres){
         this.generos.push(genre.id);
       }

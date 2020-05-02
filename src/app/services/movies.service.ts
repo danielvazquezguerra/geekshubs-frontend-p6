@@ -23,7 +23,7 @@ export class MoviesService {
   }
 
   getMoviesById(id: number){
-    return this.http.get(`${this.BASE}movies/id=${id}`);
+    return this.http.get(`http://localhost:3000/movies/id=${id}`);
   }
 
   getMoviesByTitle(title: string){
