@@ -59,15 +59,21 @@
                     <div class="order-box">
 
                         <h3 class="h3-title">Pedido.</h3>
-
+                        <!-- numero de orden -->
                         <div class="n-order">
                             <p>ORDEN nº <span class="bold-order">&nbsp; {{ order?.id }}545658</span></p>
                         </div>
+                        <!-- titulo de pelicula y ID -->
+                        <div class="n-order">
+                            <p><span class="bold-order movie-order">&nbsp; {{ order?.Movie.title }}Star Wars.  </span></p>
+                            <p>ID > <span class="bold-order thin-order">&nbsp; {{ order?.MovieId }} 112 </span></p>
+                        </div>
+                        
                         <div class="n-order">
                             <p>Fecha de pedido > <span class="bold-order thin-order">&nbsp; {{ order?.dateRent | date }} 23/03/2020 </span></p>
                         </div>
                         <div class="n-order">
-                            <p>Fecha de pedido > <span class="bold-order thin-order">&nbsp; {{ order?.dateArrival | date }} 25/03/2020 </span></p>
+                            <p>Fecha de llegada > <span class="bold-order thin-order">&nbsp; {{ order?.dateArrival | date }} 25/03/2020 </span></p>
                         </div>
                         <div class="n-order">
                             <p>Días de alquiler > <span class="bold-order thin-order">&nbsp; {{ order?.daysRent }} 5 días </span></p>
@@ -76,10 +82,11 @@
                             <p>Status > <span class="bold-order thin-order">&nbsp; {{ order?.status }} Enviado. </span></p>
                         </div>
                         <div class="n-order">
-                            <p>Status > <span class="bold-order thin-order">&nbsp; {{ order?.price }}7.50€</span></p>
+                            <p>Precio Total > <span class="bold-order thin-order">&nbsp; {{ order?.price }}7.50€</span></p>
                         </div>
-                        <p> {{ order?.MovieId }}</p>
-                        <p> {{ order?.Movie.title }}</p>
+
+                    
+                        <p> </p>
                     </div>
                 </section> 
         </article>
@@ -102,8 +109,28 @@
 
     </section>
     
+    
+    <section>
+
+        <h3 class="h3-title w-100">{{nombre}}</h3>
+
+        <div class="populares d-flex" *ngFor="let pelicula of moviesGenre | slice:0:8"> 
+            
+            <div class="movie-box col p-2">
+                
+                <img class="movie-img" [src]= "getImage(pelicula)" alt="{{ pelicula.title }}" [routerLink]="'/details/' + pelicula.id">
+                
+                <p class="movie-name"> {{ pelicula.title }}. </p>
+
+            </div>            
+
+        </div>
+
+        
+    </section>
+    
     <app-movies-genre></app-movies-genre>
-       
+
 </main>
         
                          
