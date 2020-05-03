@@ -11,11 +11,13 @@ import { NzDividerComponent } from 'ng-zorro-antd';
 })
 export class AdminSearchComponent implements OnInit {
 
-  peliculas;
+  pelicula;
   usuario;
-  pedidos;
+  pedido;
   title;
-  id;
+  idU;
+  idM;
+  idO;
   email;
   username;
 
@@ -30,6 +32,7 @@ export class AdminSearchComponent implements OnInit {
 
   // BUSQUEDA USUARIO POR ID USUARIO
   UserById(id: number) {
+    console.log(id)
     this.usersService.getUsersById(id).subscribe((usuarios: any) => {
       console.log(usuarios)
       this.usuario = usuarios;
@@ -38,36 +41,43 @@ export class AdminSearchComponent implements OnInit {
 
   // BUSQUEDA USUARIO POR EMAIL USUARIO
   UserByEmail(email: string) {
-      this.usersService.getUserByEmail(email).subscribe((usuarios: any) => {
-        this.usuario = usuarios;
-      });
-    }
+    console.log(email)
+    this.usersService.getUserByEmail(email).subscribe((usuarios: any) => {
+      console.log(usuarios)
+      this.usuario = usuarios;
+    });
+  }
 
   // BUSQUEDA USUARIO POR USERNAME USUARIO
   UserByUsername(username: string) {
+    console.log(username)
     this.usersService.getUserByUsername(username).subscribe((usuarios: any) => {
       this.usuario = usuarios;
+      console.log(this.usuario)
     });
   }
 
   // BUSQUEDA PELICULA POR ID
   MovieById(id: number) {
-    this.moviesService.getMoviesById(id).subscribe((pelicula: any) => {
-      this.peliculas = pelicula;
+    console.log(id)
+    this.moviesService.getMoviesById(id).subscribe((peliculas: any) => {
+      this.pelicula = peliculas;
+      console.log(this.pelicula)
     });
   }
 
   // PELICULAS POR TITULO
   MoviesByTitle(title: string) {
-    this.moviesService.getMoviesByTitle(title).subscribe((pelicula: any) => {
-      this.peliculas = pelicula;
+    this.moviesService.getMoviesByTitle(title).subscribe((peliculas: any) => {
+      this.pelicula = peliculas;
     });
   }
 
   // BUSQUEDA PELICULA POR ID
   OrderById(id: number) {
-    this.ordersService.getOrderById(id).subscribe((pedido: any) => {
-      this.pedidos = pedido;
+    console.log(id)
+    this.ordersService.getOrderById(id).subscribe((pedidos: any) => {
+      this.pedido = pedidos;
     });
   }
 }

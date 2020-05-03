@@ -32,22 +32,34 @@ export class OrdersService {
 
   // 1.5 ALL USER ORDERS (similar al 1)
   getUsersOrdersAll(){
-    return this.http.get(`${this.BASE}order`);
+    return this.http.get(`${this.BASE}orders/info/all`);
   }
 
   // 2 ORDER BY ORDER ID
   getOrderById(id: number){
-    return this.http.get(`${this.BASE}order=${id}`);
+    return this.http.get(`${this.BASE}orders/order/id=${id}`, {
+      headers: {
+        Authorization: localStorage.getItem('authToken') || ''
+      }
+    });
   }
 
   // 3 ORDER BY USER EMAIL **
   getOrderByEmail(email: string){
-    return this.http.get(`${this.BASE}order=${email}`);
+    return this.http.get(`${this.BASE}orders/order/email=${email}`, {
+      headers: {
+        Authorization: localStorage.getItem('authToken') || ''
+      }
+    });
   }
 
   // 4 ORDER BY ORDER DATE ¿?
   getUserOrderDates(){
-    return this.http.get(`${this.BASE}orderDate`);
+    return this.http.get(`${this.BASE}orderDate`, {
+      headers: {
+        Authorization: localStorage.getItem('authToken') || ''
+      }
+    });
   }
 
   // 5 ORDER CREATE
