@@ -6,7 +6,7 @@
   
   <section class="register-left d-flex w-50 h-100 justify-content-center align-items-center">
 
-    <form #registerForm="ngForm" (submit)="register(registerForm)" class="form-register container-fluid justify-content-center align-items-center d-flex h-100 v-100 m-0 p-0" action="" #registerForm="ngForm" (submit)="register(registerForm)">
+    <form [formGroup]="formGroup" (ngSubmit)="register()" class="form-register container-fluid justify-content-center align-items-center d-flex h-100 v-100 m-0 p-0" action="">
 
         <div class="datos-cont d-flex flex-column justify-content-start align-items-center">
           
@@ -19,21 +19,36 @@
           <div class="datos-field d-flex flex-column w-100">
     
             <!-- Nombre -->
-            <mat-form-field  hintLabel="Max 10 caracteres" appearance="legacy">
+            <mat-form-field class="form-element" hintLabel="Max 10 caracteres" appearance="legacy">
+              <input matInput #email placeholder="Email" formControlName="email">
+              <mat-error *ngIf="!formGroup.controls['email'].valid && formGroup.controls['email'].touched">
+                {{ getErrorEmail() }}
+              </mat-error>
+              <mat-hint align="end">{{email.value?.length || 0}}/10</mat-hint>
+            </mat-form-field>
+            <!-- <mat-form-field  hintLabel="Max 10 caracteres" appearance="legacy">
               <mat-label>Username</mat-label>
               <input matInput name="username" #username="ngModel" 
               id="userName" placeholder="Nombre de usuario" type="text"
               ngModel required userName minlength="5" maxlength="30">
               <mat-hint align="end">{{username.value?.length || 0}}/10</mat-hint>
-            </mat-form-field>
+            </mat-form-field> -->
   
             <!-- Email -->
-            <mat-form-field hintLabel="Max 10 caracteres" appearance="legacy">
+            <mat-form-field class="form-element" hintLabel="Max 10 caracteres" appearance="legacy">
+              <input matInput #username placeholder="Nombre de Usuario" formControlName="username">
+              <mat-hint align="end">{{username.value?.length || 0}}/30</mat-hint>
+              <mat-error *ngIf="!username.valid && username.touched">
+                {{ titleAlert }}
+              </mat-error>
+            </mat-form-field>
+            
+            <!-- <mat-form-field hintLabel="Max 10 caracteres" appearance="legacy">
               <mat-label>Email</mat-label>
               <input matInput  name="email" #email="ngModel" id="email" placeholder="rafa@gmail.com" type="email"
-              ngModel required email minlength="5" maxlength="50" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
+              ngModel required email minlength="5" maxlength="50" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"> -->
               <!-- <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint> -->
-             <mat-hint align="end" *ngIf="email.errors.required">
+             <!-- <mat-hint align="end" *ngIf="email.errors.required">
               email is required.
              </mat-hint > 
              <mat-hint align="end" *ngIf="registerForm.controls.password?.errors?.pattern">
@@ -41,11 +56,11 @@
              </mat-hint > 
               <mat-hint align="end" *ngIf="email.errors.minlength">
               email must be at least 4 characters long.
-              </mat-hint>
+              </mat-hint> -->
                <!--<mat-hint align="end" *ngIf="email.errors.forbiddenName"> 
                 Name cannot be Bob.
               </mat-hint> -->
-            </mat-form-field>
+            <!-- </mat-form-field> -->
             
             <!-- <nz-form-item>
               <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
@@ -54,14 +69,22 @@
               </nz-form-control> -->
 
             <!-- Password -->
-            <mat-form-field hintLabel="Max 10 caracteres" appearance="legacy">
+            <mat-form-field class="form-element" hintLabel="Max 10 caracteres" appearance="legacy">
+              <input matInput #password placeholder="Contraseña" formControlName="password">
+              <mat-hint align="end">{{password.value?.length || 0}}/30</mat-hint>
+              <!-- <mat-hint>Debe contener al menos una mayuscula, una minuscula y un número</mat-hint> -->
+              <mat-error *ngIf="!formGroup.controls['password'].valid && formGroup.controls['password'].touched">
+                {{ getErrorPassword() }}
+              </mat-error>
+            </mat-form-field>
+            <!-- <mat-form-field hintLabel="Max 10 caracteres" appearance="legacy">
               <mat-label>Contraseña / Password</mat-label>
               <input matInput name="password" #password="ngModel" id="password" 
               placeholder="Contraseña" type="password"
               ngModel required password minlength="7" maxlength="10" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,40}$">
               <mat-hint align="end">{{password.value?.length || 0}}/8</mat-hint>
-            </mat-form-field>
-    
+            </mat-form-field> -->
+     
             <!-- boton Enviar -->
             <button class="boton-enviar" type="submit" mat-raised-button>REGISTRARSE</button>
             <!-- <button type="submit" class="btn btn-success btn-block btn-rounded z-depth-1">Registrarse</button> -->
@@ -69,13 +92,13 @@
           </div>
           
           <!-- Mensajes  -->
-          <div class="succesmessage" *ngIf="successMsg">
+          <!-- <div class="succesmessage" *ngIf="successMsg">
             {{successMsg}}
           </div>
 
           <div class="errormessage">
             {{errorMsg}}
-          </div>  
+          </div>   -->
             
         </div>
         

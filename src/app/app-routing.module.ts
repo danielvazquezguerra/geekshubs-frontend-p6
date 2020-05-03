@@ -13,6 +13,9 @@ import { UsersAllComponent } from './components/users-all/users-all.component';
 import { OrdersAllComponent } from './components/orders-all/orders-all.component';
 import { MoviesAllComponent } from './components/movies-all/movies-all.component';
 import { AdminSearchComponent } from './components/admin-search/admin-search.component';
+import { UserDataComponent } from './components/user-data/user-data.component';
+import { UserFormComponent } from './components/user-form/user-form.component';
+import { UserOrdersComponent } from './components/user-orders/user-orders.component';
 
 
 const routes: Routes = [
@@ -22,9 +25,9 @@ const routes: Routes = [
   { path: 'details/:id', component: DetailsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'profile', component: ProfileComponent },
-  // { path: 'profile', component: ProfileComponent },
-  // { path: 'profile', component: ProfileComponent },
+  { path: 'profile/data', component: UserDataComponent },
+  { path: 'profile/update', component: UserFormComponent },
+  { path: 'profile/order', component: UserOrdersComponent },
   { path: 'admin', component: AdminprofileComponent },
   { path: 'admin/users', component: UsersAllComponent },
   { path: 'admin/orders', component: OrdersAllComponent },

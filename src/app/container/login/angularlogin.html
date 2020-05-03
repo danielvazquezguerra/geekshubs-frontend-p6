@@ -17,15 +17,15 @@
           <!-- Email -->
           <mat-form-field hintLabel="Max 10 caracteres" appearance="legacy">
             <mat-label>Email</mat-label>
-            <input matInput maxlength="30" type="email" name="email" ngModel placeholder="Ej. rafa@gmail.com" required email>
-            <mat-hint align="end">{{input.value?.length || 0}}/30</mat-hint>
+            <input matInput #email maxlength="30" type="email" name="email" ngModel placeholder="Ej. rafa@gmail.com" required email>
+            <mat-hint align="end">{{email.value?.length || 0}}/30</mat-hint>
           </mat-form-field>
       
           <!-- Password -->
           <mat-form-field hintLabel="Max 10 caracteres" appearance="legacy">
             <mat-label>Password</mat-label>
-            <input matInput #input maxlength="10" type="password" name="password" ngModel placeholder="Contraseña" required>
-            <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+            <input matInput #password maxlength="10" type="password" name="password" ngModel placeholder="Contraseña" required>
+            <mat-hint align="end">{{password.value?.length || 0}}/10</mat-hint>
           </mat-form-field>
     
           <!-- boton Enviar -->
