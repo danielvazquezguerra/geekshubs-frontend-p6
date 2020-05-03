@@ -91,8 +91,5 @@ export class AdminprofileComponent implements OnInit {
     });
   }
 
-  AllUserComponent(){
-    document.getElementById('infoMain').innerHTML = 'hola';
-  }
 
 }

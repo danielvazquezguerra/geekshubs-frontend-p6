@@ -24,8 +24,8 @@ export class UsersAllComponent implements OnInit {
     const token = localStorage.getItem('authToken');
     if (token) {
       console.log(token);
-      this.usersService.getUsersAll().subscribe(usuario => {
-        this.usuarios = usuario;
+      this.usersService.getUsersAll().subscribe(usuarios => {
+        this.usuarios = usuarios;
         console.log(this.usuarios);
       }
     )}

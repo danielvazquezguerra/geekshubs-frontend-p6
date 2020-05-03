@@ -1,17 +1,79 @@
-<!-- ALL ORDERS -->
-<div>
-    <h3>TODOS LOS PEDIDOS</h3>
-    <div class="grid">
-        <div *ngFor="let pedido of pedidos"> 
-            <p>Id: {{ pedido.id }} </p>
-            <p>Date Rent: {{ pedido.dateRent | date:'d/M/yy'}} </p>
-            <p>Date Arrival: {{ pedido.dateArrival | date:'fullDate'}} </p>
-            <p>Days Rent: {{ pedido.daysRent }} </p>
-            <p>Price: {{ pedido.status }} </p>
-            <p>Status: {{ pedido.title }} </p>
-            <p>Pelicula: {{ pedido.Movie.title }} ({{ pedido.Movie.id }})</p>
-            <p>Usuario: {{ pedido.User.username }} ({{ pedido.User.id }})</p>
-            <p>----------------</p>
-        </div>
-    </div>  
-</div>
+<main class="main-profile container-fluid m-0 p-0 h-100">
+
+    <section class="header-profile d-flex w-100 m-0 p-0">
+
+        <h3 class="header-title d-flex justify-content-start align-items-center pl-5 m-0">Administrador.</h3>
+
+    </section>
+
+    <section class="body-profile d-flex w-100 m-0 p-0">
+
+        <nav class="sidebar d-flex flex-column align-items-end justify-content-center w-25 h-100 m-0 p-3">
+
+            <ul class="bt-sidebar-list d-flex d-flex flex-column justify-content-center align-items-end">
+
+                <li><a [routerLink]="['/admin/users']" routerLinkActive="active" class="bt-sidebar" class="bt-sidebar">Usuarios</a></li>
+                <li><a [routerLink]="['/admin/orders']" routerLinkActive="active" class="bt-sidebar" class="bt-sidebar">Pedidos</a></li>
+                <li><a [routerLink]="['/admin/movies']" routerLinkActive="active" class="bt-sidebar" class="bt-sidebar">Peliculas</a></li>
+                <li><a [routerLink]="['/admin/search']" routerLinkActive="active" class="bt-sidebar">Buscador</a></li>
+               
+            </ul>
+    
+        </nav>
+    
+        <section id="infoMain" class="info-main d-flex w-75 h-100 m-0 p-0">
+
+            
+            <div class="container h-100">
+                        
+                <section class="admin-info">
+                    
+                    <div class="header-table">
+                        
+                        <tr class="d-flex w-100 h-100 align-items-center justify-content-start m-0 p-0">
+                            <th class="titulo-table">TITULO</th>
+                            <th class="id-table">ID</th>
+                            <th class="pop-table">POP.</th>
+                            <th class="vote-table">VOTACIÓN</th>
+                            <th class="rate-table">RATE</th>
+            
+                        </tr>
+                    </div>
+                    
+                    <div *ngFor="let pedido of pedidos"> 
+            
+                        <tr class="row d-flex">
+            
+                            <td class="col d-flex">
+            
+                                <p>Id: {{ pedido.id }} </p>
+                                <p>Date Rent: {{ pedido.dateRent | date:'d/M/yy'}} </p>
+                                <p>Date Arrival: {{ pedido.dateArrival | date:'fullDate'}} </p>
+                                <p>Days Rent: {{ pedido.daysRent }} </p>
+                                <p>Price: {{ pedido.status }} </p>
+                                <p>Status: {{ pedido.title }} </p>
+                                <p>Pelicula: {{ pedido.Movie.title }} ({{ pedido.Movie.id }})</p>
+                                <p>Usuario: {{ pedido.User.username }} ({{ pedido.User.id }})</p>
+                                
+                            </td>
+                            
+                        </tr>
+                        
+                    </div>   
+            
+                </section>
+            
+            </div> 
+            
+
+        </section>
+
+    </section>
+
+
+</main>
+
+
+
+
+

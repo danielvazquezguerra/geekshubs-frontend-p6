@@ -12,15 +12,11 @@
 
             <ul class="bt-sidebar-list d-flex d-flex flex-column justify-content-center align-items-end">
 
-                <li><a (click)="AllUserComponent()" class="bt-sidebar">Usuarios</a></li>
-                <li><a (click)="AllUserComponent()" class="bt-sidebar">Pedidos</a></li>
-                <li><a (click)="AllUserComponent()" class="bt-sidebar">Peliculas</a></li>
-                <li><a (click)="AllUserComponent()" class="bt-sidebar">Añadir Película</a></li>
-                <li><a (click)="AllUserComponent()" class="bt-sidebar">Borrar Película</a></li>
-                <li><a (click)="AllUserComponent()" class="bt-sidebar">Usuario por ID/email</a></li>
-                <li><a (click)="AllUserComponent()" class="bt-sidebar">Pedido por ID/fecha</a></li>
-                <li><a (click)="AllUserComponent()" class="bt-sidebar">Total de ventas diarias</a></li>
-                <li><a (click)="AllUserComponent()" class="bt-sidebar">Ventas histórico</a></li>
+                <li><a [routerLink]="['/admin/users']" routerLinkActive="active" class="bt-sidebar" class="bt-sidebar">Usuarios</a></li>
+                <li><a [routerLink]="['/admin/orders']" routerLinkActive="active" class="bt-sidebar" class="bt-sidebar">Pedidos</a></li>
+                <li><a [routerLink]="['/admin/movies']" routerLinkActive="active" class="bt-sidebar" class="bt-sidebar">Peliculas</a></li>
+                <li><a [routerLink]="['/admin/search']" routerLinkActive="active" class="bt-sidebar">Buscador</a></li>
+               
             </ul>
     
         </nav>

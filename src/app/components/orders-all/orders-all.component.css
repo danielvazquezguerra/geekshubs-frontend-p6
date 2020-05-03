@@ -1,0 +1,128 @@
+.main-profile {
+    background-color: white;
+
+}
+
+.header-profile {
+
+    height: 15%;
+    
+}
+
+.header-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 2em;
+
+}
+
+.body-profile {
+    height: 85%;
+  
+}
+
+.sidebar {
+
+    border-right: 2px solid black;
+
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.bt-sidebar-list {
+
+    
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+    line-height: 3em;
+
+}   
+
+.bt-sidebar-list a {
+
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    padding-right: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    transition: 0.1s cubic-bezier(.66,-0.21,.31,1.36);  
+    
+}
+
+.bt-sidebar-list a:hover {
+    
+    color: rgb(0, 204, 211);
+    font-weight: 800;
+    font-size: 1.2em;
+    transition: 0.1s cubic-bezier(.66,-0.21,.31,1.36);
+
+}
+
+.header-table {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    height: 10%;
+    width: 100%;
+    background-color: white;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    position: sticky;
+    z-index: 2;
+    top: 0px;
+    margin-bottom: 10px;
+}
+
+.titulo-table {
+    width: 50%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.id-table {
+    width: 10%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.pop-table {
+    width: 10%;
+    padding-right: 10px;
+    padding-left: 10px;
+
+}
+
+.vote-table {
+    width: 10%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.rate-table {
+    width: 5%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.strong {
+    font-weight: 800;
+}
+
+th {
+    display: flex;
+    align-self: flex-end;
+
+}
+
+
+.admin-info {
+
+    height: 90%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
