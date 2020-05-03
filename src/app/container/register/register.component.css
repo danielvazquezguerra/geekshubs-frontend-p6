@@ -23,6 +23,11 @@
     background-color: rgb(255, 0, 64);
 }
 
+mat-form-field.mat-form-field {
+
+    font-size: 14px;
+  }
+
 .datos-header {
 
     color: white;
@@ -62,6 +67,8 @@
     letter-spacing: 1px;
 
 }
+
+
 
 .foto-fondo {
     position: absolute;
