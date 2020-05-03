@@ -28,27 +28,8 @@ export class UserDataComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {});
     this.user = this.usersService.getUser();
-    this.getOrders();
   }
 
-
-  getOrders(){
-    const token = localStorage.getItem('authToken');
-    if (token) {
-      console.log(token);
-      this.ordersService.getOrdersUser(token).subscribe(res => {
-          this.orders = res;
-          console.log(this.orders);
-          // this.orders.forEach(order => {
-          //   console.log(order.MovieId);
-          //   this.moviesService.getById(order.MovieId).subscribe(Movies => {
-          //   this.movies = Movies;
-          //   console.log(this.movies)
-          //   });
-          // });
-      }
-    )}
-  }
 
 
 // UserInfoAll(){

@@ -12,13 +12,13 @@ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-register',
-  templateUrl: './registerPrueba.html',
+  templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
 
   formGroup: FormGroup;
-  titleAlert: string = 'This field is required';
+  titleAlert = 'Este campo es necesario';
   post: any = '';
 
   constructor(
@@ -31,54 +31,53 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.createForm();
-    this.setChangeValidate()
+    this.setChangeValidate();
   }
 
   createForm() {
-    let emailregex: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    const emailregex: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     this.formGroup = this.formBuilder.group({
-      'email': [null, [Validators.required, Validators.pattern(emailregex)], this.checkInUseEmail],
-      'name': [null, Validators.required],
-      'password': [null, [Validators.required, this.checkPassword]],
-      'validate': ''
+      email: [null, [Validators.required, Validators.pattern(emailregex)]],
+      username: [null, Validators.required],
+      password: [null, [Validators.required, this.checkPassword]],
     });
   }
 
   setChangeValidate() {
     this.formGroup.get('validate').valueChanges.subscribe(
       (validate) => {
-        if (validate == '1') {
-          this.formGroup.get('name').setValidators([Validators.required, Validators.minLength(3)]);
+        if (validate === '1') {
+          this.formGroup.get('username').setValidators([Validators.required, Validators.minLength(3)]);
           this.titleAlert = 'You need to specify at least 3 characters';
         } else {
-          this.formGroup.get('name').setValidators(Validators.required);
+          this.formGroup.get('username').setValidators(Validators.required);
         }
-        this.formGroup.get('name').updateValueAndValidity();
+        this.formGroup.get('username').updateValueAndValidity();
       }
     )
   }
 
-  get name() {
-    return this.formGroup.get('name') as FormControl
+  get username() {
+    return this.formGroup.get('username') as FormControl;
   }
 
   checkPassword(control) {
-    let enteredPassword = control.value
-    let passwordCheck = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
-    return (!passwordCheck.test(enteredPassword) && enteredPassword) ? { 'requirements': true } : null;
+    const enteredPassword = control.value;
+    const passwordCheck = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
+    return (!passwordCheck.test(enteredPassword) && enteredPassword) ? { requirements: true } : null;
   }
 
-  checkInUseEmail(control) {
-    // mimic http database access
-    let db = ['tony@gmail.com'];
-    return new Observable(observer => {
-      setTimeout(() => {
-        let result = (db.indexOf(control.value) !== -1) ? { 'alreadyInUse': true } : null;
-        observer.next(result);
-        observer.complete();
-      }, 4000)
-    })
-  }
+  // checkInUseEmail(control) {
+  //   // mimic http database access
+  //   let db = ['tony@gmail.com'];
+  //   return new Observable(observer => {
+  //     setTimeout(() => {
+  //       let result = (db.indexOf(control.value) !== -1) ? { 'alreadyInUse': true } : null;
+  //       observer.next(result);
+  //       observer.complete();
+  //     }, 4000)
+  //   })
+  // }
 
   getErrorEmail() {
     return this.formGroup.get('email').hasError('required') ? 'Email es requerido' :
@@ -87,35 +86,40 @@ export class RegisterComponent implements OnInit {
   }
 
   getErrorPassword() {
-    return this.formGroup.get('password').hasError('required') ? 'Contraseña es requerida (at least eight characters, one uppercase letter and one number)' :
-      this.formGroup.get('password').hasError('requirements') ? 'Contraseña necesitPassword needs to be at least eight characters, one uppercase letter and one number' : '';
+    return this.formGroup.get('password').hasError('required') ? 'Contraseña es requerida' :
+      this.formGroup.get('password').hasError('requirements') ? 'Debe contener al menos una mayuscula, una minuscula y un número' : '';
   }
 
   onSubmit(post) {
     this.post = post;
   }
 
-  // register(registerForm: NgForm){
-  //   if (registerForm.controls.password.errors?.pattern) {
-  //     return this.notification.warning('Wrong password',
-  //     'Your password must contain at least a lowercase letter, a uppercase letter, a number, and must be between 8 and 40 characters')
-  //   }
-  //   console.log(registerForm);
-  //   const user = registerForm.value;
-  //   this.usersService.register(user)
-  //   .subscribe(
-  //     (res: HttpResponse<object>) => {
-  //       this.successMsg = res[this.successMsg];
-  //       setTimeout(() => {
-  //         this.router.navigate(['login']);
-  //       }, 2000);
-  //   },
-  //   (error: HttpErrorResponse) => {
-  //     this.errorMsg = error.error.message;
-  //     setTimeout(() =>  this.errorMsg = '' , 2000);
-  //   }
-  // );
-
+  register(){
+    const user = this.formGroup.value;
+    this.usersService.register(user)
+    .subscribe(
+      (res:HttpResponse<object>) =>{
+        // this.notification.create(
+        //   'success',
+        //   'Registro realizado con éxito',
+        //   res['message']
+        //   );
+        this.notification.success(
+          'Registro realizado con éxito',
+          res['message']
+          );
+        setTimeout(() => {
+            this.router.navigate(['login']);
+          }, 2500);
+      },
+      (error:HttpErrorResponse)=>{
+        this.notification.error(
+          'Problema al registrar usuario',
+          error['error']['message']
+          );
+      }
+    )
+  }
   // }
   // signup(signupForm: NgForm) {
   //   console.log(signupForm);

@@ -55,7 +55,7 @@
 }
 
 
-.input-mat::placeholder {
+.mat-form-field::placeholder {
     color: white;
 }
 

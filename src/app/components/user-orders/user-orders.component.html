@@ -1,14 +1,14 @@
 <h3>Historial Pedidos</h3>
 
 <div>
-    <div *ngFor="let user of users">
-       <div>ID: {{user.id}}</div> 
-       <div>Fecha alquiler: {{user.dateRent | date:"mediumDate"}}</div> 
-       <div>Dia llegada: {{user.dateArrival | date:"mediumDate"}}</div> 
-       <div>Dias de alquiler: {{user.daysRent}} dias</div> 
-       <div>Status: {{user.status}}</div> 
-       <div>Pelicula: {{user.Movie.title}} ({{user.Movie.id}})</div>
-       <div>Precio: {{user.price}} €</div>  
+    <div *ngFor="let order of orders">
+       <div>ID: {{order.id}}</div> 
+       <div>Fecha alquiler: {{order.dateRent | date:"mediumDate"}}</div> 
+       <div>Dia llegada: {{order.dateArrival | date:"mediumDate"}}</div> 
+       <div>Dias de alquiler: {{order.daysRent}} dias</div> 
+       <div>Status: {{order.status}}</div> 
+       <div>Pelicula: {{order.Movie.title}} ({{order.Movie.id}})</div>
+       <div>Precio: {{order.price}} €</div>  
        <div>-----------------</div>
     </div>
 </div>

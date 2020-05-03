@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 import { UsersService } from 'src/app/services/users.service';
 import { OrdersService } from 'src/app/services/orders.service';
+import { NzDividerComponent } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-admin-search',
@@ -28,26 +29,26 @@ export class AdminSearchComponent implements OnInit {
   }
 
   // BUSQUEDA USUARIO POR ID USUARIO
-  // UserById(id: number) {
-  //   this.usersService.getUsersById(id).subscribe((usuarios: any) => {
-  //     console.log(usuarios)
-  //     this.usuario = usuarios;
-  //   });
-  // }
+  UserById(id: number) {
+    this.usersService.getUsersById(id).subscribe((usuarios: any) => {
+      console.log(usuarios)
+      this.usuario = usuarios;
+    });
+  }
 
   // BUSQUEDA USUARIO POR EMAIL USUARIO
-  // UserByEmail(email: string) {
-  //     this.usersService.getUserByEmail(email).subscribe((usuario: any) => {
-  //       this.usuarios = usuario;
-  //     });
-  //   }
+  UserByEmail(email: string) {
+      this.usersService.getUserByEmail(email).subscribe((usuarios: any) => {
+        this.usuario = usuarios;
+      });
+    }
 
   // BUSQUEDA USUARIO POR USERNAME USUARIO
-  // UserByUsername(username: string) {
-  //   this.usersService.getUserByUsername(username).subscribe((usuario: any) => {
-  //     this.usuarios = usuario;
-  //   });
-  // }
+  UserByUsername(username: string) {
+    this.usersService.getUserByUsername(username).subscribe((usuarios: any) => {
+      this.usuario = usuarios;
+    });
+  }
 
   // BUSQUEDA PELICULA POR ID
   MovieById(id: number) {
@@ -70,3 +71,7 @@ export class AdminSearchComponent implements OnInit {
     });
   }
 }
+
+
+
+

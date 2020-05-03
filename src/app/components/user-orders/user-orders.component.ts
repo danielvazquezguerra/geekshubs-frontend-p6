@@ -9,9 +9,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class UserOrdersComponent implements OnInit {
 
-
-  users: any;
-  id: number;
+  public orders;
+  public movies;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,15 +19,20 @@ export class UserOrdersComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-      this.UsersOrdersByUserId(params.id);
+      this.getOrders();
     });
   }
 
-  UsersOrdersByUserId(id: number){
-    this.ordersService.getOrdersByUserId(id).subscribe( user => {
-      this.users = user;
-      console.log(this.users);
-    });
+  getOrders(){
+    const token = localStorage.getItem('authToken');
+    if (token) {
+      console.log(token);
+      this.ordersService.getOrdersUser(token).subscribe(res => {
+          this.orders = res;
+          console.log(this.orders);
+      }
+      );
+    }
   }
 
   // Crear funcion para sumar precio total
