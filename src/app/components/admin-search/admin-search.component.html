@@ -1,21 +1,21 @@
 <p>Busqueda Usuario</p>
 <!-- BUSCAR USUARIO POR ID USUARIO -->
-<!-- <form action="">
+<form action="">
     <input type="text" placeholder="ID usuario" [(ngModel)]="id" [ngModelOptions]="{standalone: true}">
     <button (click)="UserById(id)">Buscar</button>
-</form> -->
+</form>
 
 <!-- BUSCAR USUARIO POR EMAIL USUARIO -->
-<!-- <form action="">
+<form action="">
     <input type="text" placeholder="ID pelicula" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
     <button (click)="UserByEmail(email)">Buscar</button>
-</form> -->
+</form>
 
 <!-- BUSCAR USUARIO POR USERNAME USUARIO -->
-<!-- <form action="">
+<form action="">
     <input type="text" placeholder="ID pelicula" [(ngModel)]="username" [ngModelOptions]="{standalone: true}">
     <button (click)="UserByUsername(username)">Buscar</button>
-</form> -->
+</form>
 
 <p>Busqueda Pelicula</p>
 <!-- BUSQUEDA PELICULA POR ID -->
@@ -37,52 +37,24 @@
     <button (click)="OrderById(id)">Buscar</button>
 </form>
 
-<!-- FILTRO POR ID, GENERO, ESTRENOS, TITULO, ACTORES -->
-
-<!-- FILTRO POR ID -->
-<!-- <div>
-    <form action="">
-        <input type="text" placeholder="ID pelicula" [(ngModel)]="id" [ngModelOptions]="{standalone: true}">
-        <button (click)="getAllMoviesById(id)">Buscar</button>
-    </form>
-</div> -->
-
-<!-- FILTRO POR TITULO -->
-<!-- <div>
-    <form action="">
-        <input type="text" placeholder="titulo pelicula" [(ngModel)]="title" [ngModelOptions]="{standalone: true}">
-        <button (click)="getAllMoviesByTitle(title)">Buscar</button>
-    </form>
-</div> -->
-
-<!-- FILTRO POR GENERO -->
-<!-- <div>
-    <form action="">
-        <input type="text" placeholder="Genero pelicula" [(ngModel)]="title">
-        <button (click)="getAllMoviesByTitle(title)">Buscar</button>
-    </form>
-</div> -->
-
-<!-- FILTRO POR ACTORES -->
-<!-- <div>
-    <form action="">
-        <input type="text" placeholder="Actores" [(ngModel)]="name" [ngModelOptions]="{standalone: true}">
-        <button (click)="getActorsByName(name)">Buscar</button>
-    </form>
-</div> -->
-
-<!-- FILTRO POR PELICULAS Y ACTORES -->
-
 <!-- RESULTADOS -->
 
+<!-- USUARIOS -->
 <div>
     <!-- <p> Id: {{ usuario.id }} </p> 
-    <p> Nombre Usuarios: {{ usuarios.username }} </p>
-    <p> Nombre: {{ usuarios.firstName }} {{ usuarios.lastName }}</p>
-    <p> Email: {{ usuarios.email }} </p>
-    <p> Dirección: {{ usuarios.address }}, España </p> -->
-    <!-- <p>{{ usuario.City.city }}</p> -->
+    <p> Nombre Usuarios: {{ usuario.username }} </p>
+    <p> Nombre: {{ usuario.firstName }} {{ usuario.lastName }}</p>
+    <p> Email: {{ usuario.email }} </p>
+    <p> Dirección: {{ usuario.address }}, España </p>
+    <p>{{ usuario.City.city }}</p> -->
 </div>
+
+<!-- PELICULA -->
+
+
+
+<!-- PEDIDO -->
+
 
 <!-- <div *ngFor="let actor of actors | slice:0:9">
     <div>
