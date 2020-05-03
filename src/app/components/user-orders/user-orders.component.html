@@ -1,14 +1,59 @@
-<h3>Historial Pedidos</h3>
+<main class="main-profile container-fluid m-0 p-0 h-100">
 
-<div>
-    <div *ngFor="let order of orders">
-       <div>ID: {{order.id}}</div> 
-       <div>Fecha alquiler: {{order.dateRent | date:"mediumDate"}}</div> 
-       <div>Dia llegada: {{order.dateArrival | date:"mediumDate"}}</div> 
-       <div>Dias de alquiler: {{order.daysRent}} dias</div> 
-       <div>Status: {{order.status}}</div> 
-       <div>Pelicula: {{order.Movie.title}} ({{order.Movie.id}})</div>
-       <div>Precio: {{order.price}} €</div>  
-       <div>-----------------</div>
-    </div>
-</div>
+    <section class="header-profile d-flex w-100 m-0 p-0">
+
+        <h3 class="header-title d-flex justify-content-start align-items-center pl-5 m-0">Administrador.</h3>
+
+    </section>
+
+    <section class="body-profile d-flex w-100 m-0 p-0">
+
+        <nav class="sidebar d-flex flex-column align-items-end justify-content-center w-25 h-100 m-0 p-3">
+
+            <ul class="bt-sidebar-list d-flex d-flex flex-column justify-content-center align-items-end">
+
+                <li><a class="bt-sidebar" routerLink="/profile/data" routerLinkActive="active">Mis datos</a></li>
+                <li><a class="bt-sidebar" routerLink="/profile/order" routerLinkActive="active">Mis pedidos</a></li>
+                <li><a class="bt-sidebar"routerLink="/profile/update" routerLinkActive="active">Modificar mis datos</a></li>
+            </ul>
+    
+        </nav>
+    
+        <section id="infoMain" class="info-main d-flex w-75 h-100 m-0 p-0">
+            <section class="admin-info">
+        
+                <thead class="header-table">
+                    
+                    <tr class="d-flex w-100 h-100 align-items-center justify-content-start m-0 p-0">
+                        <th class="id-table">ID</th>
+                        <th class="pop-table">F.ALQ</th>
+                        <th class="vote-table">DIA ALQ</th>
+                        <th class="rate-table">DIA LLEG</th>
+                        <th class="rate-table">DIAS ALQ</th>
+                        <th class="rate-table">STATUS</th>
+                        <th class="rate-table">PELI</th>
+                        <th class="rate-table">PRECIO</th>
+                    </tr>
+                </thead>
+                <div *ngFor="let order of orders">
+                    <tr class="row d-flex">
+                        <td class="col d-flex">
+                            <div>ID: {{order.id}}</div> 
+                            <div>Fecha alquiler: {{order.dateRent | date:"mediumDate"}}</div> 
+                            <div>Dia llegada: {{order.dateArrival | date:"mediumDate"}}</div> 
+                            <div>Dias de alquiler: {{order.daysRent}} dias</div> 
+                            <div>Status: {{order.status}}</div> 
+                            <div>Pelicula: {{order.Movie.title}} ({{order.Movie.id}})</div>
+                            <div>Precio: {{order.price}} €</div>  
+                        </td>
+                        
+                    </tr>
+                           
+                </div>   
+        
+            </section>
+            
+
+        </section>
+
+    </section>

@@ -32,37 +32,37 @@ export class AdminSearchComponent implements OnInit {
 
   // BUSQUEDA USUARIO POR ID USUARIO
   UserById(id: number) {
-    console.log(id)
+    console.log(id);
     this.usersService.getUsersById(id).subscribe((usuarios: any) => {
-      console.log(usuarios)
+      console.log(usuarios);
       this.usuario = usuarios;
     });
   }
 
   // BUSQUEDA USUARIO POR EMAIL USUARIO
   UserByEmail(email: string) {
-    console.log(email)
+    console.log(email);
     this.usersService.getUserByEmail(email).subscribe((usuarios: any) => {
-      console.log(usuarios)
+      console.log(usuarios);
       this.usuario = usuarios;
     });
   }
 
   // BUSQUEDA USUARIO POR USERNAME USUARIO
   UserByUsername(username: string) {
-    console.log(username)
+    console.log(username);
     this.usersService.getUserByUsername(username).subscribe((usuarios: any) => {
       this.usuario = usuarios;
-      console.log(this.usuario)
+      console.log(this.usuario);
     });
   }
 
   // BUSQUEDA PELICULA POR ID
   MovieById(id: number) {
-    console.log(id)
+    console.log(id);
     this.moviesService.getMoviesById(id).subscribe((peliculas: any) => {
       this.pelicula = peliculas;
-      console.log(this.pelicula)
+      console.log(this.pelicula);
     });
   }
 
@@ -75,7 +75,7 @@ export class AdminSearchComponent implements OnInit {
 
   // BUSQUEDA PELICULA POR ID
   OrderById(id: number) {
-    console.log(id)
+    console.log(id);
     this.ordersService.getOrderById(id).subscribe((pedidos: any) => {
       this.pedido = pedidos;
     });
