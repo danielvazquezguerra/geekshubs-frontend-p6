@@ -11,8 +11,8 @@ export class OrdersService {
   BASE = 'http://localhost:3000/';
   public order: Order;
   private token: string;
-  private daysRent:any;
-  private price:any;
+  private daysRent: any;
+  private price: any;
   // alquiler: any = {id: this.movie.id, daysRent: this.daysRent, payingAmount: this.totalAmount}
 
   constructor(
@@ -109,5 +109,5 @@ export class OrdersService {
     });
   }
 
-  
+
 }
