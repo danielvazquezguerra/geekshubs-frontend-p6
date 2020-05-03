@@ -1,17 +1,33 @@
-<h2>Perfil Usuario</h2>
+<main class="main-profile container-fluid m-0 p-0 h-100">
 
-<div class="row">
-    <div class="col-6">
-        <!-- <app-user-data></app-user-data> -->
-        <app-user-form></app-user-form>
-    </div>
-    
+    <section class="header-profile d-flex w-100 m-0 p-0">
 
+        <h3 class="header-title d-flex justify-content-start align-items-center pl-5 m-0">Datos de Perfil.</h3>
+
+    </section>
+
+    <section class="body-profile d-flex w-100 m-0 p-0">
+
+        <nav class="sidebar d-flex flex-column align-items-end justify-content-center w-25 h-100 m-0 p-3">
+
+            <ul class="bt-sidebar-list d-flex d-flex flex-column justify-content-center align-items-end">
+
+                <li><a class="bt-sidebar" href="#">Mis datos</a></li>
+                <li><a class="bt-sidebar" href="#">Mis pedidos</a></li>
+                <li><a class="bt-sidebar" href="#">Modificar mis datos</a></li>
+            </ul>
     
-<!--     
-    <div class="col-6">
-        <app-user-orders></app-user-orders>
-    </div> -->
+        </nav>
     
-</div>
+        <section class="info-main d-flex w-75 h-100 m-0 p-0">
+
+                <app-user-form class="container-fluid m-0 p-0"></app-user-form>
+
+        </section>
+
+    </section>
+
+
+</main>
+
 

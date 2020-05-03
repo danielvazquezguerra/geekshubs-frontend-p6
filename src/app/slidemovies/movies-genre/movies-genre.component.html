@@ -1,10 +1,10 @@
-<main class="populares-main container w-100">
+<main class="populares-main container-fluid w-100">
     
-    <h3 class="populares-title w-100">Populares.</h3>
+    <h3 class="populares-title w-100">{{nombre}}</h3>
 
     <div class="row content-slide d-flex flex-nowrap justify-content-center">
             
-        <div class="populares d-flex" *ngFor="let pelicula of populares | slice:0:8"> 
+        <div class="populares d-flex" *ngFor="let pelicula of moviesGenre | slice:0:8"> 
             
             <div class="movie-box col p-2">
                 

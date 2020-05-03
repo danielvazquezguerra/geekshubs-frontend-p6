@@ -1,0 +1,67 @@
+.main-profile {
+   
+}
+
+.form-header {
+    height: 10%;
+    box-sizing: content-box;
+    margin-bottom: 2px solid black;
+}
+
+.form-info {
+
+    height: 90%;
+    margin-top: 20px;
+    border-right: 2px solid black;
+
+}
+
+
+.header-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 1.5em;
+
+}
+
+.mat-form-field {
+
+    width: 46%;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.bt-submit {  
+    
+    width: 30%;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    background-color: rgb(5, 255, 242);
+    padding: 5px;
+    padding-left: 2%;
+    padding-right: 2%;
+    outline: none;
+    /* border: 3px solid rgb(5, 255, 242); */
+    border: 0px;
+    margin-top: 10px;
+    margin-left: 10px;
+    transition: 0.1s cubic-bezier(.66,-0.21,.31,1.36);
+}
+
+.bt-submit:hover {  
+    
+    width: 45%;
+    color: black ;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    background-color: rgb(255, 0, 64);
+    padding: 5px;
+    padding-left: 2%;
+    padding-right: 2%;
+    outline: none;
+    /* border: 3px solid rgb(5, 255, 242); */
+    border: 0px;
+    margin-left: 10px;
+    transition: 0.1s cubic-bezier(.66,-0.21,.31,1.36);
+}

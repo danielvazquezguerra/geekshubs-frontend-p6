@@ -23,7 +23,7 @@
     <div class="userZone login-header" *ngIf="usersService.getUser() as user" ng-controller="mensajeLogout">
         <p>{{mensaje}}</p>
         <a class="bt-rent" ng-mouseover="mensajeLogout()" (click)="logout()">LOGOUT</a>
-        <a [routerLink]="['/profile']" class="material-icons search-icon" routerLinkActive="active">{{user.username}}<span>person</span></a>
+        <a [routerLink]="['/profile']" class="material-icons search-icon" routerLinkActive="active"><span>{{user.username}}</span><span>person</span></a>
     </div>
     
 </nav>

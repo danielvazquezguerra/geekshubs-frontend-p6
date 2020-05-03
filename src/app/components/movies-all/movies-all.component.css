@@ -1,0 +1,59 @@
+.header-table {
+    height: 10%;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.titulo-table {
+    width: 50%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.id-table {
+    width: 5%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.pop-table {
+    width: 10%;
+    padding-right: 10px;
+    padding-left: 10px;
+
+}
+
+.vote-table {
+    width: 10%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.rate-table {
+    width: 5%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.col {
+    box-sizing: content-box;
+}
+
+
+th {
+    display: flex;
+    align-self: flex-end;
+
+}
+
+tr. {
+    box-sizing: content-box;
+
+}
+
+.admin-info {
+
+    height: 90%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}

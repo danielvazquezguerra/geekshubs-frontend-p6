@@ -109,26 +109,6 @@
 
     </section>
     
-    
-    <section>
-
-        <h3 class="h3-title w-100">{{nombre}}</h3>
-
-        <div class="populares d-flex" *ngFor="let pelicula of moviesGenre | slice:0:8"> 
-            
-            <div class="movie-box col p-2">
-                
-                <img class="movie-img" [src]= "getImage(pelicula)" alt="{{ pelicula.title }}" [routerLink]="'/details/' + pelicula.id">
-                
-                <p class="movie-name"> {{ pelicula.title }}. </p>
-
-            </div>            
-
-        </div>
-
-        
-    </section>
-    
     <app-movies-genre></app-movies-genre>
 
 </main>
