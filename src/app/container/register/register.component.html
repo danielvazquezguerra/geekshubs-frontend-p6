@@ -20,11 +20,11 @@
     
             <!-- Nombre -->
             <mat-form-field class="form-element" hintLabel="Max 15 caracteres" appearance="legacy">
-              <input matInput #email placeholder="Email" formControlName="email" minlength="5" maxlength="15">
+              <input matInput #email placeholder="Email" formControlName="email" minlength="5" maxlength="25">
               <mat-error *ngIf="!formGroup.controls['email'].valid && formGroup.controls['email'].touched">
                 {{ getErrorEmail() }}
               </mat-error>
-              <mat-hint align="end">{{email.value?.length || 0}}/15</mat-hint>
+              <mat-hint align="end">{{email.value?.length || 0}}/25</mat-hint>
             </mat-form-field>
             <!-- <mat-form-field  hintLabel="Max 10 caracteres" appearance="legacy">
               <mat-label>Username</mat-label>

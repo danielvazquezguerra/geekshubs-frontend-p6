@@ -38,7 +38,7 @@ export class UsersService {
   getUserInfo(token){
     return this.http.get<User>(`${this.BASE}users/info`, {
       headers: {
-        Authorization: token
+        Authorization: localStorage.getItem('authToken') || ''
       }
     });
   }
@@ -47,32 +47,40 @@ export class UsersService {
     this.token = localStorage.getItem('authToken');
     return this.http.get(`${this.BASE}users/info/all`, {
       headers: {
-        Authorization: this.token
+        Authorization: localStorage.getItem('authToken') || ''
       }
     });
   }
 
   getUsersById(id: number){
-    return this.http.get(`${this.BASE}users/info/id=${id}`);
-  }
-
-  getUsersByName(name: string){
-    return this.http.get(`${this.BASE}users/info/id${name}`);
+    return this.http.get(`${this.BASE}users/info/id=${id}`, {
+      headers: {
+        Authorization: localStorage.getItem('authToken') || ''
+      }
+    });
   }
 
   getUserByEmail(email: string){
-    return this.http.get(`${this.BASE}users/info/username${email}`);
+    return this.http.get(`${this.BASE}users/info/email=${email}`, {
+      headers: {
+        Authorization: localStorage.getItem('authToken') || ''
+      }
+    });
   }
 
   getUserByUsername(username: string){
-    return this.http.get(`${this.BASE}users/${username}`);
+    return this.http.get(`${this.BASE}users/info/username=${username}`, {
+      headers: {
+        Authorization: localStorage.getItem('authToken') || ''
+      }
+    });
   }
 
   modifiedUserById(body: any){
     this.token = localStorage.getItem('authToken');
     return this.http.put(`${this.BASE}users/update`, body, {
       headers: {
-        Authorization: this.token
+        Authorization: localStorage.getItem('authToken') || ''
       }
     });
   }

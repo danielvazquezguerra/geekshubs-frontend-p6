@@ -1,60 +1,97 @@
-<p>Busqueda Usuario</p>
+<h3>Busqueda Usuario</h3>
 <!-- BUSCAR USUARIO POR ID USUARIO -->
-<form action="">
-    <input type="text" placeholder="ID usuario" [(ngModel)]="id" [ngModelOptions]="{standalone: true}">
-    <button (click)="UserById(id)">Buscar</button>
-</form>
+<mat-form-field appearance="legacy">
+    <mat-label>Id Usuario</mat-label>
+    <input class="input-mat" matInput placeholder="ID Usuario" type="number"  [(ngModel)]="idU" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+<button class="search material-icons" (click)="UserById(idU)">search</button>
 
 <!-- BUSCAR USUARIO POR EMAIL USUARIO -->
-<form action="">
-    <input type="text" placeholder="ID pelicula" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
-    <button (click)="UserByEmail(email)">Buscar</button>
-</form>
+<mat-form-field appearance="legacy">
+    <mat-label>Email Usuario</mat-label>
+    <input class="input-mat" matInput placeholder="Email Usuario" type="text"  [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+<button class="search material-icons" (click)="UserByEmail(email)">search</button>
 
 <!-- BUSCAR USUARIO POR USERNAME USUARIO -->
-<form action="">
-    <input type="text" placeholder="ID pelicula" [(ngModel)]="username" [ngModelOptions]="{standalone: true}">
-    <button (click)="UserByUsername(username)">Buscar</button>
-</form>
+<mat-form-field appearance="legacy">
+    <mat-label>Nombre Usuario</mat-label>
+    <input class="input-mat" matInput placeholder="Username Usuario" type="text"  [(ngModel)]="username" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+<button class="search material-icons" (click)="UserByUsername(username)">search</button>
 
-<p>Busqueda Pelicula</p>
+<h3>Busqueda Pelicula</h3>
 <!-- BUSQUEDA PELICULA POR ID -->
-<form action="">
-    <input type="text" placeholder="ID pelicula" [(ngModel)]="id" [ngModelOptions]="{standalone: true}">
-    <button (click)="MovieById(id)">Buscar</button>
-</form>
+<mat-form-field appearance="legacy">
+    <mat-label>ID pelicula</mat-label>
+    <input class="input-mat" matInput placeholder="ID pelicula" type="number"  [(ngModel)]="idM" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+<button class="search material-icons" (click)="MovieById(idM)">search</button>
 
 <!-- BUSQUEDA PELICULA POR TITULO -->
-<form action="">
-    <input type="text" placeholder="titulo pelicula" [(ngModel)]="title" [ngModelOptions]="{standalone: true}">
-    <button (click)="MoviesByTitle(title)">Buscar</button>
-</form>
+<mat-form-field appearance="legacy">
+    <mat-label>Titulo pelicula</mat-label>
+    <input class="input-mat" matInput placeholder="Titulo pelicula" type="text"  [(ngModel)]="title" [ngModelOptions]="{standalone: true}">
+</mat-form-field>
+<button class="search material-icons" (click)="MoviesByTitle(title)">search</button>
+
 
 <h3>Busqueda Pedido</h3>
+
 <!-- BUSQUEDA PEDIDO POR ID PEDIDO -->
-<form action="">
-    <input type="text" placeholder="ID pelicula" [(ngModel)]="id" [ngModelOptions]="{standalone: true}">
-    <button (click)="OrderById(id)">Buscar</button>
-</form>
+<mat-form-field appearance="legacy">
+    <mat-label>ID pedido</mat-label>
+    <input class="input-mat" matInput placeholder="ID pedido" type="number"  [(ngModel)]="idO" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+<button class="search material-icons" (click)="OrderById(idO)">search</button>
 
 <!-- RESULTADOS -->
 
 <!-- USUARIOS -->
-<div>
-    <!-- <p> Id: {{ usuario.id }} </p> 
-    <p> Nombre Usuarios: {{ usuario.username }} </p>
-    <p> Nombre: {{ usuario.firstName }} {{ usuario.lastName }}</p>
-    <p> Email: {{ usuario.email }} </p>
-    <p> Dirección: {{ usuario.address }}, España </p>
-    <p>{{ usuario.City.city }}</p> -->
+<div class="row">
+    <div class="col-4">
+        <h3>Usuario</h3>
+        <p> Id: {{ usuario.id }} </p> 
+        <p> Nick: {{ usuario.username }} </p>
+        <p> Nombre: {{ usuario.firstName }} {{ usuario.lastName }}</p>
+        <p> Email: {{ usuario.email }} </p>
+        <p> Dirección: {{ usuario.address }}, España </p>
+        <p>{{ usuario.City.city }}</p> 
+        <!-- <button>Modificar</button> -->
+    </div>
+    
+    <!-- PELICULA -->
+    <div class="col-4">
+        <h3>Pelicula</h3>
+        <p> Id: {{ pelicula.id }} </p> 
+        <p> Titulo: {{ pelicula.title }} </p> 
+        <p> Titulo original: {{ pelicula.original_title }} </p> 
+        <p> Popularity: {{ pelicula.popularity }} </p>
+        <p> Vote Count: {{ pelicula.vote_count }} </p>
+        <p> Poster: {{ pelicula.poster_path }} </p>
+        <p> Backdrop path: {{ pelicula.backdrop_path }}</p>
+        <p> Idiona original:{{ pelicula.original_language }}</p>
+        <p> Vote Average: {{ pelicula.vote_average }} </p> 
+        <p> Fecha Estreno: {{ pelicula.release_date }} </p> 
+        <p> Resumen: {{ pelicula.overview }} </p> 
+        <!-- <button>Modificar</button> -->
+    </div>
+    
+    
+    <!-- PEDIDO -->
+    <div class="col-4"> 
+        <h3>Pedido</h3>
+        <p>Id: {{ pedido.id }} </p>
+        <p>Date Rent: {{ pedido.dateRent | date:'d/M/yy'}} </p>
+        <p>Date Arrival: {{ pedido.dateArrival | date:'d/M/yy'}} </p>
+        <p>Days Rent: {{ pedido.daysRent }} </p>
+        <p>Price: {{ pedido.status }} </p>
+        <p>Status: {{ pedido.title }} </p>
+        <p>Pelicula: {{ pedido.Movie.title }} ({{ pedido.Movie.id }})</p>
+        <p>Usuario: {{ pedido.User.username }} ({{ pedido.User.id }})</p>
+        <!-- <button>Modificar</button> -->
+    </div>
 </div>
-
-<!-- PELICULA -->
-
-
-
-<!-- PEDIDO -->
-
 
 <!-- <div *ngFor="let actor of actors | slice:0:9">
     <div>
