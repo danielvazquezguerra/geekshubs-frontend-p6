@@ -9,6 +9,14 @@
 
     background-color: rgb(255, 0, 64);
     height: 80%;
+    transition: 0.1s cubic-bezier(.66,-0.21,.31,1.36);
+}
+
+.login-middle:hover {
+
+    background-color: rgb(255, 0, 64);
+    height: 90%;
+    transition: 0.1s cubic-bezier(.66,-0.21,.31,1.36);
 }
 
 .foto-fondo {

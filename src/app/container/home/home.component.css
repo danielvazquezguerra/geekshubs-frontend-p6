@@ -15,15 +15,6 @@
 
 }
 
-.up-left {
-   
-    
-}
-
-.up-right {
-    
-}
-
 .main-up p {
     margin: 0px;
 }
@@ -164,18 +155,39 @@
     }
     
 
-.bt-rent {  
+    .bt-rent {  
     
-    width: 100px;
-    color: black;
-    background-color: rgb(0, 255, 242);
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    outline: none;
-    border: 0px;
-    margin-top: 10px;
-}
+        width: 200px;
+        color: black;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 800;
+        background-color: rgb(5, 255, 242);
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        outline: none;
+        /* border: 3px solid rgb(5, 255, 242); */
+        border: 0px;
+        margin-top: 10px;
+        transition: 0.1s cubic-bezier(.66,-0.21,.31,1.36);
+    }
+    
+    .bt-rent:hover {  
+        
+        width: 300px;
+        color: black ;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 800;
+        background-color: rgb(255, 0, 64);
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 60px;
+        outline: none;
+        /* border: 3px solid rgb(5, 255, 242); */
+        border: 0px;
+        margin-left: 10px;
+        transition: 0.1s cubic-bezier(.66,-0.21,.31,1.36);
+    }
 
 .search {
     color: white;
@@ -183,8 +195,9 @@
 
 }
 
-.input-mat::placeholder {
+.input-mat::placeholder.input-mat {
     color: white;
+    width: 400px;
 }
 
 .mat-hint {

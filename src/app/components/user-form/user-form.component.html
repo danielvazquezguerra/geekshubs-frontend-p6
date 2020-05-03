@@ -1,19 +1,91 @@
-<h3>Modificar datos de Usuario</h3>
-<div class="profile row" *ngIf="usersService.getUser() as user">
-  <form #userModifyForm="ngForm" (submit)="ModifyUser(userModifyForm)">
-      <input type="text" [(ngModel)]="user.username" name="username" ngModel #username="ngModel" id="username" type="text" placeholder="username" required>
-      <input type="text" [(ngModel)]="user.firstName" name="firstName" ngModel #firstName="ngModel" id="firstName" placeholder="firstName">
-      <input type="text" [(ngModel)]="user.lastName" name="lastName" ngModel #lastName="ngModel" id="lastName" placeholder="lastName">
-      <input type="email" [(ngModel)]="user.email" name="email" ngModel #email="ngModel" id="email" placeholder="email" required>
-      <input type="text" name="oldPassword" ngModel #oldPassword="ngModel" id="oldPassword" placeholder="Old Password" required>
-      <input type="text" name="password" ngModel #password="ngModel" id="password" placeholder="New Password" required>
-      <input type="text" [(ngModel)]="user.address" name="address" ngModel #address="ngModel" id="address" placeholder="address">
-      <input type="text" [(ngModel)]="user.imageURL" name="imageURL" ngModel #imageURL="ngModel" id="imageURL" placeholder="imageURL">
-      <input type="number" [(ngModel)]="user.CityId" name="CityId" ngModel #CityId="ngModel" id="CityId" placeholder="CityId">
-      <button type="submit">Modificar</button>
-      <!-- Mensajes respuesta -->
+<main class="main-profile d-flex flex-column w-100 h-100 m-0 p-4" *ngIf="usersService.getUser() as user">
+
+    <div class="form-header d-flex w-100">
+      
+      <h3 class="header-title">Modificar datos de Usuario</h3>
+
+    </div>
+    
+    <form class="form-info d-flex flex-wrap w-100" #userModifyForm="ngForm" (submit)="ModifyUser(userModifyForm)">
+
+      <mat-form-field  hintLabel="Max 30 caracteres" appearance="legacy">
+        <mat-label>Username</mat-label>
+        <input matInput type="text" userName [(ngModel)]="user.username" name="username" ngModel #username="ngModel" id="username" type="text" placeholder="username" required>
+        <mat-hint align="end">{{username.value?.length || 0}}/30</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field  hintLabel="Max 30 caracteres" appearance="legacy">
+        <mat-label>Firstname</mat-label>
+        <input matInput type="text" [(ngModel)]="user.firstName" name="firstName" ngModel #firstName="ngModel" id="firstName" placeholder="firstName">
+        <mat-hint align="end">{{firstName.value?.length || 0}}/30</mat-hint>
+      </mat-form-field>
+      
+      <mat-form-field  hintLabel="Max 30 caracteres" appearance="legacy">
+        <mat-label>Lastname</mat-label>
+        <input matInput type="text" [(ngModel)]="user.lastName" name="lastName" ngModel #lastName="ngModel" id="lastName" placeholder="lastName">
+        <mat-hint align="end">{{firstName.value?.length || 0}}/30</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field  hintLabel="Max 30 caracteres" appearance="legacy">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" [(ngModel)]="user.email" name="email" ngModel #email="ngModel" id="email" placeholder="email" required>
+        <mat-hint align="end">{{email.value?.length || 0}}/30</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field  hintLabel="Max 08 caracteres" appearance="legacy">
+        <mat-label>Oldpassword</mat-label>
+        <input matInput type="password" name="oldPassword" ngModel #oldPassword="ngModel" id="oldPassword" placeholder="Old Password" maxlength="8" required>
+        <mat-hint align="end">{{oldPassword.value?.length || 0}}/8</mat-hint>
+      </mat-form-field>
+      
+            <mat-form-field  hintLabel="Max 30 caracteres" appearance="legacy">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" name="password" ngModel #password="ngModel" id="password" placeholder="New Password" maxlength="8" required>
+              <mat-hint align="end">{{password.value?.length || 0}}/8</mat-hint>
+            </mat-form-field>
+
+      <mat-form-field  hintLabel="Max 30 caracteres" appearance="legacy">
+        <mat-label>Address</mat-label>
+        <input matInput type="text" [(ngModel)]="user.address" name="address" ngModel #address="ngModel" id="address" placeholder="address">
+        <mat-hint align="end">{{address.value?.length || 0}}/30</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field  hintLabel="Max 30 caracteres" appearance="legacy">
+        <mat-label>Foto</mat-label>
+        <input matInput type="text" [(ngModel)]="user.imageURL" name="imageURL" ngModel #imageURL="ngModel" id="imageURL" placeholder="imageURL">
+        <mat-hint align="end">{{imageURL.value?.length || 0}}/30</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field  hintLabel="Max 30 caracteres" appearance="legacy">
+        <mat-label>City</mat-label>
+        <input matInput type="number" [(ngModel)]="user.CityId" name="CityId" ngModel #CityId="ngModel" id="CityId" placeholder="CityId">
+        <mat-hint align="end">{{CityId.value?.length || 0}}/30</mat-hint>
+      </mat-form-field>
+
+      <button class="bt-submit" type="submit">Modificar</button>
+
       <div class="message" *ngIf="message">
-          {{message}}
-        </div>
-  </form> 
-</div>
+
+        {{message}}
+        
+      </div>
+
+</form> 
+
+</main>
+
+            <!-- <input type="text" [(ngModel)]="user.username" name="username" ngModel #username="ngModel" id="username" type="text" placeholder="username" required> -->
+            <!-- <input type="text" [(ngModel)]="user.firstName" name="firstName" ngModel #firstName="ngModel" id="firstName" placeholder="firstName">
+            <input type="text" [(ngModel)]="user.lastName" name="lastName" ngModel #lastName="ngModel" id="lastName" placeholder="lastName"> -->
+            <!-- <input type="email" [(ngModel)]="user.email" name="email" ngModel #email="ngModel" id="email" placeholder="email" required> -->
+            <!-- <input type="text" name="oldPassword" ngModel #oldPassword="ngModel" id="oldPassword" placeholder="Old Password" required> -->
+            <!-- <input type="text" name="password" ngModel #password="ngModel" id="password" placeholder="New Password" required> -->
+            <!-- <input type="text" [(ngModel)]="user.address" name="address" ngModel #address="ngModel" id="address" placeholder="address"> -->
+            <!-- <input type="text" [(ngModel)]="user.imageURL" name="imageURL" ngModel #imageURL="ngModel" id="imageURL" placeholder="imageURL"> -->
+            <!-- <input type="number" [(ngModel)]="user.CityId" name="CityId" ngModel #CityId="ngModel" id="CityId" placeholder="CityId"> -->
+           
+            <!-- Mensajes respuesta -->
+
+
+
+

@@ -7,6 +7,10 @@
 
 }
 
+input {
+    width: 400px;
+}
+
 .movie-left {
     
     
@@ -14,7 +18,7 @@
 
 .movie-right {
 
-    border-left: 1px solid white;
+    border-left: 1px solid black;
    
 }
 
@@ -106,6 +110,21 @@
     margin-left: 3px;
     margin-right: 3px;
     color: black;
+    transition: 0.1s cubic-bezier(.66,-0.21,.31,1.36);
+}
+
+.bt-genre:hover {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 1em;
+    border: 2px solid white;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin: 0px;
+    margin-left: 3px;
+    margin-right: 3px;
+    color: white;
+    transition: 0.1s cubic-bezier(.66,-0.21,.31,1.36);
 }
 
 .rent-box {
@@ -134,7 +153,7 @@ nz-select {
     margin-top: 20px;
 }
 
-.casting-title {
+.h3-title {
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
     color: black;
@@ -214,5 +233,100 @@ nz-select {
     font-size: 14px;
     border-radius: 2px;
     color: rgba(0, 0, 0, 0.65);
-    background-color: rgb(0, 255, 242);;
+    background-color: rgb(0, 255, 242);
+
 }
+
+.bt-rent {  
+    
+    width: 200px;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    background-color:rgb(5, 255, 242);
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    outline: none;
+    /* border: 3px solid rgb(5, 255, 242); */
+    border: 0px;
+    
+    transition: 0.1s cubic-bezier(.66,-0.21,.31,1.36);
+}
+
+.bt-rent:hover {  
+    
+    width: 300px;
+    color: black ;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    background-color:rgb(5, 255, 242);
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 60px;
+    outline: none;
+    /* border: 3px solid rgb(5, 255, 242); */
+    border: 0px;
+    margin-left: 10px;
+    transition: 0.1s cubic-bezier(.66,-0.21,.31,1.36);
+}
+
+
+
+
+.n-order > p {
+    display: flex;
+    align-items: center;
+}
+
+.order-box {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.9em;
+    margin: 0px;
+    line-height: 1em;
+    
+}
+
+.bold-order {
+    font-family: 'poppins', sans-serif;
+    font-weight: 800;
+    font-size: 1.5em;
+
+}
+
+.movie-order {
+    color: yellow;
+    font-size: 1.8em;
+}
+
+.thin-order {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }

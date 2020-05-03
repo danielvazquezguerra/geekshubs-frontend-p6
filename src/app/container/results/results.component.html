@@ -4,16 +4,27 @@
     
     <section class="main-search d-flex w-100 justify-content-start aligns-items-center">
         
-        <div>
-            <form action="">
+        
+            <!-- <form class="form-search" action="">
                 <input type="text" placeholder="título / actor" [(ngModel)]="title" [ngModelOptions]="{standalone: true}">
                 <button (click)="getAllMoviesAndActorsByTitle(title)">Buscar</button>
+            </form> -->
+            
+            <form class="form-search p-3 d-flex justify-content-end align-items-center">
+                
+                <mat-form-field appearance="legacy">
+                    <mat-label>Puedes buscar por título o actor</mat-label>
+                    <input class="input-mat" matInput placeholder="Actor / Titulo / Genero" type="text"  [(ngModel)]="title" [ngModelOptions]="{standalone: true}">
+                    <mat-hint>Ya casi tienes lo que buscas</mat-hint>
+                  </mat-form-field>
+                <button class="search material-icons" (click)="getAllMoviesAndActorsByTitle(title)">search</button>
+    
             </form>
-        </div>
+       
 
     </section>
 
-    <section class="main-results d-flex flex-wrap">
+    <section class="main-movies d-flex flex-wrap">
 
         <div class="row content-slide">
 
