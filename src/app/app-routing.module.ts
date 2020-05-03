@@ -8,7 +8,7 @@ import { DetailsComponent } from './container/details/details.component';
 import { AdminprofileComponent } from './container/adminprofile/adminprofile.component';
 import { RegisterComponent } from './container/register/register.component';
 import { LoginComponent } from './container/login/login.component';
-import { ProfileComponent } from './container/profile/profile.component';
+// import { ProfileComponent } from './container/profile/profile.component';
 import { UsersAllComponent } from './components/users-all/users-all.component';
 import { OrdersAllComponent } from './components/orders-all/orders-all.component';
 import { MoviesAllComponent } from './components/movies-all/movies-all.component';
@@ -16,6 +16,8 @@ import { AdminSearchComponent } from './components/admin-search/admin-search.com
 import { UserDataComponent } from './components/user-data/user-data.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { UserOrdersComponent } from './components/user-orders/user-orders.component';
+import { MovieUpdateComponent } from './components/movie-update/movie-update.component';
+import { CreateMovieComponent } from './components/create-movie/create-movie.component';
 
 
 const routes: Routes = [
@@ -32,6 +34,8 @@ const routes: Routes = [
   { path: 'admin/users', component: UsersAllComponent },
   { path: 'admin/orders', component: OrdersAllComponent },
   { path: 'admin/movies', component: MoviesAllComponent },
+  { path: 'admin/movieAdd', component: CreateMovieComponent },
+  { path: 'admin/movieUpdate', component: MovieUpdateComponent },
   { path: 'admin/search', component: AdminSearchComponent },
 ];
 

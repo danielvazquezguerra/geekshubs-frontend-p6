@@ -47,7 +47,7 @@ export class ResultsComponent implements OnInit {
   // PELICULAS POR ID
   getAllMoviesById(id: number) {
     this.moviesService.getMoviesById(id).subscribe((pelicula: any) => {
-      console.log(pelicula)
+      console.log(pelicula);
       this.peliculas = pelicula;
     });
   }
@@ -55,7 +55,7 @@ export class ResultsComponent implements OnInit {
   // PELICULAS POR TITULO
   getAllMoviesByTitle(title: string) {
     this.moviesService.getMoviesByTitle(title).subscribe((pelicula: any) => {
-      console.log(pelicula)
+      console.log(pelicula);
       this.movies = pelicula;
     });
   }
