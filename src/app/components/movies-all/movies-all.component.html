@@ -1,31 +1,32 @@
 
 <main class="container h-100">
 
-    <section class="header-table">
-        <tr class="d-flex w-100 h-100 align-items-center justify-content-start m-0 p-0">
-            <th class="titulo-table">TITULO</th>
-            <th class="id-table">ID</th>
-            <th class="pop-table">POPULARIDAD</th>
-            <th class="vote-table">VOTACIÓN</th>
-            <th class="rate-table">RATE</th>
-        </tr>
-    </section>
     <section class="admin-info">
-
         
+        <div class="header-table">
+            
+            <tr class="d-flex w-100 h-100 align-items-center justify-content-start m-0 p-0">
+                <th class="titulo-table">TITULO</th>
+                <th class="id-table">ID</th>
+                <th class="pop-table">POP.</th>
+                <th class="vote-table">VOTACIÓN</th>
+                <th class="rate-table">RATE</th>
+
+            </tr>
+        </div>
         <div *ngFor="let movie of movies">
             <tr class="row d-flex">
                 <td class="col d-flex">
-                    <p class="titulo-table">{{ movie.title }}</p>  
+                    <p class="titulo-table strong">{{ movie.title }}</p>  
                     <p class="id-table">{{ movie.id }}</p>
                     <p class="pop-table">{{ movie.popularity }} </p>
                     <p class="vote-table">{{ movie.vote_count }} </p>
+                    <p class="rate-table"> {{ movie.vote_average }} </p>
                 </td>
                 
             </tr>
                     <!-- <p>Original Language: {{ movie.original_language }} </p>
                     <p>Original Title: {{ movie.original_title }}</p>
-                    <p>Vote Average: {{ movie.vote_average }} </p> -->
                     <!-- <p>Overview: {{ movie.overview | slice:0:50}}... </p>
                     <p>Release Date: {{ movie.release_date }} </p>
                     <p>Generos</p>
