@@ -63,9 +63,9 @@ export class DetailsComponent implements OnInit {
   detailsById(id: number) {
     this.moviesService.getMoviesById(id).subscribe((pelicula: any) => {
       this.detalle = pelicula;
-      console.log(this.detalle)
+      console.log(this.detalle);
       this.genres = pelicula.Genres;
-      console.log(this.genres)
+      console.log(this.genres);
       for (const genre of this.genres){
         this.generos.push(genre.id);
       }
@@ -118,13 +118,16 @@ export class DetailsComponent implements OnInit {
     this.ordersService.getOrderCreate(order)
     .subscribe(
         (res: HttpResponse<any>) => {
-        console.log(res)
+        console.log(res);
         this.ordersService.order = order;
-        console.log(this.ordersService.order)
+        this.pedido = this.ordersService.order;
+        console.log(order);
         // tslint:disable-next-line: no-string-literal
         this.successMsg = res['message'];
-        // console.log(this.successMsg);
-
+        console.log(order);
+        // setTimeout(() => {
+        //   this.router.navigate(['']);
+        // }, 2000);
         },
         (error: HttpErrorResponse) => {
         this.errorMsg = error.error.message;

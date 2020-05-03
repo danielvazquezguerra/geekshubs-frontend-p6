@@ -21,10 +21,10 @@
             <!-- Nombre -->
             <mat-form-field  hintLabel="Max 10 caracteres" appearance="legacy">
               <mat-label>Username</mat-label>
-              <input matInput name="userName" #userName="ngModel" 
+              <input matInput name="username" #username="ngModel" 
               id="userName" placeholder="Nombre de usuario" type="text"
               ngModel required userName minlength="5" maxlength="30">
-              <mat-hint align="end">{{userName.value?.length || 0}}/10</mat-hint>
+              <mat-hint align="end">{{username.value?.length || 0}}/10</mat-hint>
             </mat-form-field>
   
             <!-- Email -->
@@ -36,15 +36,23 @@
              <mat-hint align="end" *ngIf="email.errors.required">
               email is required.
              </mat-hint > 
+             <mat-hint align="end" *ngIf="registerForm.controls.password?.errors?.pattern">
+              tiene que ser un email.
+             </mat-hint > 
               <mat-hint align="end" *ngIf="email.errors.minlength">
               email must be at least 4 characters long.
               </mat-hint>
                <!--<mat-hint align="end" *ngIf="email.errors.forbiddenName"> 
                 Name cannot be Bob.
               </mat-hint> -->
-            
             </mat-form-field>
             
+            <!-- <nz-form-item>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
+                  <input nz-input formControlName="email" id="email" />
+              </nz-form-control> -->
+
             <!-- Password -->
             <mat-form-field hintLabel="Max 10 caracteres" appearance="legacy">
               <mat-label>Contraseña / Password</mat-label>
@@ -60,6 +68,14 @@
     
           </div>
           
+          <!-- Mensajes  -->
+          <div class="succesmessage" *ngIf="successMsg">
+            {{successMsg}}
+          </div>
+
+          <div class="errormessage">
+            {{errorMsg}}
+          </div>  
             
         </div>
         

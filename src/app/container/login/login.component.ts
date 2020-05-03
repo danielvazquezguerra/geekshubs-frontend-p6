@@ -28,18 +28,20 @@ export class LoginComponent implements OnInit {
     if (loginForm.valid) {
       this.usuariosService.login(loginForm.value)
         .subscribe(
-          (res: HttpResponse<object>) => {
+          (res: HttpResponse<any>) => {
             /* tslint:disable:no-string-literal */
             this.successMsg = res['message'];
+            console.log(this.successMsg);
             localStorage.setItem('authToken', res['token']);
             this.usuariosService.setUser(res['user']);
             setTimeout(() => {
-              this.router.navigate(['']);
+              this.router.navigate(['home']);
             }, 2000);
           },
 
           (error: HttpErrorResponse) => {
           this.errorMsg = error.error.message;
+          console.log(this.errorMsg);
           setTimeout(() =>  this.errorMsg = '' , 2000);
          }
         );

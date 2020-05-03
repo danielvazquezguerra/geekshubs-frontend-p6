@@ -53,23 +53,15 @@
                 </div>  
             </div>
         </article>
-
-        <p>{{this.ordersService.order | json}}</p>
-<!-- 
-        <article class="movie-right d-flex flex-column w-25 h-100 m-0 p-0" *ngIf="order !== null">
-                <section>
-                    <div>
-                        <h3>Pedidos</h3>
-                        <p> {{ order?.id }}</p>
-                        <p> {{ order?.dateRent | date }}</p>
-                        <p> {{ order?.dateArrival | date }}</p>
-                        <p> {{ order?.daysRent }}</p>
-                        <p> {{ order?.status }}</p>
-                        <p> {{ order?.price }} €</p>
-                        <p> {{ order?.MovieId }}</p>
-                        <p> {{ order?.Movie.title }}</p>
-                    </div>
-                </section> 
+        <!-- <article class="movie-right d-flex flex-column w-25 h-100 m-0 p-0">
+            <div>
+                <h3>Pedido</h3>
+                <p>Fecha alquiler: {{pedido.dateRent | json}}</p>
+                <p>Fecha entrega:{{pedido.dateArrival | json }}</p>
+                <p>Dias de alquiler: {{pedido.daysRent | json }}</p>
+                <p>Precio: {{pedido.price | json }} €</p>
+                <p>Id Pelicula{{pedido.MovieId | json }}</p>        
+            </div>
         </article> -->
     </section>
 

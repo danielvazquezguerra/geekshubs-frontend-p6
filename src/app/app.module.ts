@@ -22,6 +22,7 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { AntDesignModule } from './antdesign.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 //#endregion
 
 //#region Components
@@ -91,6 +92,7 @@ registerLocaleData(en);
     AntDesignModule,
     NgxGlideModule,
     CarouselModule,
+    MatSnackBarModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
 
