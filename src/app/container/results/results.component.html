@@ -24,21 +24,23 @@
 
     </section>
 
+    <!-- Resultados -->
     <section class="main-movies d-flex flex-wrap">
 
         <div class="row content-slide">
 
-            <div *ngFor="let movie of movies | slice:0:27">
+            <div *ngFor="let movie of movies | slice:0:20">
                 <div  class="movie-box col p-2">
                     <img class="movie-img" [src]= "getImage(movie)" alt="" [routerLink]="'/details/' + movie.id"> 
                     <p class="movie-name">{{ movie.title }}</p>
                 </div>
             </div>
-        
-            <div *ngFor="let actor of actors | slice:0:9">
-                <div>
-                    <p>{{ actor.name }}</p>
-                    <img [src]= "getImage3(actor)" alt="" [routerLink]="'/details/' + actor.id"> 
+        </div> 
+        <div class="row content-slide">
+            <div *ngFor="let actor of actors | slice:0:10">
+                <div class="movie-box col p-2">
+                    <img class="movie-img"[src]= "getImage3(actor)" alt=""> 
+                    <p class="movie-name">{{ actor.name }}</p>
                 </div>
             </div>
 
@@ -46,11 +48,12 @@
 
     </section>
 
+    <!-- Peliculas mostradas -->
     <section class="main-results d-flex flex-wrap h-auto">
         
         <div class="row content-slide">
             
-            <div class="populares d-flex" *ngFor="let pelicula of peliculas | slice:0:27">
+            <div class="populares d-flex" *ngFor="let pelicula of peliculas | slice:0:30">
 
                 <div class="movie-box col p-2">
                 
@@ -60,13 +63,6 @@
                 </div>
             </div>
         
-            <div *ngFor="let actor of actors">
-                <div>
-                    <p>{{ actor.name }}</p>
-                    <!-- <img [src]= "getImage(actor)" alt="" [routerLink]="'/details/' + actor.id">  -->
-                </div>
-            </div>
-
         </div>
 
     </section>

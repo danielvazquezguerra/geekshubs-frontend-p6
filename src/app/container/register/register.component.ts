@@ -7,7 +7,6 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -25,7 +24,6 @@ export class RegisterComponent implements OnInit {
     private usersService: UsersService,
     public router: Router,
     private notification: NzNotificationService,
-    private snackBar: MatSnackBar,
     private formBuilder: FormBuilder
   ) { }
 
@@ -99,11 +97,6 @@ export class RegisterComponent implements OnInit {
     this.usersService.register(user)
     .subscribe(
       (res:HttpResponse<object>) =>{
-        // this.notification.create(
-        //   'success',
-        //   'Registro realizado con éxito',
-        //   res['message']
-        //   );
         this.notification.success(
           'Registro realizado con éxito',
           res['message']
