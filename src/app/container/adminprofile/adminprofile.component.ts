@@ -7,6 +7,7 @@ import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { OrdersService } from '../../services/orders.service';
 import { MoviesService } from '../../services/movies.service';
 
+
 @Component({
   selector: 'app-adminprofile',
   templateUrl: './adminprofile.component.html',
@@ -19,14 +20,18 @@ export class AdminprofileComponent implements OnInit {
   message;
   pedidos;
   movies;
+  
 
   constructor(
     private ordersService: OrdersService,
     private moviesService: MoviesService,
-    public router: Router
+    public router: Router,
+  
+
   ) { }
 
   ngOnInit(): void {
+
 
   }
 
@@ -84,6 +89,10 @@ export class AdminprofileComponent implements OnInit {
     this.moviesService.getMovieDelete(id).subscribe((movies: any) => {
       this.movies = movies;
     });
+  }
+
+  AllUserComponent(){
+    document.getElementById('infoMain').innerHTML = 'hola';
   }
 
 }

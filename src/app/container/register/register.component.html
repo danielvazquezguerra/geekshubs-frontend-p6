@@ -19,8 +19,8 @@
           <div class="datos-field d-flex flex-column w-100">
     
             <!-- Nombre -->
-            <mat-form-field class="form-element" hintLabel="Max 15 caracteres" appearance="legacy">
-              <input matInput #email placeholder="Email" formControlName="email" minlength="5" maxlength="25">
+            <mat-form-field hintLabel="Max 15 caracteres" appearance="legacy">
+              <input matInput #email placeholder="Email" formControlName="email" minlength="5" maxlength="15">
               <mat-error *ngIf="!formGroup.controls['email'].valid && formGroup.controls['email'].touched">
                 {{ getErrorEmail() }}
               </mat-error>
@@ -35,7 +35,7 @@
             </mat-form-field> -->
   
             <!-- Email -->
-            <mat-form-field class="form-element" hintLabel="Max 30 caracteres" appearance="legacy">
+            <mat-form-field hintLabel="Max 30 caracteres" appearance="legacy">
               <input matInput #username placeholder="Nombre de Usuario" formControlName="username" minlength="5" maxlength="30">
               <mat-hint align="end">{{username.value?.length || 0}}/30</mat-hint>
               <mat-error *ngIf="!username.valid && username.touched">
@@ -69,7 +69,7 @@
               </nz-form-control> -->
 
             <!-- Password -->
-            <mat-form-field class="form-element" hintLabel="Max 30 caracteres" appearance="legacy">
+            <mat-form-field hintLabel="Max 30 caracteres" appearance="legacy">
               <input matInput #password placeholder="Contraseña" formControlName="password" minlength="5" maxlength="30">
               <mat-hint align="end">{{password.value?.length || 0}}/30</mat-hint>
               <!-- <mat-hint>Debe contener al menos una mayuscula, una minuscula y un número</mat-hint> -->

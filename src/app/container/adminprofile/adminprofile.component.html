@@ -12,22 +12,22 @@
 
             <ul class="bt-sidebar-list d-flex d-flex flex-column justify-content-center align-items-end">
 
-                <li><a class="bt-sidebar" href="#">Usuarios</a></li>
-                <li><a class="bt-sidebar" href="#">Pedidos</a></li>
-                <li><a class="bt-sidebar" href="#">Peliculas</a></li>
-                <li><a href="" class="bt-sidebar">Añadir Película</a></li>
-                <li><a href="" class="bt-sidebar">Borrar Película</a></li>
-                <li><a href="" class="bt-sidebar">Usuario por ID/email</a></li>
-                <li><a href="" class="bt-sidebar">Pedido por ID/fecha</a></li>
-                <li><a href="" class="bt-sidebar">Total de ventas diarias</a></li>
-                <li><a href="" class="bt-sidebar">Ventas histórico</a></li>
+                <li><a (click)="AllUserComponent()" class="bt-sidebar">Usuarios</a></li>
+                <li><a (click)="AllUserComponent()" class="bt-sidebar">Pedidos</a></li>
+                <li><a (click)="AllUserComponent()" class="bt-sidebar">Peliculas</a></li>
+                <li><a (click)="AllUserComponent()" class="bt-sidebar">Añadir Película</a></li>
+                <li><a (click)="AllUserComponent()" class="bt-sidebar">Borrar Película</a></li>
+                <li><a (click)="AllUserComponent()" class="bt-sidebar">Usuario por ID/email</a></li>
+                <li><a (click)="AllUserComponent()" class="bt-sidebar">Pedido por ID/fecha</a></li>
+                <li><a (click)="AllUserComponent()" class="bt-sidebar">Total de ventas diarias</a></li>
+                <li><a (click)="AllUserComponent()" class="bt-sidebar">Ventas histórico</a></li>
             </ul>
     
         </nav>
     
-        <section class="info-main d-flex w-75 h-100 m-0 p-0">
+        <section id="infoMain" class="info-main d-flex w-75 h-100 m-0 p-0">
 
-                <app-movies-all class="container-fluid m-0 p-0"></app-movies-all>
+            
 
         </section>
 
