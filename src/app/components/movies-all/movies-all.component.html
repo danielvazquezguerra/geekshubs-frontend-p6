@@ -17,11 +17,11 @@
         <div *ngFor="let movie of movies">
             <tr class="row d-flex">
                 <td class="col d-flex">
-                    <p class="titulo-table strong">{{ movie.title }}</p>  
-                    <p class="id-table">{{ movie.id }}</p>
-                    <p class="pop-table">{{ movie.popularity }} </p>
-                    <p class="vote-table">{{ movie.vote_count }} </p>
-                    <p class="rate-table"> {{ movie.vote_average }} </p>
+                    <div class="titulo-table strong">{{ movie.title }}</div>  
+                    <div class="id-table">{{ movie.id }}</div>
+                    <div class="pop-table">{{ movie.popularity }} </div>
+                    <div class="vote-table">{{ movie.vote_count }} </div>
+                    <div class="rate-table"> {{ movie.vote_average }} </div>
                 </td>
                 
             </tr>
