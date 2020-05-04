@@ -1,65 +1,68 @@
 .main-profile {
-    background-color: rgb(255, 0, 64);;
-
+   
 }
 
-.header-profile {
-
-    height: 15%;
-    
+.form-header {
+    height: 10%;
+    box-sizing: content-box;
+    margin-bottom: 2px solid black;
 }
 
-.header-title {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-    font-size: 2em;
+.form-info {
 
-}
-
-.body-profile {
-    height: 85%;
-  
-}
-
-.sidebar {
-
+    height: 90%;
+    margin-top: 20px;
     border-right: 2px solid black;
 
 }
 
 
-a {
-    text-decoration: none;
+.header-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 1.5em;
+
 }
 
-.bt-sidebar-list {
+.mat-form-field {
 
+    width: 46%;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.bt-submit {  
     
-    width: 100%;
-    height: 100%;
-    list-style-type: none;
-    line-height: 3em;
-
-}   
-
-.bt-sidebar-list a {
-
+    width: 30%;
     color: black;
     font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    padding-right: 20px;
-    cursor: pointer;
-    font-size: 0.9em;
-    letter-spacing: 1px;
-    transition: 0.1s cubic-bezier(.66,-0.21,.31,1.36);  
-    
+    font-weight: 800;
+    background-color: rgb(5, 255, 242);
+    padding: 5px;
+    padding-left: 2%;
+    padding-right: 2%;
+    outline: none;
+    /* border: 3px solid rgb(5, 255, 242); */
+    border: 0px;
+    margin-top: 10px;
+    margin-left: 10px;
+    transition: 0.1s cubic-bezier(.66,-0.21,.31,1.36);
 }
 
-.bt-sidebar-list a:hover {
+.bt-submit:hover {  
     
-    color: rgb(0, 204, 211);
+    width: 45%;
+    color: black ;
+    font-family: 'Poppins', sans-serif;
     font-weight: 800;
-    font-size: 1.2em;
+    background-color: rgb(255, 0, 64);
+    padding: 5px;
+    padding-left: 2%;
+    padding-right: 2%;
+    outline: none;
+    /* border: 3px solid rgb(5, 255, 242); */
+    border: 0px;
+    margin-left: 10px;
     transition: 0.1s cubic-bezier(.66,-0.21,.31,1.36);
 }
 
