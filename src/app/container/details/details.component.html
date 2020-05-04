@@ -102,21 +102,18 @@
         </article>
     </section>
 
-    <section class="casting w-100 container">
-
-        <h3 class="h3-title w-100">Casting.</h3>
-       
+    <section class="main-movies d-flex flex-wrap">
+    
         <!-- ACTORES -->
-        <div class="row">
-            <div class="actores" *ngFor="let actor of actores | slice:0:8"> 
-                <div class="actor-box col p-2">
-                    <p class="actor-name"> {{ actor.name }}. </p>
-                    <p> {{ actor.character }} </p>
-                    <img class="actor-img" [src]= "getImage3(actor)" alt="{{ actor.name }}" [routerLink]="'/details/' + actor.id">
-                </div>            
+        <h3 class="populares-title w-100">Casting</h3>
+        <div class="row content-slide">
+            <div *ngFor="let actor of actores | slice:0:7">
+                <div class="movie-box col p-2">
+                    <img class="movie-img" [src]= "getImage3(actor)" alt=""> 
+                    <p class="movie-name">{{ actor.name }}</p> 
+                </div>
             </div>
         </div>
-
     </section>
     
     <app-movies-genre></app-movies-genre>

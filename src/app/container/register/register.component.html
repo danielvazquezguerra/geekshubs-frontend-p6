@@ -20,19 +20,12 @@
     
             <!-- Nombre -->
             <mat-form-field hintLabel="Max 15 caracteres" appearance="legacy">
-              <input matInput #email placeholder="Email" formControlName="email" minlength="5" maxlength="15">
+              <input matInput #email placeholder="Email" formControlName="email" minlength="5" maxlength="25">
               <mat-error *ngIf="!formGroup.controls['email'].valid && formGroup.controls['email'].touched">
                 {{ getErrorEmail() }}
               </mat-error>
               <mat-hint align="end">{{email.value?.length || 0}}/25</mat-hint>
             </mat-form-field>
-            <!-- <mat-form-field  hintLabel="Max 10 caracteres" appearance="legacy">
-              <mat-label>Username</mat-label>
-              <input matInput name="username" #username="ngModel" 
-              id="userName" placeholder="Nombre de usuario" type="text"
-              ngModel required userName minlength="5" maxlength="30">
-              <mat-hint align="end">{{username.value?.length || 0}}/10</mat-hint>
-            </mat-form-field> -->
   
             <!-- Email -->
             <mat-form-field hintLabel="Max 30 caracteres" appearance="legacy">
@@ -42,25 +35,6 @@
                 {{ titleAlert }}
               </mat-error>
             </mat-form-field>
-            
-            <!-- <mat-form-field hintLabel="Max 10 caracteres" appearance="legacy">
-              <mat-label>Email</mat-label>
-              <input matInput  name="email" #email="ngModel" id="email" placeholder="rafa@gmail.com" type="email"
-              ngModel required email minlength="5" maxlength="50" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"> -->
-              <!-- <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint> -->
-             <!-- <mat-hint align="end" *ngIf="email.errors.required">
-              email is required.
-             </mat-hint > 
-             <mat-hint align="end" *ngIf="registerForm.controls.password?.errors?.pattern">
-              tiene que ser un email.
-             </mat-hint > 
-              <mat-hint align="end" *ngIf="email.errors.minlength">
-              email must be at least 4 characters long.
-              </mat-hint> -->
-               <!--<mat-hint align="end" *ngIf="email.errors.forbiddenName"> 
-                Name cannot be Bob.
-              </mat-hint> -->
-            <!-- </mat-form-field> -->
             
             <!-- <nz-form-item>
               <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
@@ -77,29 +51,13 @@
                 {{ getErrorPassword() }}
               </mat-error>
             </mat-form-field>
-            <!-- <mat-form-field hintLabel="Max 10 caracteres" appearance="legacy">
-              <mat-label>Contraseña / Password</mat-label>
-              <input matInput name="password" #password="ngModel" id="password" 
-              placeholder="Contraseña" type="password"
-              ngModel required password minlength="7" maxlength="10" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,40}$">
-              <mat-hint align="end">{{password.value?.length || 0}}/8</mat-hint>
-            </mat-form-field> -->
      
             <!-- boton Enviar -->
             <button class="boton-enviar" type="submit" mat-raised-button>REGISTRARSE</button>
             <!-- <button type="submit" class="btn btn-success btn-block btn-rounded z-depth-1">Registrarse</button> -->
     
           </div>
-          
-          <!-- Mensajes  -->
-          <!-- <div class="succesmessage" *ngIf="successMsg">
-            {{successMsg}}
-          </div>
-
-          <div class="errormessage">
-            {{errorMsg}}
-          </div>   -->
-            
+              
         </div>
         
         

@@ -64,7 +64,6 @@ export class MoviesGenreComponent implements OnInit {
         this.nombre = genre.name;
         console.log(this.nombre);
         this.moviesGenre = genre.Movies;
-
     });
   }
 

@@ -15,13 +15,12 @@
                 <li><a class="bt-sidebar" routerLink="/profile/data" routerLinkActive="active">Mis datos</a></li>
                 <li><a class="bt-sidebar" routerLink="/profile/order" routerLinkActive="active">Mis pedidos</a></li>
                 <li><a class="bt-sidebar"routerLink="/profile/update" routerLinkActive="active">Modificar mis datos</a></li>
-
             </ul>
     
         </nav>
     
         <section id="infoMain" class="info-main d-flex w-75 h-100 m-0 p-0">
-            
+     
                 <section class="admin-info container">
                     
                     <div class="profile-info d-flex justify-content-start align-items-center w-100 h-100" *ngIf="usersService.getUser() as user">

@@ -93,9 +93,9 @@ export class ResultsComponent implements OnInit {
     }
   }
 
-  getImage3(pelicula: any){
-    if (pelicula.poster_path){
-      return this.imageURL + (pelicula.poster_path);
+  getImage3(actor: any){
+    if (actor.profile_path){
+      return this.imageURL + (actor.profile_path);
     }
     else {
       return this.notImage;

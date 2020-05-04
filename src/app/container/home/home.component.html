@@ -61,32 +61,31 @@
         
     </section>
 
-    <section class="main-down content-fluid justify-content-center m-0 p-0">
+    <section class="main-movies d-flex flex-wrap">
 
-        <app-movies-genre></app-movies-genre>
         
-        <!-- <h3>Populares</h3>
-        <div class="grid">
-            <div *ngFor="let populares of populares | slice:0:4">
-                <div>
-                    <p>{{ populares.title }}</p>
-                    <img [src]= "getImage(populares)" alt="" [routerLink]="'/details/' + populares.id"> 
+        <h3 class="populares-title w-100">Populares</h3>
+        <div class="row content-slide">
+            <div *ngFor="let populares of populares | slice:0:7">
+                <div class="movie-box col p-2">
+                    <img class="movie-img" [src]= "getImage(populares)" alt="" [routerLink]="'/details/' + populares.id"> 
+                    <p class="movie-name">{{ populares.title }}</p> 
                 </div>
             </div>
         </div>
         
-        <h3>Estrenos</h3>
-        <div class="d-flex">
-            <div *ngFor="let estreno of estrenos | slice:0:4">
-                <div>
-                    <p>{{ estreno.title }}</p>
-                    <img [src]= "getImage(estreno)" alt="" [routerLink]="'/details/' + estreno.id"> 
+        <h3 class="populares-title w-100">Estrenos</h3>
+        <div class="row content-slide">
+            <div *ngFor="let estreno of estrenos | slice:0:7">
+                <div class="movie-box col p-2">
+                    <img class="movie-img" [src]="getImage(estreno)" alt="" [routerLink]="'/details/' + estreno.id"> 
+                    <p class="movie-name">{{ estreno.title }}</p>
                 </div>
             </div>
         </div>
         
         <app-genre-random></app-genre-random>
-         -->
+        
     </section>
     
 </main>
