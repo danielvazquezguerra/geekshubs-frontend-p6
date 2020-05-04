@@ -63,3 +63,56 @@ a {
     transition: 0.1s cubic-bezier(.66,-0.21,.31,1.36);
 
 }
+
+.admin-info {
+
+    height: 90%;
+
+}
+
+.info-content {
+
+    padding: 40px;
+    border: 2px solid black;
+}
+
+.profile-info {
+    
+    width: auto;
+    height: auto;
+}
+
+.labels {
+    font-family: 'Poppins',sans-serif;
+    font-weight: 800;
+    width: 20%;
+    height: 50%;
+    padding-right: 40px;
+}
+
+.datos {
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    width: 40%;
+    height: 50%;
+    
+}
+
+.row{
+
+    height: 100px;
+    
+}
+
+.super-font {
+    font-size: 3em;
+    font-weight: 800;
+    color: rgb(255, 94, 0);
+}
+
+.mid-font {
+    font-size: 1.3em;
+    font-weight: 500;
+}
+

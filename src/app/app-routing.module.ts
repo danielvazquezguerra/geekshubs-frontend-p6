@@ -18,6 +18,7 @@ import { UserFormComponent } from './components/user-form/user-form.component';
 import { UserOrdersComponent } from './components/user-orders/user-orders.component';
 import { MovieUpdateComponent } from './components/movie-update/movie-update.component';
 import { CreateMovieComponent } from './components/create-movie/create-movie.component';
+import { ProfileComponent } from './container/profile/profile.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'details/:id', component: DetailsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'profile', component: ProfileComponent},
   { path: 'profile/data', component: UserDataComponent },
   { path: 'profile/update', component: UserFormComponent },
   { path: 'profile/order', component: UserOrdersComponent },

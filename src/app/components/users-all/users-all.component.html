@@ -12,10 +12,16 @@
 
             <ul class="bt-sidebar-list d-flex d-flex flex-column justify-content-center align-items-end">
 
-                <li><a [routerLink]="['/admin/users']" routerLinkActive="active" class="bt-sidebar" class="bt-sidebar">Usuarios</a></li>
-                <li><a [routerLink]="['/admin/orders']" routerLinkActive="active" class="bt-sidebar" class="bt-sidebar">Pedidos</a></li>
-                <li><a [routerLink]="['/admin/movies']" routerLinkActive="active" class="bt-sidebar" class="bt-sidebar">Peliculas</a></li>
-                <li><a [routerLink]="['/admin/search']" routerLinkActive="active" class="bt-sidebar">Buscador</a></li>
+                <li><a class="bt-sidebar" routerLink="/admin/users" routerLinkActive="active">Usuarios</a></li>
+                <li><a class="bt-sidebar" routerLink="/admin/orders" routerLinkActive="active">Pedidos</a></li>
+                <li><a class="bt-sidebar" routerLink="/admin/movies" routerLinkActive="active">Peliculas</a></li>
+                <li><a class="bt-sidebar" routerLink="/admin/movieAdd" routerLinkActive="active">Añadir Película</a></li>
+                <li><a class="bt-sidebar" routerLink="/admin/movieUpdate" routerLinkActive="active">Modificar Película</a></li>
+                <li><a class="bt-sidebar" routerLink="/admin/" routerLinkActive="active">Borrar Película</a></li>
+                <li><a class="bt-sidebar" routerLink="/admin/" routerLinkActive="active">Usuario por ID/email</a></li>
+                <li><a class="bt-sidebar" routerLink="/admin/" routerLinkActive="active">Pedido por ID/fecha</a></li>
+                <li><a class="bt-sidebar" routerLink="/admin/" routerLinkActive="active">Total de ventas diarias</a></li>
+                <li><a class="bt-sidebar" routerLink="/admin/" routerLinkActive="active">Ventas histórico</a></li>
                
             </ul>
     
@@ -39,7 +45,7 @@
                         </tr>
                     </div>
                     
-                        <div *ngFor="let usuario of usuarios"></div>
+                        <div *ngFor="let usuario of usuarios">
             
                         <tr class="row d-flex">
             
@@ -47,7 +53,7 @@
 
                                 <p>{{usuario.id}}</p>
             
-                                <!-- <p> Id: {{ usuario.id }} </p> 
+                                <p> Id: {{ usuario.id }} </p> 
                                 <p> Nombre Usuario: {{ usuario.username }} </p>
                                 <p> Nombre: {{ usuario.firstName }} {{ usuario.lastName }}</p>
                                 <p> Email: {{ usuario.email }} </p>
@@ -56,12 +62,13 @@
                                     <p> Nº pedido: {{ order.id }} </p>
                                     <p> Nº pelicula: {{ order.MovieId }} </p>
                                     <p>//////</p>
-                                </div> -->
+                                </div>
                                 
                             </td>
                             
                         </tr>
                         
+                   </div>     
            
         </section>
             

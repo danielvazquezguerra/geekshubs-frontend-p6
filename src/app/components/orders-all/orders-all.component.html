@@ -31,11 +31,13 @@
                     <div class="header-table">
                         
                         <tr class="d-flex w-100 h-100 align-items-center justify-content-start m-0 p-0">
-                            <th class="titulo-table">TITULO</th>
+
                             <th class="id-table">ID</th>
-                            <th class="pop-table">POP.</th>
-                            <th class="vote-table">VOTACIÓN</th>
-                            <th class="rate-table">RATE</th>
+                            <th class="dayrent-table">DAY RENT</th>
+                            <th class="dayarrival-table">DAY ARRIVAL</th>
+                            <th class="price-table">PRICE</th>
+                            <th class="pelicula-table">PELICULA</th>
+                            <th class="usuario-table">USUARIO</th>
             
                         </tr>
                     </div>
@@ -46,14 +48,12 @@
             
                             <td class="col d-flex">
             
-                                <p>Id: {{ pedido.id }} </p>
-                                <p>Date Rent: {{ pedido.dateRent | date:'d/M/yy'}} </p>
-                                <p>Date Arrival: {{ pedido.dateArrival | date:'fullDate'}} </p>
-                                <p>Days Rent: {{ pedido.daysRent }} </p>
-                                <p>Price: {{ pedido.status }} </p>
-                                <p>Status: {{ pedido.title }} </p>
-                                <p>Pelicula: {{ pedido.Movie.title }} ({{ pedido.Movie.id }})</p>
-                                <p>Usuario: {{ pedido.User.username }} ({{ pedido.User.id }})</p>
+                                <p class="id-table">{{ pedido.id }} </p>
+                                <p class="dayrent-table">{{ pedido.dateRent | date:'d/M/yy'}} </p>
+                                <p class="dayarrival-table">{{ pedido.dateArrival | date:'fullDate'}} </p>
+                                <p class="price-table">{{ pedido.status }} </p>
+                                <p class="pelicula-table">{{ pedido.Movie.title }} ({{ pedido.Movie.id }})</p>
+                                <p class="usuario-table">{{ pedido.User.username }} ({{ pedido.User.id }})</p>
                                 
                             </td>
                             

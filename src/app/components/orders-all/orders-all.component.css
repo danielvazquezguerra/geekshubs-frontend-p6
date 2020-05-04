@@ -78,32 +78,39 @@ a {
     margin-bottom: 10px;
 }
 
-.titulo-table {
-    width: 50%;
-    padding-right: 10px;
-    padding-left: 10px;
-}
-
 .id-table {
     width: 10%;
     padding-right: 10px;
     padding-left: 10px;
 }
 
-.pop-table {
+.dayrent-table {
+    width: 50%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+
+.dayarrival-table {
     width: 10%;
     padding-right: 10px;
     padding-left: 10px;
 
 }
 
-.vote-table {
+.price-table {
     width: 10%;
     padding-right: 10px;
     padding-left: 10px;
 }
 
-.rate-table {
+.pelicula-table {
+    width: 5%;
+    padding-right: 10px;    
+    padding-left: 10px;
+}
+
+.usuario-table {
     width: 5%;
     padding-right: 10px;
     padding-left: 10px;
