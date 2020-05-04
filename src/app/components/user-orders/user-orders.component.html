@@ -2,7 +2,7 @@
 
     <section class="header-profile d-flex w-100 m-0 p-0">
 
-        <h3 class="header-title d-flex justify-content-start align-items-center pl-5 m-0">Administrador.</h3>
+        <h3 class="header-title d-flex justify-content-start align-items-center pl-5 m-0">Perfil Usuario</h3>
 
     </section>
 
@@ -18,41 +18,41 @@
             </ul>
     
         </nav>
+        
     
         <section id="infoMain" class="info-main d-flex w-75 h-100 m-0 p-0">
+            <div class="container h-100">
             <section class="admin-info">
         
-                <thead class="header-table">
+                <div class="header-table">
                     
                     <tr class="d-flex w-100 h-100 align-items-center justify-content-start m-0 p-0">
                         <th class="id-table">ID</th>
                         <th class="pop-table">F.ALQ</th>
-                        <th class="vote-table">DIA ALQ</th>
                         <th class="rate-table">DIA LLEG</th>
                         <th class="rate-table">DIAS ALQ</th>
                         <th class="rate-table">STATUS</th>
                         <th class="rate-table">PELI</th>
                         <th class="rate-table">PRECIO</th>
                     </tr>
-                </thead>
+                </div>
+            
                 <div *ngFor="let order of orders">
                     <tr class="row d-flex">
                         <td class="col d-flex">
-                            <div>ID: {{order.id}}</div> 
-                            <div>Fecha alquiler: {{order.dateRent | date:"mediumDate"}}</div> 
-                            <div>Dia llegada: {{order.dateArrival | date:"mediumDate"}}</div> 
-                            <div>Dias de alquiler: {{order.daysRent}} dias</div> 
-                            <div>Status: {{order.status}}</div> 
-                            <div>Pelicula: {{order.Movie.title}} ({{order.Movie.id}})</div>
-                            <div>Precio: {{order.price}} €</div>  
-                        </td>
-                        
+                            <div>{{order.id}}</div> 
+                            <div>{{order.dateRent | date:"mediumDate"}}</div> 
+                            <div>{{order.dateArrival | date:"mediumDate"}}</div> 
+                            <div>{{order.daysRent}}</div> 
+                            <div>{{order.status}}</div> 
+                            <div>{{order.Movie.title}} ({{order.Movie.id}})</div>
+                            <div>{{order.price}} €</div>  
+                        </td>            
                     </tr>
-                           
-                </div>   
-        
+                </div>
+         
             </section>
-            
+        </div>
 
         </section>
 

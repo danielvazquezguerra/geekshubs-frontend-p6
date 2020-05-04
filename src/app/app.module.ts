@@ -22,7 +22,7 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { AntDesignModule } from './antdesign.module';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCardModule } from '@angular/material/card';
 //#endregion
 
 //#region Components
@@ -52,6 +52,7 @@ import { MoviesAllComponent } from './components/movies-all/movies-all.component
 import { CreateMovieComponent } from './components/create-movie/create-movie.component';
 import { MovieUpdateComponent } from './components/movie-update/movie-update.component';
 import { AdminSearchComponent } from './components/admin-search/admin-search.component';
+import { SliderComponent } from './components/slider/slider.component';
 
 registerLocaleData(en);
 //#endregion
@@ -79,6 +80,7 @@ registerLocaleData(en);
     CreateMovieComponent,
     MovieUpdateComponent,
     AdminSearchComponent,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,
@@ -92,7 +94,7 @@ registerLocaleData(en);
     AntDesignModule,
     NgxGlideModule,
     CarouselModule,
-    MatSnackBarModule
+    MatCardModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
 

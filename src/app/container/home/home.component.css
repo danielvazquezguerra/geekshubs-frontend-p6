@@ -35,10 +35,27 @@
 }
 
 .movie-box {
+    width: 200px;
+    height: auto;
+    
+}
 
-    width: 60%;
-    height: 100%;
- 
+.movie-img {
+    width: 100%;
+    height: auto;
+}
+
+.movie-name {
+    display: flex;
+    font-size: 0.8em;
+    height: auto;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-transform: capitalize;
+    line-height: 1.2em;
+    margin-top: 10px;
+    border-top: 2px solid white;
+    padding-top: 5px;
 }
 
 .movie-info {
@@ -66,7 +83,13 @@
     height: 400px;
 }
 
+.populares-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    color: white;
+    border-bottom: 2px solid white;
 
+}
 
 /*FORMATO DE LA INFO DE LA PELICULA*/
 

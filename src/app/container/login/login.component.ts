@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 @Component({
   selector: 'app-login',
@@ -12,13 +13,10 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  public message: string;
-  public errorMsg: string;
-  public successMsg: string;
-
   constructor(
     private usuariosService: UsersService,
-    public router: Router
+    public router: Router,
+    private notification: NzNotificationService,
   ) { }
 
   ngOnInit(): void {
@@ -28,23 +26,24 @@ export class LoginComponent implements OnInit {
     if (loginForm.valid) {
       this.usuariosService.login(loginForm.value)
         .subscribe(
-          (res: HttpResponse<any>) => {
-            /* tslint:disable:no-string-literal */
-            this.successMsg = res['message'];
-            console.log(this.successMsg);
+          (res: HttpResponse<object>) => {
+            this.notification.success(
+              'Login realizado con éxito',
+              res['message']
+              );
             localStorage.setItem('authToken', res['token']);
             this.usuariosService.setUser(res['user']);
             setTimeout(() => {
-              this.router.navigate(['home']);
-            }, 2000);
+                this.router.navigate(['home']);
+              }, 2000);
           },
-
           (error: HttpErrorResponse) => {
-          this.errorMsg = error.error.message;
-          console.log(this.errorMsg);
-          setTimeout(() =>  this.errorMsg = '' , 2000);
-         }
-        );
+            this.notification.error(
+              'Problema al logear al usuario',
+              error['error']['message']
+              );
+          }
+        )
     }
   }
 }

@@ -72,6 +72,7 @@ export class DetailsComponent implements OnInit {
       const genre1 = this.generos[0];
       this.getGenreId(genre1);
       this.actores = pelicula.Actors;
+      console.log(this.actores)
     });
   }
 
@@ -94,9 +95,9 @@ export class DetailsComponent implements OnInit {
     }
   }
 
-  getImage3(detalle: any){
-    if (detalle.profile_path){
-      return this.imageURL + (detalle.profile_path);
+  getImage3(actor: any){
+    if (actor.profile_path){
+      return this.imageURL + (actor.profile_path);
     }
     else {
       return this.notImage;
