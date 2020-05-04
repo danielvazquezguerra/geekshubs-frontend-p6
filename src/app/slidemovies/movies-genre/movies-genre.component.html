@@ -1,4 +1,4 @@
-        <h3 class="populares-title w-100">{{nombre}}</h3>
+        <!-- <h3 class="populares-title w-100">{{nombre}}</h3>
         <div class="row content-slide">
             <div *ngFor="let pelicula of moviesGenre | slice:0:7">
                 <div class="movie-box col p-2">
@@ -6,9 +6,29 @@
                     <p class="movie-name">{{ pelicula.title }}</p> 
                 </div>
             </div>
-        </div>
+        </div> -->
 
+<main class="populares-main container-fluid w-100">
+    
+     <h3 class="populares-title w-100">{{nombre}}</h3>
+        
+    <div class="row content-slide d-flex flex-nowrap justify-content-center">
+                    
+        <div class="populares d-flex" *ngFor="let pelicula of moviesGenre | slice:0:8"> 
+                    
+                <div class="movie-box col p-2">
+                        
+                    <img class="movie-img" [src]= "getImage(pelicula)" alt="{{ pelicula.title }}" [routerLink]="'/details/' + pelicula.id">
+                        
+                    <p class="movie-name"> {{ pelicula.title }}. </p>
+        
+                </div>            
+        
+         </div>
+        
+    </div>
 
+</main>
 <!-- <main class="populares-main container-fluid w-100">
     
     <h3 class="populares-title w-100">{{nombre}}</h3>
