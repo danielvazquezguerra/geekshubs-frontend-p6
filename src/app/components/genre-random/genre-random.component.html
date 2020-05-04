@@ -6,7 +6,7 @@
 
         <h3>Genero {{name}}</h3>
         <div class="grid">
-            <div *ngFor="let genre of genres | slice:0:8">
+            <div *ngFor="let genre of genres | slice:0:7">
                 <div>
                     <p>{{ genre.title }}</p>
                     <img [src]= "getImage(genre)" alt="" [routerLink]="'/details/' + genre.id"> 

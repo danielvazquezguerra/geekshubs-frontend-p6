@@ -140,7 +140,7 @@ nz-select {
 }
 
 .actor-box {
-    width: 150px;
+    width: 200px;
 }
 
 .actor-img {
@@ -330,3 +330,33 @@ nz-select {
     /* Support for IE. */
     font-feature-settings: 'liga';
   }
+
+  .populares-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+.movie-box {
+    width: 200px;
+    height: auto;    
+}
+
+.movie-img {
+    width: 100%;
+    height: auto;
+}
+
+.movie-name {
+    display: flex;
+    font-size: 0.8em;
+    height: auto;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-transform: capitalize;
+    line-height: 1.2em;
+    margin-top: 10px;
+    border-top: 2px solid white;
+    padding-top: 5px;
+}
