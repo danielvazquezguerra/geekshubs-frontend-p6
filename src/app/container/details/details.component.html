@@ -37,7 +37,7 @@
                     </nz-select>
                     
                     <!-- BOTON ALQUILER GUEST -->
-                     <button class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()" nz-button nzType="default">ALQUILER</button>
+                     <button class="bt-rent" (click)="rentMovieGuest()" *ngIf="!usersService.getUser()" nz-button nzType="default">AlquilarGuest</button>
 
                      <!-- BOTON ALQUILER LOGIN -->
                      <button class="bt-rent" (click)="orderCreate(movie)" *ngIf="usersService.getUser()" nz-button nzType="default">Alquilar</button>
@@ -76,23 +76,23 @@
                         <!-- titulo de pelicula y ID -->
                         <div class="n-order">
                             <!-- <p><span class="bold-order movie-order">&nbsp; {{ order?.Movie.title }}Star Wars.  </span></p> -->
-                            <p>ID > <span class="bold-order thin-order">&nbsp; {{pedido.MovieId | json }} </span></p>
+                            <p>ID > <span class="bold-order thin-order">&nbsp; </span></p>
                         </div>
                         
                         <div class="n-order">
-                            <p>Fecha de pedido > <span class="bold-order thin-order">&nbsp; {{pedido.dateRent | json }} </span></p>
+                            <p>Fecha de pedido > <span class="bold-order thin-order">&nbsp;  </span></p>
                         </div>
                         <div class="n-order">
-                            <p>Fecha de llegada > <span class="bold-order thin-order">&nbsp; {{pedido.dateArrival | json }} </span></p>
+                            <p>Fecha de llegada > <span class="bold-order thin-order">&nbsp;  </span></p>
                         </div>
                         <div class="n-order">
-                            <p>Días de alquiler > <span class="bold-order thin-order">&nbsp; {{pedido.daysRent | json }}     </span></p>
+                            <p>Días de alquiler > <span class="bold-order thin-order">&nbsp; </span></p>
                         </div>
                          <div class="n-order">
-                            <p>Status > <span class="bold-order thin-order">&nbsp; {{ order?.status }} Enviado. </span></p>
+                            <p>Status > <span class="bold-order thin-order">&nbsp;  </span></p>
                         </div>
                         <div class="n-order">
-                            <p>Precio Total > <span class="bold-order thin-order">&nbsp; {{ order?.price }}7.50€</span></p>
+                            <p>Precio Total > <span class="bold-order thin-order">&nbsp; </span></p>
                         </div>
 
                     

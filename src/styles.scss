@@ -1,7 +1,3 @@
-@import '~@glidejs/glide/src/assets/sass/glide.core';
-@import '~@glidejs/glide/src/assets/sass/glide.theme';
-@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
-@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
 * {
     margin: 0;
@@ -51,8 +47,6 @@ html, body { height: 100%; }
 .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
     position: relative;
     background-color: transparent;
-    /* border: 1px solid black; */
-    /* border-radius: 2px; */
     transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     width: 100%;
     height: 32px;

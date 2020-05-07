@@ -142,8 +142,9 @@ export class DetailsComponent implements OnInit {
   }
 
   rentMovieLogin() {
-    console.log('boton si esta logueado');
+  
     this.router.navigate(['login']);
+    
   }
 
 }
